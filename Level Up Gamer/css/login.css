@@ -1,0 +1,112 @@
+/* Variables de color de la marca */
+:root {
+  --azul-electrico: #1e90ff;
+  --verde-neon: #39ff14;
+  --negro-fondo: #000000;
+  --gris-borde: #2a3241;
+  --gris-texto: #8a99ad;
+}
+
+.app-shell{
+  max-width: 550px;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--negro-fondo);
+  color: #ffffff;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Encabezado */
+.titulo-marca {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--verde-neon);
+  letter-spacing: 1px;
+}
+
+.subtitulo-marca {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--azul-electrico);
+  font-weight: 700;
+  margin-top: -8px;
+}
+
+.texto-bienvenida {
+  color: var(--gris-texto);
+  font-size: 0.85rem;
+}
+
+/* Banner de descuento Duoc UC */
+.banner-estudiante {
+  border: 1px solid var(--verde-neon);
+  background-color: rgba(57, 255, 20, 0.03);
+  font-size: 0.72rem;
+  white-space: nowrap; /* Mantiene todo en una sola línea */
+}
+
+.icono-estudiante {
+  font-size: 1rem;
+}
+
+.texto-banner {
+  color: var(--gris-texto);
+}
+
+.texto-banner strong {
+  color: var(--verde-neon);
+}
+
+/* Formulario e Inputs */
+.form-control::placeholder {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.enlace-olvido {
+  color: var(--azul-electrico);
+  text-decoration: none;
+}
+
+.enlace-olvido:hover {
+  text-decoration: underline;
+}
+
+.boton-ingresar {
+  background-color: var(--azul-electrico);
+  color: #ffffff;
+  border: none;
+}
+
+.boton-ingresar:hover {
+  background-color: #187bcd;
+  color: #ffffff;
+}
+
+/* Botones sociales */
+.boton-red-social {
+  border-color: var(--gris-borde);
+  background-color: #0d1117;
+}
+
+.boton-red-social:hover {
+  border-color: var(--azul-electrico);
+}
+
+/* Registro */
+.enlace-registro {
+  color: var(--verde-neon);
+  text-decoration: none;
+}
+
+.enlace-registro:hover {
+  text-decoration: underline;
+}

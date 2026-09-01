@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Gamer - Inicio de Sesión</title>
+
+  <!-- Bootstrap (estilos base) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <!-- Hojas de estilo propias -->
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <div class="app-shell">
+    <main class="container px-3 pb-5 pt-4">
+
+      <!-- Encabezado / Titulo -->
+      <section class="text-center mb-4">
+        <h1 class="titulo-marca">LEVEL-<span>UP</span></h1>
+        <p class="subtitulo-marca">TIENDA GAMER</p>
+        <p class="texto-bienvenida mt-3">Bienvenida de nuevo, Jugador Uno 👾</p>
+      </section>
+
+      <!-- Banner Estudiantes Duoc UC -->
+      <div class="banner-estudiante d-flex align-items-center gap-2 mb-4 p-2 rounded">
+        <span class="icono-estudiante">🎓</span>
+        <p class="texto-banner mb-0 text-truncate">
+          <strong>DUOC UC</strong> — Ingresa con tu correo estudiantil y obtén <strong>20% DE DESCUENTO.</strong>
+        </p>
+      </div>
+
+      <!-- Formulario de Entrada -->
+      <form action="index.html" method="GET" class="formulario-login mb-3">
+
+        <!-- Campo Correo -->
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-dark text-secondary border-secondary">✉</span>
+          <input type="email" class="form-control bg-dark text-white border-secondary" placeholder="Correo electrónico" required>
+        </div>
+
+        <!-- Campo Contraseña -->
+        <div class="input-group mb-2">
+          <span class="input-group-text bg-dark text-secondary border-secondary">🔒</span>
+          <input type="password" class="form-control bg-dark text-white border-secondary" placeholder="Contraseña" required>
+        </div>
+
+        <!-- Enlace Olvidaste Contraseña -->
+        <div class="text-end mb-4">
+          <a href="#" class="enlace-olvido small">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <!-- Botón Iniciar Sesión -->
+        <button type="submit" class="btn boton-ingresar w-100 fw-bold text-uppercase py-2 mb-4">
+          INICIAR SESIÓN &rarr;
+        </button>
+
+      </form>
+
+      <!-- Divisor u Opción Social -->
+      <div class="text-center position-relative mb-4">
+        <hr class="border-secondary opacity-25">
+        <span class="position-absolute top-50 start-50 translate-middle px-2 bg-black text-secondary small">o ingresa con</span>
+      </div>
+
+      <!-- Botones de Redes Sociales -->
+      <div class="row g-2 mb-4">
+        <div class="col-4">
+          <button type="button" class="btn boton-red-social w-100 d-flex flex-column align-items-center py-2 text-white">
+            <span>🎮</span>
+            <small class="text-secondary">Steam</small>
+          </button>
+        </div>
+        <div class="col-4">
+          <button type="button" class="btn boton-red-social w-100 d-flex flex-column align-items-center py-2 text-white">
+            <span>💬</span>
+            <small class="text-secondary">Discord</small>
+          </button>
+        </div>
+        <div class="col-4">
+          <button type="button" class="btn boton-red-social w-100 d-flex flex-column align-items-center py-2 text-white">
+            <span>🌐</span>
+            <small class="text-secondary">Google</small>
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer / Enlace a Registro -->
+      <div class="text-center mt-4">
+        <span class="text-secondary small">¿Nuevo aquí?</span>
+        <a href="registro.html" class="enlace-registro fw-bold small ms-1">Crear Cuenta &rarr;</a>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
