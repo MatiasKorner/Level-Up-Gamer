@@ -59,6 +59,9 @@ body {
 .icon-button {
   background: transparent;
   font-size: 1.1rem;
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
 }
 
 .hero-gamer {
@@ -198,4 +201,58 @@ body {
 .bottom-nav span {
   margin-top: 3px;
   text-transform: uppercase;
+}
+
+/* ---------- Header de páginas internas (carrito, pago, perfil, etc.) ---------- */
+
+.back-arrow {
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.icon-button {
+  position: relative;
+}
+
+.icon-button .badge-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 3px;
+  border-radius: 8px;
+  background-color: var(--azul);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Estados de validación (comparten look con Bootstrap) ---------- */
+
+.invalid-feedback {
+  font-size: 0.72rem;
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: #ff4d4d;
+}
+
+.form-control.is-valid,
+.form-select.is-valid {
+  border-color: var(--verde);
 }

@@ -25,7 +25,9 @@
 
       <div class="header-icons">
         <button class="icon-button" aria-label="Notificaciones">🔔</button>
-        <button class="icon-button" aria-label="Carrito">🛒</button>
+        <a href="carrito.html" class="icon-button" aria-label="Carrito">
+          🛒<span class="badge-count" id="cart-count-badge">0</span>
+        </a>
       </div>
     </header>
 
@@ -57,7 +59,9 @@
               <h3>Phantom Strike</h3>
               <div class="product-footer">
                 <span>$49.990 CLP</span>
-                <button class="add-button" aria-label="Agregar Phantom Strike">+</button>
+                <button class="add-button" aria-label="Agregar Phantom Strike"
+                  data-id="phantom-strike" data-nombre="Phantom Strike" data-variante="PS5 Digital"
+                  data-precio="49990" data-img="img/producto-1.jpg">+</button>
               </div>
             </div>
           </article>
@@ -68,7 +72,9 @@
               <h3>Grid Runner X</h3>
               <div class="product-footer">
                 <span>$39.990 CLP</span>
-                <button class="add-button" aria-label="Agregar Grid Runner X">+</button>
+                <button class="add-button" aria-label="Agregar Grid Runner X"
+                  data-id="grid-runner-x" data-nombre="Grid Runner X" data-variante="PC / Steam"
+                  data-precio="39990" data-img="img/producto-2.jpg">+</button>
               </div>
             </div>
           </article>
@@ -79,7 +85,9 @@
               <h3>Dark Protocol</h3>
               <div class="product-footer">
                 <span>$59.990 CLP</span>
-                <button class="add-button" aria-label="Agregar Dark Protocol">+</button>
+                <button class="add-button" aria-label="Agregar Dark Protocol"
+                  data-id="dark-protocol" data-nombre="Dark Protocol" data-variante="Edición Estándar"
+                  data-precio="59990" data-img="img/producto-3.jpg">+</button>
               </div>
             </div>
           </article>
@@ -90,7 +98,9 @@
               <h3>Nova Command</h3>
               <div class="product-footer">
                 <span>$44.990 CLP</span>
-                <button class="add-button" aria-label="Agregar Nova Command">+</button>
+                <button class="add-button" aria-label="Agregar Nova Command"
+                  data-id="nova-command" data-nombre="Nova Command" data-variante="Edición Estándar"
+                  data-precio="44990" data-img="img/producto-4.jpg">+</button>
               </div>
             </div>
           </article>
@@ -105,5 +115,8 @@
       <a href="perfil.html">👤<span>Perfil</span></a>
     </nav>
   </div>
+
+  <script src="js/tienda.js"></script>
+  <script src="js/inicio.js"></script>
 </body>
 </html>

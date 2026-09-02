@@ -1,0 +1,398 @@
+/* =======================================================================
+   cuenta.css — Estilos para perfil.html, puntos.html y pedidos.html
+   ======================================================================= */
+
+/* ----- Encabezado de perfil ----- */
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.enlace-editar {
+  color: var(--azul);
+  font-size: 0.75rem;
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+}
+
+.perfil-datos {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.avatar-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--azul), var(--verde));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.perfil-datos h2 {
+  margin: 0 0 2px;
+  font-size: 1rem;
+}
+
+.perfil-datos .correo {
+  color: var(--texto-secundario);
+  font-size: 0.75rem;
+  margin: 0 0 6px;
+}
+
+.badge-nivel {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid var(--verde);
+  border-radius: 12px;
+  color: var(--verde);
+  font-size: 0.65rem;
+  font-weight: bold;
+}
+
+/* ----- Stats (nivel / puntos / pedidos) ----- */
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 12px 4px;
+  border: 1px solid #252525;
+  border-radius: 8px;
+  background-color: #101010;
+}
+
+.stat-box strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--azul);
+}
+
+.stat-box span {
+  font-size: 0.62rem;
+  color: var(--texto-secundario);
+  text-transform: uppercase;
+}
+
+/* ----- Lista de menú del perfil ----- */
+
+.menu-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  border: 1px solid #252525;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.menu-list li {
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.menu-list li:last-child {
+  border-bottom: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  color: white;
+  text-decoration: none;
+  background-color: #0c0c0c;
+  border: 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-item .icono {
+  font-size: 1rem;
+  width: 22px;
+  text-align: center;
+}
+
+.menu-item .texto {
+  flex: 1;
+}
+
+.menu-item .texto strong {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.menu-item .texto small {
+  color: var(--texto-secundario);
+  font-size: 0.68rem;
+}
+
+.menu-item .chevron {
+  color: #555;
+}
+
+.menu-item.peligro .texto strong {
+  color: #ff4d4d;
+}
+
+/* ----- Saldo de puntos ----- */
+
+.puntos-card {
+  text-align: center;
+  padding: 22px 16px;
+  border: 1px solid #1a3d24;
+  border-radius: 12px;
+  background: radial-gradient(circle at top, rgba(57, 255, 20, 0.08), transparent 70%);
+  margin-bottom: 18px;
+}
+
+.puntos-card .etiqueta {
+  font-size: 0.65rem;
+  color: var(--texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.puntos-card .valor {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--verde);
+  margin: 4px 0 0;
+}
+
+.puntos-card .sub {
+  font-size: 0.7rem;
+  color: var(--texto-secundario);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.nivel-progreso {
+  font-size: 0.7rem;
+  color: var(--texto-secundario);
+  margin-bottom: 6px;
+}
+
+.barra-progreso {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #151515;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.barra-progreso-fill {
+  height: 100%;
+  background-color: var(--verde);
+  border-radius: 4px;
+}
+
+.puntos-card .rango {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.62rem;
+  color: #666;
+}
+
+/* ----- Logros ----- */
+
+.logros-titulo {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: var(--texto-secundario);
+  margin: 18px 0 10px;
+}
+
+.logros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.logro {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #234;
+  background-color: #0c1a26;
+}
+
+.logro.bloqueado {
+  opacity: 0.35;
+  border-style: dashed;
+  border-color: #333;
+  background-color: #0a0a0a;
+}
+
+/* ----- Canje de recompensas ----- */
+
+.reward-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border: 1px solid #252525;
+  border-radius: 8px;
+  background-color: #101010;
+}
+
+.reward-card .titulo {
+  font-size: 0.8rem;
+  margin: 0 0 3px;
+}
+
+.reward-card .costo {
+  font-size: 0.7rem;
+  color: var(--verde);
+}
+
+.reward-btn {
+  border: 1px solid var(--azul);
+  background: transparent;
+  color: var(--azul);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.reward-btn:hover:not(:disabled) {
+  background-color: var(--azul);
+  color: white;
+}
+
+.reward-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ----- Historial de pedidos ----- */
+
+.order-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin-bottom: 18px;
+}
+
+.order-tab {
+  flex: 0 0 auto;
+  padding: 6px 14px;
+  border-radius: 16px;
+  background-color: #151515;
+  color: var(--texto-secundario);
+  border: 0;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.order-tab.active {
+  background-color: var(--azul);
+  color: white;
+}
+
+.order-card {
+  border: 1px solid #252525;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background-color: #0c0c0c;
+}
+
+.order-card .cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.order-card .cabecera strong {
+  font-size: 0.82rem;
+}
+
+.order-card .meta {
+  color: var(--texto-secundario);
+  font-size: 0.68rem;
+  margin-bottom: 10px;
+}
+
+.order-status {
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.62rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.order-status.en_camino {
+  background-color: rgba(30, 144, 255, 0.15);
+  color: var(--azul);
+}
+
+.order-status.entregado {
+  background-color: rgba(57, 255, 20, 0.12);
+  color: var(--verde);
+}
+
+.order-status.cancelado {
+  background-color: rgba(255, 77, 77, 0.12);
+  color: #ff4d4d;
+}
+
+.order-card .pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-card .total {
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.order-card .accion-btn {
+  border: 1px solid var(--azul);
+  background: transparent;
+  color: var(--azul);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-card .accion-btn:hover {
+  background-color: var(--azul);
+  color: white;
+}
+
+.sin-resultados {
+  text-align: center;
+  color: var(--texto-secundario);
+  font-size: 0.8rem;
+  padding: 30px 0;
+}

@@ -1,0 +1,351 @@
+/* =======================================================================
+   compras.css — Estilos para carrito.html, pago.html y confirmacion.html
+   ======================================================================= */
+
+.subtitulo-pagina {
+  color: var(--texto-secundario);
+  font-size: 0.72rem;
+  margin: -4px 0 16px;
+}
+
+/* ----- Ítems del carrito ----- */
+
+.cart-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #252525;
+  border-radius: 8px;
+  background-color: #101010;
+}
+
+.cart-item img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-item-info h3 {
+  margin: 0 0 2px;
+  font-size: 0.8rem;
+}
+
+.cart-item-info .variante {
+  color: var(--texto-secundario);
+  font-size: 0.68rem;
+  margin: 0 0 6px;
+}
+
+.cart-item-info .precio {
+  color: var(--verde);
+  font-weight: bold;
+  font-size: 0.78rem;
+}
+
+.cart-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.remove-btn {
+  border: 0;
+  background: transparent;
+  color: #888;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.remove-btn:hover {
+  color: #ff4d4d;
+}
+
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.qty-stepper button {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #1a1a1a;
+  color: white;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.qty-stepper button:hover {
+  background-color: var(--azul);
+}
+
+.qty-stepper span {
+  min-width: 14px;
+  text-align: center;
+  font-size: 0.78rem;
+}
+
+/* ----- Código de promoción ----- */
+
+.promo-box {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.promo-box input {
+  flex: 1;
+}
+
+.promo-box .aplicado {
+  color: var(--verde);
+  border-color: var(--verde);
+}
+
+/* ----- Resumen / Totales ----- */
+
+.summary-box {
+  border: 1px solid #252525;
+  border-radius: 8px;
+  padding: 14px;
+  margin: 16px 0;
+  background-color: #0c0c0c;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--texto-secundario);
+  margin-bottom: 8px;
+}
+
+.summary-row.descuento span:last-child {
+  color: var(--verde);
+}
+
+.summary-row.envio span:last-child {
+  color: var(--verde);
+  text-transform: uppercase;
+}
+
+.summary-row.total {
+  border-top: 1px solid #252525;
+  padding-top: 10px;
+  margin-top: 4px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: white;
+}
+
+.summary-row.total span:last-child {
+  color: var(--verde);
+}
+
+/* ----- Proceso de pago: indicador de pasos ----- */
+
+.pasos-checkout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 10px 0 24px;
+}
+
+.paso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6rem;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.paso .circulo {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #151515;
+  border: 1px solid #2a2a2a;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #666;
+}
+
+.paso.activo .circulo,
+.paso.completado .circulo {
+  background-color: var(--azul);
+  border-color: var(--azul);
+  color: white;
+}
+
+.paso.activo {
+  color: white;
+}
+
+.linea-paso {
+  width: 30px;
+  height: 1px;
+  background-color: #2a2a2a;
+  margin-bottom: 14px;
+}
+
+.paso-form {
+  display: none;
+}
+
+.paso-form.activo {
+  display: block;
+}
+
+.seccion-titulo {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--texto-secundario);
+  margin: 20px 0 12px;
+}
+
+/* ----- Método de envío / pago (radio cards) ----- */
+
+.opcion-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border: 1px solid #252525;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.opcion-radio:has(input:checked),
+.opcion-radio.seleccionado {
+  border-color: var(--azul);
+  background-color: rgba(30, 144, 255, 0.06);
+}
+
+.opcion-radio input {
+  accent-color: var(--azul);
+}
+
+.opcion-radio .detalle {
+  flex: 1;
+}
+
+.opcion-radio .detalle strong {
+  display: block;
+  font-size: 0.78rem;
+}
+
+.opcion-radio .detalle small {
+  color: var(--texto-secundario);
+  font-size: 0.68rem;
+}
+
+.opcion-radio .precio-opcion {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--verde);
+  text-transform: uppercase;
+}
+
+/* ----- Confirmación de pedido ----- */
+
+.confirmacion-wrap {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.circulo-exito {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 3px solid var(--verde);
+  box-shadow: 0 0 0 6px rgba(57, 255, 20, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  color: var(--verde);
+}
+
+.confirmacion-wrap h1 {
+  color: var(--verde);
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.confirmacion-wrap p {
+  color: var(--texto-secundario);
+  font-size: 0.8rem;
+  margin-bottom: 28px;
+}
+
+.orden-card {
+  text-align: left;
+  border: 1px solid #252525;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  background-color: #0c0c0c;
+}
+
+.orden-card .fila {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.orden-card .fila:last-child {
+  border-bottom: 0;
+}
+
+.orden-card .fila span:first-child {
+  color: var(--texto-secundario);
+}
+
+.btn-confirmar {
+  background-color: var(--verde);
+  color: #000;
+  border: none;
+}
+
+.btn-confirmar:hover {
+  background-color: #2fd90f;
+  color: #000;
+}
+
+.puntos-ganados {
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px dashed var(--verde);
+  border-radius: 8px;
+  color: var(--verde);
+  font-size: 0.78rem;
+  font-weight: bold;
+}
