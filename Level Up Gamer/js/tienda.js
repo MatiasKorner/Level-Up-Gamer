@@ -148,12 +148,13 @@ const LevelUp = (() => {
     calcularTotales() {
       const items = this.obtenerItems();
       const subtotal = items.reduce((acc, i) => acc + i.precio * i.cantidad, 0);
-      const promo = this.obtenerPromo();
-      const descuentoPct = promo && promo.toUpperCase() === "DUOC20" ? 0.2 : 0;
+      const correo = localStorage.getItem("lug_correo") || "";
+      const esDuoc = correo.toLowerCase().endsWith("@duocuc.cl");
+      const descuentoPct = esDuoc ? 0.2 : 0;
       const descuento = Math.round(subtotal * descuentoPct);
       const envio = 0;
       const total = subtotal - descuento + envio;
-      return { subtotal, descuento, descuentoPct, envio, total, promoValido: descuentoPct > 0 };
+      return { subtotal, descuento, descuentoPct, envio, total, esDuoc };
     },
   };
 

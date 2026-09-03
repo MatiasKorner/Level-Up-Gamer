@@ -5,12 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const vacioEl = document.getElementById("carrito-vacio");
   const conItemsEl = document.getElementById("carrito-con-items");
   const subtituloEl = document.getElementById("carrito-subtitulo");
-  const promoInput = document.getElementById("promo-input");
-  const promoBtn = document.getElementById("promo-btn");
+
 
   function render() {
     const items = LevelUp.Carrito.obtenerItems();
     const totales = LevelUp.Carrito.calcularTotales();
+    const beneficioDuoc = document.getElementById("beneficio-duoc");
+
+    if (totales.esDuoc) {
+      beneficioDuoc.classList.remove("d-none");
+    } else {
+      beneficioDuoc.classList.add("d-none");
+    }
 
     document.getElementById("cart-count-badge").textContent = LevelUp.Carrito.contarUnidades();
 
@@ -28,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     subtituloEl.textContent =
       LevelUp.Carrito.contarUnidades() +
       " producto" + (LevelUp.Carrito.contarUnidades() === 1 ? "" : "s") +
-      (totales.promoValido ? " · Descuento Duoc 20% aplicado" : "");
+      (totales.esDuoc ? " · Descuento Duoc 20% aplicado" : "");
 
     listaEl.innerHTML = items
       .map(
@@ -54,19 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("resumen-subtotal").textContent = LevelUp.formatCLP(totales.subtotal);
     document.getElementById("resumen-descuento-label").textContent =
-      totales.promoValido ? "Descuento Duoc (20%)" : "Descuento";
+      totales.esDuoc ? "Descuento Duoc (20%)" : "Descuento";
     document.getElementById("resumen-descuento").textContent = "-" + LevelUp.formatCLP(totales.descuento);
     document.getElementById("resumen-total").textContent = LevelUp.formatCLP(totales.total);
 
-    const promoGuardado = LevelUp.Carrito.obtenerPromo();
-    promoInput.value = promoGuardado || "";
-    if (totales.promoValido) {
-      promoBtn.textContent = "Aplicado ✓";
-      promoBtn.classList.add("aplicado");
-    } else {
-      promoBtn.textContent = "Aplicar";
-      promoBtn.classList.remove("aplicado");
-    }
+    
   }
 
   listaEl.addEventListener("click", (e) => {
@@ -88,23 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (btn.dataset.accion === "eliminar") {
       LevelUp.Carrito.eliminar(id);
       LevelUp.toast(`${item.nombre} eliminado del carrito`);
-    }
-    render();
-  });
-
-  promoBtn.addEventListener("click", () => {
-    const codigo = promoInput.value.trim();
-    if (!codigo) {
-      LevelUp.Validar.marcarInvalido(promoInput, "Ingresa un código.");
-      return;
-    }
-    LevelUp.Carrito.aplicarPromo(codigo);
-    const totales = LevelUp.Carrito.calcularTotales();
-    if (totales.promoValido) {
-      LevelUp.Validar.marcarValido(promoInput);
-      LevelUp.toast("Código aplicado: 20% de descuento");
-    } else {
-      LevelUp.Validar.marcarInvalido(promoInput, "Código no válido.");
     }
     render();
   });
