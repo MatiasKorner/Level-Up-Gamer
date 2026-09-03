@@ -1,0 +1,22 @@
+
+
+body {
+    margin: 0;
+}
+
+/* dvh = Dynamic Viewport Height */
+
+.error-page {
+    min-height: 100dvh;
+    background-color: #000000;
+}
+
+/* rem es una unidad relativa al tamaño de la fuente estaablecido en el elemento raiz
+               clamp (minimo, preferido, maximo) */
+.error-code {
+    font-size: clamp(4rem, 6vw, 10rem);
+    color: #168cff;
+    text-shadow: 0 0 10px #168cff;  
+    font-weight: 800;
+    font-family: 'Orbitron', sans-serif;
+}
