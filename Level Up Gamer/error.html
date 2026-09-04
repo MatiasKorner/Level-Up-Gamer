@@ -18,6 +18,7 @@
 
     <!-- hace algo similar pero para el servidor de fuentes de google -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- Carga Orbitron, una fuente "futurista" -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -47,11 +48,99 @@
         <div class="error-actions">
             <a href="index.html" class="error-button error-button-first">↩ RENACER – IR AL INICIO</a>
 
-            <a href="#" class="error-button error-button-second">📞 REPORTAR ESTE ERROR</a>
+            <!--
+            data-bs-toggle ="modal" : le avisa a bootstrap que el boton va a abrir un modal
+            data-bs-target="#reportModal" : le dice a boostrap que abra el modal con el id "reportModal" -->
+
+            <a href="#" class="error-button error-button-second" data-bs-toggle="modal" data-bs-target="#reportModal">📞
+                REPORTAR ESTE ERROR</a>
 
         </div>
 
     </main>
+
+
+    <!-- Modal de reporte (sepa la bola como funciona) -->
+    <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border-primary">
+
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="reportModalLabel">Reportar Error</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="reportForm" class="needs-validation" novalidate>
+
+                        <!-- Nombre de usuario -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de usuario</label>
+                            <input type="text" class="form-control bg-dark text-white border-secondary" id="username"
+                                name="username" required minlength="4"> <!-- longitud minima -->
+                            <div class="invalid-feedback">
+                                Escribe un nombre de usuario válido (mínimo 4 caracteres).
+                            </div>
+                        </div>
+
+                        <!-- Título del reporte -->
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Título del reporte</label>
+                            <input type="text" class="form-control bg-dark text-white border-secondary" id="title"
+                                name="title" required minlength="5"> <!-- longitud minima -->
+                            <div class="invalid-feedback">
+                                El título debe tener al menos 5 caracteres.
+                            </div>
+                        </div>
+
+                        <!-- Descripción -->
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Descripción del error</label>
+                            <textarea class="form-control bg-dark text-white border-secondary" id="description"
+                                name="description" rows="4" required minlength="10"></textarea>
+                            <div class="invalid-feedback">
+                                Describe el error con al menos 10 caracteres.
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Enviar reporte</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- Modal de éxito -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-success">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title">Reporte enviado</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="mb-3" style="font-size: 3rem;"><img src="img/modal-enviado.png" alt="" class="img-modal"></div>
+                <p class="mb-0">¡Tu reporte se envió correctamente!</p>
+                <p class="text-secondary small">Gracias por ayudarnos a mejorar.</p>
+            </div>
+            <div class="modal-footer border-secondary justify-content-center">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- se carga un script de bootstrap para que el modal funcione correctamente -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- se carga el js -->
+    <script src="js/error.js"></script>
 
 </body>
 

@@ -111,3 +111,8 @@ body {
     transform: translateY(-2px); /* el boton sube un poquito al pasar el raton por encima */
   
 }
+
+.img-modal{
+    width: clamp(7rem, 16vw, 10rem);
+    border-radius: 0.5rem;
+}
