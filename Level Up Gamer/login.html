@@ -38,14 +38,19 @@
         <!-- Campo Correo -->
         <div class="input-group mb-3">
           <span class="input-group-text bg-dark text-secondary border-secondary">✉</span>
-          <input type="email" id="correo" class="form-control bg-dark text-white border-secondary" placeholder="Correo electrónico" required>
+          <input type="email" id="correo" class="form-control bg-dark text-white border-secondary" placeholder="Correo electrónico"  maxlength="100" required>
+          
         </div>
+
+        <small id="error-correo" class="text-danger"></small>
 
         <!-- Campo Contraseña -->
         <div class="input-group mb-2">
           <span class="input-group-text bg-dark text-secondary border-secondary">🔒</span>
-          <input type="password" class="form-control bg-dark text-white border-secondary" placeholder="Contraseña" required>
+          <input type="password" id="contraseña" class="form-control bg-dark text-white border-secondary" placeholder="Contraseña" maxlength="10" required>
         </div>
+
+        <small id="error-contraseña" class="text-danger"></small>
 
         <!-- Enlace Olvidaste Contraseña -->
         <div class="text-end mb-4">

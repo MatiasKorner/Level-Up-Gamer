@@ -110,3 +110,11 @@ body {
 .enlace-registro:hover {
   text-decoration: underline;
 }
+
+#error-correo { /* Se usa el # porque utilizamos id*/
+  display: block; 
+  margin-top: -10px;
+  margin-bottom: 12px;
+  margin-left: 15px;
+  font-size: 0.8rem;
+}
