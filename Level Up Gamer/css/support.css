@@ -1,0 +1,227 @@
+body.support-main-page {
+    margin: 0;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    min-height: 100dvh;
+}
+
+
+.back-button {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(0.86rem, 1.6vw, 1.3rem);
+    letter-spacing: 0.08rem;
+}
+
+.back-arrow {
+    margin-right: 0.4rem;
+}
+
+.support-page {
+    min-height: 100vh;
+}
+
+.support-header {
+    padding: 1rem;
+}
+
+.support-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.support-icon {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.7rem;
+}
+
+.support-content h2 {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.4rem;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+.support-subtitle {
+    text-align: center;
+    color: #525151;
+    font-size: 0.75rem;
+    margin-bottom: 1.7rem;
+}
+
+/* Barra de busqueda */
+
+.search-box {
+    margin-bottom: 1.5rem;
+}
+
+.search-box .input-group-text,
+.search-box .form-control {
+    background-color: #111111;
+    border-color: #153759;
+    color: #ffffff;
+}
+
+.search-box .input-group-text {
+    border-right: none;
+}
+
+.search-box .form-control {
+    border-left: none;
+}
+
+/* cambia el color del texto placeholder en la barra de busqueda */
+.search-box .form-control::placeholder {
+    font-family: 'Oxanium', sans-serif;
+    color: #525151;
+    font-size: clamp(0.8rem, 1.3vw, 1.3rem);
+}
+
+/* acordeon */
+.faq-accordion .accordion-item {
+    background-color: #090909;
+    border: 1px solid #1d1d1d;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    margin-bottom: 0.6rem;
+}
+/*
+En vez de utilizar la funcion .collapse para añadir el borde azul, se utiliza "aria-expanded",
+de este modo se evita que todas los acordeones aparezcan con el borde azul, debido a que el borde
+se genera antes que la clase ".collapse" */
+.faq-accordion .accordion-item:has(.accordion-button[aria-expanded="true"]) {
+    border-color: #153759;
+}
+
+.faq-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(0.6rem, 0.9vw, 1rem);
+    margin-bottom: 0.7rem;
+    color: #008cff;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+}
+
+.faq-accordion .accordion-button {
+    background-color: #090909;
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 0.8rem 0.75rem;
+    box-shadow: none;
+    border: none;
+
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    background-color: #000;
+    color: #ffffff;
+}
+
+/* boton del acordio al estar cerrado */
+.faq-accordion .accordion-button::after {
+    color:  #1981f7;
+    background-image: none;
+    content: "+";
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    transform: none;
+}
+
+/* boton del acordion al estar abierto*/
+.faq-accordion .accordion-button[aria-expanded="true"]::after {
+    content: "-";
+}
+
+.faq-accordion .accordion-body {
+    background-color: #090909;
+    font-family: 'Oxanium', sans-serif;
+    color: #999999;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    padding: 0 0.75rem 0.8rem;
+}
+
+/* Tarjeta de wsp */
+
+.whatsapp-card {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #066b35;
+    border-radius: 0.6rem;
+    background-color: #03170d;
+}
+
+.whatsapp-card h3 {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 600;
+    margin-bottom: -0.1rem;
+    color: #00e676;
+    text-align: center;
+    font-size: 0.65rem;
+    letter-spacing: 0.08rem;
+}
+
+.whatsapp-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.whatsapp-icon {
+    min-width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #25d366;
+    font-size: 1.2rem;
+}
+
+.whatsapp-info p {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
+.whatsapp-button {
+    margin-top: 0.8rem;
+    margin-left: 3.3rem;
+    padding: 0.55rem 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: #20d467;
+    color: #001b0b;
+    font-family: 'Oxanium', sans-serif;
+    font-size: clamp(0.6rem, 0.9vw, 1rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.10s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.03);
+}
+
+.whatsapp-time {
+    color: #20d467;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 0.7rem;
+}
+@media (max-width: 576px) {
+    .support-content {
+        padding: 1.5rem 0.75rem;
+    }
+}
