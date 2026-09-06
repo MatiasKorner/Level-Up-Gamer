@@ -6,16 +6,19 @@ body.support-main-page {
     min-height: 100dvh;
 }
 
-.back-arrow {
-    color: #ffffff;
+
+.back-button {
     text-decoration: none;
-    font-family: 'Orbitron', sans-serif;
     font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.03em;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
+    color: #fff;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(0.86rem, 1.6vw, 1.3rem);
+    letter-spacing: 0.08rem;
+}
+
+.back-arrow {
+    margin-right: 0.4rem;
 }
 
 .support-page {
@@ -24,14 +27,6 @@ body.support-main-page {
 
 .support-header {
     padding: 1rem;
-}
-
-.support-header h1 {
-    font-weight: 600;
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(0.8rem, 1.6vw, 1.3rem);
-    letter-spacing: 0.08rem;
 }
 
 .support-content {
@@ -220,14 +215,10 @@ se genera antes que la clase ".collapse" */
     transform: scale(1.03);
 }
 
-.whatsapp-minutes {
-    color: #ffffff;
-    font-family: 'Oxanium', sans-serif;
-    font-size: 0.7rem;
-}
-
 .whatsapp-time {
     color: #20d467;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 0.7rem;
 }
 @media (max-width: 576px) {
     .support-content {
