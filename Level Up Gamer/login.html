@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Gamer | Iniciar Sesión</title>
+  <link rel="stylesheet" href="estilos/base.css">
+  <link rel="stylesheet" href="estilos/componentes.css">
+  <link rel="stylesheet" href="estilos/auth.css">
+</head>
+<body>
+  <header class="navegacion">
+    <a href="inicio.html" class="logotipo">LEVEL-<span>UP</span></a>
+  </header>
+
+  <main class="contenedor-principal">
+    <div class="contenedor-autenticacion">
+      <h1 class="titulo-autenticacion">LEVEL-<span>UP</span></h1>
+      <p class="subtitulo-autenticacion" style="color: #1e90ff;">TIENDA GAMER</p>
+      
+      <p style="text-align: center; font-size: 0.85rem; color: #d3d3d3; margin: 1rem 0 1.2rem 0;">
+        Bienvenido de nuevo, Jugador Uno 👾
+      </p>
+
+      <div class="banner-beneficio-duoc" style="border-color: var(--color-verde); background-color: rgba(57, 255, 20, 0.05);">
+        <span class="icono-duoc">🎓</span>
+        <div class="texto-duoc">
+          <strong style="color: var(--color-verde);">DUOC UC</strong> — Ingresa con tu correo estudiantil y obtén <strong style="color: var(--color-verde);">20% DE DESCUENTO</strong>
+        </div>
+      </div>
+
+      <form onsubmit="validarLogin(event)">
+        <div class="grupo-campo">
+          <span class="icono-campo">✉️</span>
+          <input type="email" id="email" class="campo-entrada" placeholder="Correo electrónico" required>
+        </div>
+
+        <div class="grupo-campo">
+          <span class="icono-campo">🔒</span>
+          <input type="password" id="pass" class="campo-entrada" placeholder="Contraseña" required>
+        </div>
+
+        <a href="#" class="enlace-olvido">¿Olvidaste tu contraseña?</a>
+
+        <button type="submit" class="boton-azul">INICIAR SESIÓN →</button>
+
+        <div class="divisor-social">
+          <span>o ingresa con</span>
+        </div>
+
+        <div class="grid-redes-sociales">
+          <button type="button" class="boton-social">
+            <span class="icono-social">🎮</span>
+            <span>Steam</span>
+          </button>
+          <button type="button" class="boton-social">
+            <span class="icono-social">🔵</span>
+            <span>Discord</span>
+          </button>
+          <button type="button" class="boton-social">
+            <span class="icono-social">🌐</span>
+            <span>Google</span>
+          </button>
+        </div>
+
+        <p class="pie-autenticacion">
+          ¿Nuevo aquí? <a href="registro.html" class="verde">Crear Cuenta →</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <script src="js/validaciones_login.js"></script>
+
+</body>
+</html>

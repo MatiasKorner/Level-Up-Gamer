@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Level-Up Gamer | Catálogo</title>
+  <link rel="stylesheet" href="estilos/base.css">
+  <link rel="stylesheet" href="estilos/componentes.css">
+  <link rel="stylesheet" href="estilos/inicio.css">
+  <link rel="stylesheet" href="estilos/catalogo.css">
+</head>
+<body>
+  <header class="navegacion">
+    <a href="inicio.html" class="logotipo">LEVEL-<span>UP</span></a>
+    
+    <ul class="menu-principal">
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+    </ul>
+
+    <div class="contenedor-derecho">
+      <ul class="enlaces-nav">
+        <li><a href="login.html">Iniciar sesión</a></li>
+        <li><a href="registro.html">Registrarse</a></li>
+      </ul>
+      <div class="iconos-nav">
+        <a href="#" class="icono-carrito">🛒 <span class="contador-carrito">2</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor-principal">
+    <h2 class="encabezado-catalogo">CATÁLOGO</h2>
+
+    <div class="barra-busqueda">
+      <div class="grupo-campo-busqueda">
+        <span class="icono-busqueda">🔍</span>
+        <input type="text" class="campo-busqueda" placeholder="Buscar juego, consola o accesorio...">
+      </div>
+      
+      <div class="contenedor-select">
+        <select class="select-orden">
+          <option value="" disabled selected hidden>Ordenar por: Destacados</option>
+          <option value="precio-menor">Precio: Menor a Mayor</option>
+          <option value="precio-mayor">Precio: Mayor a Menor</option>
+          <option value="nombre">Nombre: A - Z</option>
+        </select>
+        <span class="flecha-select">▼</span>
+      </div>
+    </div>
+
+    <!-- Filtros de categoría para el Catálogo -->
+    <div class="filtros-categoria">
+      <button class="boton-azul" onclick="filtrarProductos('todos', this)">Todos</button>
+      <button class="boton-azul boton-borde" onclick="filtrarProductos('consolas', this)">Consolas</button>
+      <button class="boton-azul boton-borde" onclick="filtrarProductos('pc', this)">PC</button>
+    </div>
+
+    <div class="rejilla-productos">
+      <div class="tarjeta" data-categoria="consolas tendencias">
+        <img src="img/mando.jpg" alt="Mando DualSense PS5" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Mando DualSense PS5</div>
+        <div class="precio-tarjeta">$64.990 CLP</div>
+        <a href="detalle.html?id=mando" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="pc tendencias">
+        <img src="img/auris.webp" alt="Audífonos HyperX Cloud II" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Audífonos HyperX Cloud II</div>
+        <div class="precio-tarjeta">$89.990 CLP</div>
+        <a href="detalle.html?id=auris" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="pc tendencias">
+        <img src="img/teclado.webp" alt="Teclado Redragon Kumara K552" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Teclado Redragon Kumara</div>
+        <div class="precio-tarjeta">$32.990 CLP</div>
+        <a href="detalle.html?id=teclado" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="pc tendencias">
+        <img src="img/mouse.webp" alt="Mouse Logitech G305" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Mouse Logitech G305</div>
+        <div class="precio-tarjeta">$29.990 CLP</div>
+        <a href="detalle.html?id=mouse" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="consolas tendencias">
+        <img src="img/gta.webp" alt="Grand Theft Auto VI" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Grand Theft Auto VI (PS5)</div>
+        <div class="precio-tarjeta">$69.990 CLP</div>
+        <a href="detalle.html?id=gta" class="boton-azul">Ver Detalle</a>
+      </div>
+      
+      <div class="tarjeta" data-categoria="consolas">
+        <img src="img/fc.jpg" alt="EA Sports FC 26" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">EA Sports FC 26</div>
+        <div class="precio-tarjeta">$54.990 CLP</div>
+        <a href="detalle.html?id=ea-fc" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="pc">
+        <img src="img/mousepad.jpg" alt="Mousepad Monster Games USB RGB Negro" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Mousepad Monster Games USB RGB Negro</div>
+        <div class="precio-tarjeta">$9.990 CLP</div>
+        <a href="detalle.html?id=mousepad" class="boton-azul">Ver Detalle</a>
+      </div>
+    </div>
+  </main> 
+
+  <script src="js/filtros_inicio.js"></script>
+</body>
+</html>

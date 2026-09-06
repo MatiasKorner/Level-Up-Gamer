@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Level-Up Gamer | Inicio</title>
+  <link rel="stylesheet" href="estilos/base.css">
+  <link rel="stylesheet" href="estilos/componentes.css">
+  <link rel="stylesheet" href="estilos/inicio.css">
+</head>
+<body>
+  <header class="navegacion">
+    <a href="inicio.html" class="logotipo">LEVEL-<span>UP</span></a>
+    
+    <ul class="menu-principal">
+      <li><a href="inicio.html" class="activo">Inicio</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+    </ul>
+
+    <div class="contenedor-derecho">
+      <ul class="enlaces-nav">
+        <li><a href="login.html">Iniciar sesión</a></li>
+        <li><a href="registro.html">Registrarse</a></li>
+      </ul>
+      <div class="iconos-nav">
+        <a href="#" class="icono-carrito">🛒 <span class="contador-carrito">2</span></a>
+      </div>
+    </div> 
+  </header>
+
+  <main class="contenedor-principal">
+    <div class="banner-principal">
+      <!-- Imagen de fondo para el banner de oferta -->
+      <img src="img/hero-gamer.png" alt="Cyber Storm Banner" class="imagen-banner-fondo">
+      <div class="contenido-banner">
+        <span class="etiqueta-banner">OFERTA ESPECIAL</span>
+        <h1 class="titulo-banner">CYBER STORM RECARGADO</h1>
+        <p class="precio-banner">$29.990 CLP</p>
+      </div>
+    </div>
+
+    <div class="filtros-categoria">
+      <button class="boton-azul" onclick="filtrarProductos('tendencias', this)">Tendencias</button>
+      <button class="boton-azul boton-borde" onclick="filtrarProductos('consolas', this)">Consolas</button>
+      <button class="boton-azul boton-borde" onclick="filtrarProductos('pc', this)">PC</button>
+    </div>
+
+    <h2 class="titulo-seccion">Artículos Destacados</h2>
+    <div class="rejilla-productos">
+      
+      <!-- PRODUCTOS -->
+      <div class="tarjeta" data-categoria="consolas tendencias">
+        <img src="img/mando.jpg" alt="Mando Inalámbrico DualSense PS5" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Mando Inalámbrico DualSense PS5</div>
+        <div class="precio-tarjeta">$64.990 CLP</div>
+        <a href="detalle.html?id=mando" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="pc tendencias">
+        <img src="img/teclado.webp" alt="Redragon Kumara K552 RGB" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Redragon Kumara K552 RGB</div>
+        <div class="precio-tarjeta">$32.990 CLP</div>
+        <a href="detalle.html?id=teclado" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="pc tendencias">
+        <img src="img/mouse.webp" alt="Mouse Logitech G305" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Mouse Logitech G305</div>
+        <div class="precio-tarjeta">$29.990 CLP</div>
+        <a href="detalle.html?id=mouse" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="tendencias pc">
+        <img src="img/auris.webp" alt="Audífonos Gamer HyperX Cloud II Wireless" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Audífonos Gamer HyperX Cloud II Wireless</div>
+        <div class="precio-tarjeta">$84.990 CLP</div>
+        <a href="detalle.html?id=auris" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="consolas tendencias">
+        <img src="img/gta.webp" alt="Grand Theft Auto VI" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Grand Theft Auto VI (PS5)</div>
+        <div class="precio-tarjeta">$69.990 CLP</div>
+        <a href="detalle.html?id=gta" class="boton-azul">Ver Detalle</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>&copy; 2026 Level-Up Gamer. Todos los derechos reservados.</footer>
+
+  <script src="js/filtros_inicio.js"></script>
+</body>
+</html>
