@@ -19,6 +19,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/blog.css">
+
+    <!-- JS -->
+    <script src="js/blog.js"></script>
 </head>
 
 <body class="blog-page">
@@ -29,18 +32,22 @@
     <main class="container py-4">
 
         <!-- "mb-4": deja una espacio de margen debajo del elemento, evita que el texto se vea demasiado cerca a los btns -->
-        <h1 class="blog-title mb-4">BLOG GAMER</h1>
+        <header class="blog-header">
+            <a href="index.html" class="back-button ">
+                <span class="back-arrow">←</span>BLOG GAMER</h1>
+            </a>
+        </header>
 
         <div class="category-filters d-flex flex-wrap gap-2 mb-4">
-            <button class="category-btn active">Todo</button>
-            <button class="category-btn">Reseñas</button>
-            <button class="category-btn">Hardware</button>
-            <button class="category-btn">Consejos</button>
-            <button class="category-btn">Esports</button>
+            <button class="category-btn active" data-filter="all">Todo</button>
+            <button class="category-btn" data-filter="reviews">Reseñas</button>
+            <button class="category-btn" data-filter="hardware">Hardware</button>
+            <button class="category-btn" data-filter="tips">Consejos</button>
+            <button class="category-btn" data-filter="esports">Esports</button>
         </div>
 
         <!-- Post destacado -->
-        <article class="featured-post mb-4">
+        <article class="featured-post mb-4" data-category="reviews">
             <!-- al hacer click se redirije al href -->
             <a href="articulo.html" class="featured-link">
                 <div class="featured-image-wrapper">
@@ -68,7 +75,7 @@
         <!-- estructura base del post -->
         <div class="post-list">
             <!-- redirige a la pagina articulo.html -->
-            <a href="#" class="post-card">
+            <a href="#" class="post-card" data-category="hardware">
                 <!-- img que aparece en el post -->
                 <img src="img/first-post.jpeg" alt="RTX 5090" class="post-card-image">
                 <div class="post-card-content">
@@ -85,7 +92,7 @@
             </a>
 
             <!-- Segundo post -->
-            <a href="#" class="post-card">
+            <a href="#" class="post-card" data-category="tips">
                 <img src="img/second-post.jpg" alt="Setup Gamer" class="post-card-image">
                 <div class="post-card-content">
                     <h3 class="post-card-title">Guia Definitiva: Setup Gamer Chile 2026</h3>
@@ -97,7 +104,7 @@
             </a>
 
             <!-- tercer post -->
-            <a href="#" class="post-card">
+            <a href="#" class="post-card" data-category="esports">
                 <img src="img/third-post.jpg" alt="Esport Chile" class="post-card-image">
                 <div class="post-card-content">
                     <h3 class="post-card-title">Esports en Chile 2026: Estado del Arte</h3>

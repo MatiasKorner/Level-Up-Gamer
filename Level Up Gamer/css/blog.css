@@ -8,10 +8,28 @@ body.blog-page {
 
 }
 
-.blog-title {
+.blog-header {
+    padding: 0.4rem; 
+}
+
+.back-button {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(0.86rem, 1.6vw, 1.3rem);
+    letter-spacing: 0.08rem;
+}
+
+.back-arrow {
+    margin-right: 0.4rem;
+}
+
+.back-button {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1rem, 1.8vw, 2rem);
     letter-spacing: 0.05rem;
     margin:0;
 }

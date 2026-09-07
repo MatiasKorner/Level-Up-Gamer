@@ -109,4 +109,16 @@
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.5rem;
 }
+/* 
+empuja el btn hacia abajo independientemente del largo del texto
+asi no se ve descuadrado
+*/
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
+.tarjeta .boton-azul {
+  margin-top: auto;
+}
