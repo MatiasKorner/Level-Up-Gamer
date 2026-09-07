@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --color-fondo: #090a0f;
+  --color-tarjeta: #12141d;
+  --color-campo: #1a1d28;
+  --color-azul: #1e90ff;
+  --color-verde: #39ff14;
+  --texto-principal: #ffffff;
+  --texto-secundario: #d3d3d3;
+  --color-borde: #262938;
+  --fuente-titulo: 'Orbitron', sans-serif;
+  --fuente-cuerpo: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--texto-principal);
+  font-family: var(--fuente-cuerpo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-principal {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 5%;
+  flex: 1;
+}
