@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.back-button {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.back-button:hover {
+    color: #cccccc;
+}
+
+.back-arrow {
+    color: #1e90ff;
+    padding: 0.1rem;
+}
+
+.events-header {
+    border-bottom: 1px solid #222;
+    padding: 1rem 1.5rem;
+}
+
+.events-header h1 {
+    margin: 0;
+    font-size: clamp(1.1rem, vw, 1.5rem);
+}
+
+.events-intro {
+    padding: 0.75rem 1.5rem;
+}
+
+.events-intro h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    color: #008cff;
+    font-size: clamp(0.8rem, 1.4vw, 1.5rem);
+    font-weight: 600;
+}
+
+.events-intro p {
+    margin: 0.35rem 0 0;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.chile-map {
+    width: min(100%, 12rem);
+    margin: 0 auto;
+    padding: 0.5rem;
+    border: 1px solid #008cff;
+    border-radius: 0.75rem;
+}
+
+.chile-map img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.events-list {
+    padding-bottom: 1rem;
+}
+
+.events-list h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+}
+
+.events-card {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: #080808;
+    border: 1px solid #222;
+    border-radius: 0.75rem;
+}
+
+.events-card h3 {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    color: #39ff14;
+    font-size: clamp(0.8rem, 1.3vw, 1rem);
+}
+
+.events-card strong {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+.events-card p {
+    font-size: clamp(0.7rem, 0.8vw, 1rem);
+    margin: 0.25rem 0 1rem;
+    color: #555;
+    
+}
+
+
+
+
+.events-card button {
+    padding: 0.35rem 0.8rem;
+    border: 1px solid #39ff14;
+    border-radius: 999px;
+    background-color: transparent;
+    color: #39ff14;
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+}
