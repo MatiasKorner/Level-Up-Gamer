@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Level-Up Gamer | Detalle de Producto</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/detalle.css">
+</head>
+<body>
+  <header class="navegacion">
+    <a href="inicio.html" class="logotipo">LEVEL-<span>UP</span></a>
+    
+    <ul class="menu-principal">
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+    </ul>
+
+    <div class="contenedor-derecho">
+      <ul class="enlaces-nav">
+        <li><a href="login.html">Iniciar sesión</a></li>
+        <li><a href="registro.html">Registrarse</a></li>
+      </ul>
+      <div class="iconos-nav">
+        <a href="#" class="icono-carrito">🛒 <span class="contador-carrito">2</span></a>
+      </div>
+    </div> 
+  </header>
+
+  <main class="contenedor-principal">
+    <!-- Botón de retorno -->
+    <button onclick="window.history.back()" class="boton-volver">← Volver</button>
+
+    <div class="detalle-producto">
+      <img id="detalle-imagen" src="" alt="" class="imagen-detalle">
+      <div class="info-detalle">
+        <h1 id="detalle-titulo">Cargando...</h1>
+        <p id="detalle-precio" class="precio-detalle"></p>
+        <p id="detalle-descripcion"></p>
+
+        <!-- Selector de cantidad -->
+        <div class="contenedor-cantidad">
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" id="cantidad" value="1" min="1" max="10">
+        </div>
+        <button class="boton-azul">Añadir al Carrito</button>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>&copy; 2026 Level-Up Gamer. Todos los derechos reservados.</footer>
+
+  <script src="js/detalle.js"></script>
+</body>
+</html>
