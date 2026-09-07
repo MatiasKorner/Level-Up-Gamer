@@ -9,39 +9,40 @@
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/compras.css">
 </head>
-<body>
-  <div class="app-shell">
-    <header class="topbar">
+<body class="bg-black text-white">
+
+  <div class="checkout-wrapper">
+    <header class="checkout-topbar">
       <a href="carrito.html" class="back-arrow" aria-label="Volver">&larr;</a>
-      <h1 class="page-title">Proceso de Pago</h1>
-      <span style="width:1.3rem"></span>
+      <h1 class="page-title">PROCESO DE PAGO</h1>
+      <span class="spacer"></span>
     </header>
 
-    <main class="container px-3 pb-5">
-      <div class="pasos-checkout">
-        <div class="paso activo" data-paso="1"><span class="circulo">1</span>Envío</div>
+    <main class="checkout-container">
+      <div class="pasos-checkout mb-4">
+        <div class="paso activo" data-paso="1"><span class="circulo">1</span>ENVÍO</div>
         <div class="linea-paso"></div>
-        <div class="paso" data-paso="2"><span class="circulo">2</span>Pago</div>
+        <div class="paso" data-paso="2"><span class="circulo">2</span>PAGO</div>
         <div class="linea-paso"></div>
-        <div class="paso" data-paso="3"><span class="circulo">3</span>Confirmar</div>
+        <div class="paso" data-paso="3"><span class="circulo">3</span>CONFIRMAR</div>
       </div>
 
       <!-- Paso 1: Dirección de envío -->
       <form id="form-envio" class="paso-form activo" novalidate>
-        <p class="seccion-titulo">Dirección de envío</p>
+        <h2 class="seccion-titulo">DIRECCIÓN DE ENVÍO</h2>
 
         <div class="campo-form mb-3">
-          <input type="text" id="envio-nombre" class="form-control bg-dark text-white border-secondary" placeholder="Nombre completo">
+          <input type="text" id="envio-nombre" class="form-control custom-input" placeholder="Nombre completo">
         </div>
         <div class="campo-form mb-3">
-          <input type="text" id="envio-direccion" class="form-control bg-dark text-white border-secondary" placeholder="Calle, número y depto.">
+          <input type="text" id="envio-direccion" class="form-control custom-input" placeholder="Calle, número y depto.">
         </div>
-        <div class="row g-2 mb-3">
+        <div class="row g-3 mb-3">
           <div class="col-6 campo-form">
-            <input type="text" id="envio-ciudad" class="form-control bg-dark text-white border-secondary" placeholder="Ciudad">
+            <input type="text" id="envio-ciudad" class="form-control custom-input" placeholder="Ciudad">
           </div>
           <div class="col-6 campo-form">
-            <select id="envio-region" class="form-select bg-dark text-white border-secondary">
+            <select id="envio-region" class="form-select custom-input">
               <option value="" selected disabled>Región</option>
               <option>Región Metropolitana</option>
               <option>Valparaíso</option>
@@ -54,73 +55,102 @@
           </div>
         </div>
         <div class="campo-form mb-4">
-          <input type="tel" id="envio-telefono" class="form-control bg-dark text-white border-secondary" placeholder="Número de teléfono (+56 9 xxxx xxxx)">
+          <input type="tel" id="envio-telefono" class="form-control custom-input" placeholder="Número de teléfono (+56 9 xxxx xxxx)">
         </div>
 
-        <p class="seccion-titulo">Método de envío</p>
-        <label class="opcion-radio">
-          <input type="radio" name="metodo-envio" value="estandar" checked>
-          <span class="detalle"><strong>Estándar (3-5 días hábiles)</strong><small>Sin costo adicional</small></span>
-          <span class="precio-opcion">Gratis</span>
-        </label>
-        <label class="opcion-radio">
-          <input type="radio" name="metodo-envio" value="express" data-precio="4990">
-          <span class="detalle"><strong>Express (1-2 días hábiles)</strong><small>Llega más rápido</small></span>
-          <span class="precio-opcion">$4.990</span>
-        </label>
-        <label class="opcion-radio">
-          <input type="radio" name="metodo-envio" value="mismo-dia" data-precio="9990">
-          <span class="detalle"><strong>Mismo día (solo RM)</strong><small>Pedidos antes de las 14:00</small></span>
-          <span class="precio-opcion">$9.990</span>
-        </label>
+        <h2 class="seccion-titulo">MÉTODO DE ENVÍO</h2>
+        
+        <div class="opciones-contenedor mb-4">
+          <label class="opcion-radio">
+            <input type="radio" name="metodo-envio" value="estandar" checked>
+            <div class="detalle-radio">
+              <strong>Estándar (3-5 días hábiles)</strong>
+              <small>Sin costo adicional</small>
+            </div>
+            <span class="precio-opcion gratis">GRATIS</span>
+          </label>
 
-        <div class="summary-box mt-3">
-          <div class="summary-row total"><span>Total del pedido</span><span id="total-paso1">$0 CLP</span></div>
+          <label class="opcion-radio">
+            <input type="radio" name="metodo-envio" value="express" data-precio="4990">
+            <div class="detalle-radio">
+              <strong>Express (1-2 días hábiles)</strong>
+              <small>Llega más rápido</small>
+            </div>
+            <span class="precio-opcion">$4.990</span>
+          </label>
+
+          <label class="opcion-radio">
+            <input type="radio" name="metodo-envio" value="mismo-dia" data-precio="9990">
+            <div class="detalle-radio">
+              <strong>Mismo día (solo RM)</strong>
+              <small>Pedidos antes de las 14:00</small>
+            </div>
+            <span class="precio-opcion">$9.990</span>
+          </label>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100 fw-bold text-uppercase py-2">
-          Continuar al pago &rarr;
+        <div class="summary-box mb-4">
+          <div class="summary-row total">
+            <span>Total del pedido</span>
+            <span id="total-paso1" class="monto-destacado">$117.980 CLP</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-accion w-100">
+          CONTINUAR AL PAGO &rarr;
         </button>
       </form>
 
       <!-- Paso 2: Método de pago -->
       <form id="form-pago" class="paso-form" novalidate>
-        <p class="seccion-titulo">Método de pago</p>
+        <h2 class="seccion-titulo">MÉTODO DE PAGO</h2>
 
-        <label class="opcion-radio">
-          <input type="radio" name="metodo-pago" value="Webpay Débito" checked>
-          <span class="detalle"><strong>Webpay Débito</strong><small>Pago inmediato desde tu cuenta</small></span>
-        </label>
-        <label class="opcion-radio">
-          <input type="radio" name="metodo-pago" value="Webpay Crédito">
-          <span class="detalle"><strong>Webpay Crédito</strong><small>Hasta 3 cuotas sin interés</small></span>
-        </label>
-        <label class="opcion-radio">
-          <input type="radio" name="metodo-pago" value="Transferencia Bancaria">
-          <span class="detalle"><strong>Transferencia Bancaria</strong><small>Confirmación manual (24 hrs)</small></span>
-        </label>
+        <div class="opciones-contenedor mb-4">
+          <label class="opcion-radio">
+            <input type="radio" name="metodo-pago" value="Webpay Débito" checked>
+            <div class="detalle-radio">
+              <strong>Webpay Débito</strong>
+              <small>Pago inmediato desde tu cuenta</small>
+            </div>
+          </label>
+          <label class="opcion-radio">
+            <input type="radio" name="metodo-pago" value="Webpay Crédito">
+            <div class="detalle-radio">
+              <strong>Webpay Crédito</strong>
+              <small>Hasta 3 cuotas sin interés</small>
+            </div>
+          </label>
+          <label class="opcion-radio">
+            <input type="radio" name="metodo-pago" value="Transferencia Bancaria">
+            <div class="detalle-radio">
+              <strong>Transferencia Bancaria</strong>
+              <small>Confirmación manual (24 hrs)</small>
+            </div>
+          </label>
+        </div>
 
-        <div class="d-flex gap-2 mt-4">
-          <button type="button" class="btn btn-outline-light w-50" data-volver="1">&larr; Volver</button>
-          <button type="submit" class="btn btn-primary w-50 fw-bold text-uppercase">Continuar &rarr;</button>
+        <div class="d-flex gap-3 mt-4">
+          <button type="button" class="btn btn-outline-light w-50 py-2 fw-bold" data-volver="1">&larr; VOLVER</button>
+          <button type="submit" class="btn btn-primary btn-accion w-50">CONTINUAR &rarr;</button>
         </div>
       </form>
 
       <!-- Paso 3: Confirmar -->
       <div id="paso-confirmar" class="paso-form">
-        <p class="seccion-titulo">Resumen del pedido</p>
+        <h2 class="seccion-titulo">RESUMEN DEL PEDIDO</h2>
 
-        <div class="summary-box">
+        <div class="summary-box mb-4">
           <div class="summary-row"><span>Envío a</span><span id="resumen-nombre"></span></div>
           <div class="summary-row"><span>Dirección</span><span id="resumen-direccion"></span></div>
           <div class="summary-row"><span>Método de envío</span><span id="resumen-metodo-envio"></span></div>
           <div class="summary-row"><span>Método de pago</span><span id="resumen-metodo-pago"></span></div>
-          <div class="summary-row total"><span>Total a pagar</span><span id="total-paso3">$0 CLP</span></div>
+          <hr class="border-secondary">
+          <div class="summary-row total"><span>Total a pagar</span><span id="total-paso3" class="monto-destacado">$0 CLP</span></div>
         </div>
 
-        <div class="d-flex gap-2 mt-4">
-          <button type="button" class="btn btn-outline-light w-50" data-volver="2">&larr; Volver</button>
-          <button type="button" id="btn-confirmar-pedido" class="btn btn-confirmar w-50 fw-bold text-uppercase">Confirmar pedido</button>
+        <div class="d-flex gap-3 mt-4">
+          <button type="button" class="btn btn-outline-light w-50 py-2 fw-bold" data-volver="2">&larr; VOLVER</button>
+          <button type="button" id="btn-confirmar-pedido" class="btn btn-confirmar w-50 fw-bold">CONFIRMAR PEDIDO</button>
         </div>
       </div>
     </main>
