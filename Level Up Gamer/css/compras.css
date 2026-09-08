@@ -101,173 +101,235 @@
   font-size: 0.78rem;
 }
 
-/* ----- Código de promoción ----- */
-
-.promo-box {
-  display: flex;
-  gap: 8px;
-  margin: 14px 0;
+/* Layout general del checkout */
+.checkout-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
 }
 
-.promo-box input {
+.checkout-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.back-arrow {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-arrow:hover {
+  color: #1e90ff;
+}
+
+.page-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+  text-align: center;
+}
+
+.spacer {
+  width: 1.5rem;
+}
+
+/* Indicador de pasos */
+.pasos-checkout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.paso {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+}
+
+.paso.activo {
+  color: #fff;
+}
+
+.paso .circulo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #222;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.paso.activo .circulo {
+  background-color: #1e90ff;
+  color: #fff;
+}
+
+.linea-paso {
+  flex: 1;
+  height: 1px;
+  background-color: #333;
+  margin: 0 1rem;
+}
+
+/* Títulos de sección */
+.seccion-titulo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Inputs personalizados */
+.custom-input {
+  background-color: #111 !important;
+  border: 1px solid #2a2a2a !important;
+  color: #fff !important;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+.custom-input:focus {
+  border-color: #1e90ff !important;
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.4) !important;
+}
+
+/* Tarjetas de Selección (Radios) */
+.opciones-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.opcion-radio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.opcion-radio:hover {
+  border-color: #444;
+}
+
+.opcion-radio input[type="radio"] {
+  accent-color: #1e90ff;
+  margin-right: 1rem;
+  transform: scale(1.2);
+}
+
+.opcion-radio input[type="radio"]:checked + .detalle-radio {
+  color: #fff;
+}
+
+.detalle-radio {
+  display: flex;
+  flex-direction: column;
   flex: 1;
 }
 
-.promo-box .aplicado {
-  color: var(--verde);
-  border-color: var(--verde);
+.detalle-radio strong {
+  font-size: 0.9rem;
 }
 
-/* ----- Resumen / Totales ----- */
+.detalle-radio small {
+  color: #777;
+  font-size: 0.75rem;
+}
 
+.precio-opcion {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #39ff14;
+}
+
+/* Cuadro de resumen */
 .summary-box {
-  border: 1px solid #252525;
+  background-color: #0d0d0d;
+  border: 1px solid #222;
   border-radius: 8px;
-  padding: 14px;
-  margin: 16px 0;
-  background-color: #0c0c0c;
+  padding: 1.25rem;
 }
 
 .summary-row {
   display: flex;
   justify-content: space-between;
-  font-size: 0.78rem;
-  color: var(--texto-secundario);
-  margin-bottom: 8px;
-}
-
-.summary-row.descuento span:last-child {
-  color: var(--verde);
-}
-
-.summary-row.envio span:last-child {
-  color: var(--verde);
-  text-transform: uppercase;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
 }
 
 .summary-row.total {
-  border-top: 1px solid #252525;
-  padding-top: 10px;
-  margin-top: 4px;
-  font-size: 0.95rem;
-  font-weight: bold;
-  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0;
 }
 
-.summary-row.total span:last-child {
-  color: var(--verde);
+.monto-destacado {
+  color: #39ff14;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
 }
 
-/* ----- Proceso de pago: indicador de pasos ----- */
-
-.pasos-checkout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin: 10px 0 24px;
+/* Botones */
+.btn-accion {
+  background-color: #1e90ff;
+  border: none;
+  padding: 0.85rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.paso {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.6rem;
-  color: #666;
-  text-transform: uppercase;
+.btn-accion:hover {
+  background-color: #0072e6;
 }
 
-.paso .circulo {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #151515;
-  border: 1px solid #2a2a2a;
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: #666;
+.btn-confirmar {
+  background-color: #39ff14;
+  color: #000;
+  border: none;
+  padding: 0.85rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
 }
 
-.paso.activo .circulo,
-.paso.completado .circulo {
-  background-color: var(--azul);
-  border-color: var(--azul);
-  color: white;
+.btn-confirmar:hover {
+  background-color: #2cd40e;
+  color: #000;
 }
 
-.paso.activo {
-  color: white;
-}
-
-.linea-paso {
-  width: 30px;
-  height: 1px;
-  background-color: #2a2a2a;
-  margin-bottom: 14px;
-}
-
+/* Control de vistas dinámicas */
 .paso-form {
   display: none;
 }
 
 .paso-form.activo {
   display: block;
-}
-
-.seccion-titulo {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--texto-secundario);
-  margin: 20px 0 12px;
-}
-
-/* ----- Método de envío / pago (radio cards) ----- */
-
-.opcion-radio {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  margin-bottom: 8px;
-  border: 1px solid #252525;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.opcion-radio:has(input:checked),
-.opcion-radio.seleccionado {
-  border-color: var(--azul);
-  background-color: rgba(30, 144, 255, 0.06);
-}
-
-.opcion-radio input {
-  accent-color: var(--azul);
-}
-
-.opcion-radio .detalle {
-  flex: 1;
-}
-
-.opcion-radio .detalle strong {
-  display: block;
-  font-size: 0.78rem;
-}
-
-.opcion-radio .detalle small {
-  color: var(--texto-secundario);
-  font-size: 0.68rem;
-}
-
-.opcion-radio .precio-opcion {
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: var(--verde);
-  text-transform: uppercase;
 }
 
 /* ----- Confirmación de pedido ----- */
