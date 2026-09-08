@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contenedor donde están todas las tarjetas de productos
   const rejilla = document.querySelector('.rejilla-productos');
 
-  // Convertimos la lista de tarjetas en un Array real
-  // (así podemos usar métodos como .filter() y .sort())
+  // Convierte la lista de tarjetas en un Array real
+  // (así se pueden usar métodos como .filter() y .sort())
   const tarjetas = Array.from(document.querySelectorAll('.tarjeta'));
 
   // El select de "Ordenar por..."
@@ -17,7 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const campoBusqueda = document.querySelector('.campo-busqueda');
 
   // Todos los botones de categoría (Todos, Consolas, PC)
-  const botonesCategoria = document.querySelectorAll('.filtros-categoria .boton-azul');
+  const botonesCategoria = document.querySelectorAll('.filtros-categoria .boton-azul[data-categoria], .opcion-categoria');
+
+  // Elementos del menú de los 3 puntos
+  const btnMas = document.getElementById('btn-mas-categorias');
+  const menuCategorias = document.getElementById('menu-categorias');
 
 
   // 2. VARIABLES DE ESTADO
@@ -38,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Actualiza la categoría seleccionada
     categoriaActual = categoria;
 
-    // Quitamos el estilo "activo" de todos los botones
+    // Quita el estilo "activo" de todos los botones
     botonesCategoria.forEach(btn => {
       btn.classList.add('boton-borde');   // vuelve a poner el borde
     });
@@ -49,9 +53,30 @@ document.addEventListener('DOMContentLoaded', () => {
       boton.classList.remove('boton-borde');
     }
 
+    // Cierra el menú de los 3 puntos si estaba abierto
+    if (menuCategorias) {
+      menuCategorias.classList.remove('activo');
+    }
+
     // Aplica los filtros y el orden con la nueva categoría
     aplicarFiltrosYOrden();
   };
+
+
+  // Abrir / cerrar el menú de los 3 puntos
+  if (btnMas && menuCategorias) {
+    btnMas.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuCategorias.classList.toggle('activo');
+    });
+
+    // Cierra el menú si se hace clic fuera de él
+    document.addEventListener('click', (e) => {
+      if (!menuCategorias.contains(e.target) && e.target !== btnMas) {
+        menuCategorias.classList.remove('activo');
+      }
+    });
+  }
 
 
   // 4. EVENTOS DE ORDENAMIENTO Y BÚSQUEDA
@@ -134,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // PASO 3: Mostrar / ocultar y reordenar en el DOM
 
-    // Primero ocultamos TODAS las tarjetas
+    // Primero oculta TODAS las tarjetas
     tarjetas.forEach(t => {
       t.style.display = 'none';
     });
@@ -154,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function extraerPrecio(tarjeta) {
     const texto = tarjeta.querySelector('.precio-tarjeta')?.textContent || '0';
 
-    // Quitam todo lo que NO sea un dígito ($, puntos, letras, espacios...)
+    // Quita todo lo que NO sea un dígito ($, puntos, letras, espacios...)
     const soloNumeros = texto.replace(/[^\d]/g, '');
 
     // Convierte el string a número
