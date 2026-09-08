@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Gamer - Inicio de Sesión</title>
+
+  <!-- Bootstrap (estilos base) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+
+  <!-- Hojas de estilo propias -->
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+  <div class="pagina-login">
+
+    <img src="img/logo-Level-Up.png" alt="Logo Level-Up Gamer" class="logo-principal">
+
+    <div class="login-contenedor">
+      <!-- Panel de Acceso Cliente-->
+      <section class="panel-cliente">
+        <main class="container px-3 pb-5 pt-4">
+
+          <!-- Encabezado / Titulo -->
+          <section class="text-center mb-4">
+            <h1 class="titulo-marca">LEVEL-<span>UP</span></h1>
+            <p class="subtitulo-marca">TIENDA GAMER</p>
+            <p class="texto-bienvenida mt-3">Bienvenida de nuevo, Jugador Uno 👾</p>
+          </section>
+
+          <!-- Banner Estudiantes Duoc UC -->
+          <div class="banner-estudiante d-flex align-items-center gap-2 mb-4 p-2 rounded">
+            <span class="icono-estudiante">🎓</span>
+            <p class="texto-banner mb-0 text-truncate">
+              <strong>DUOC UC</strong> — Ingresa con tu correo estudiantil y obtén <strong>20% DE DESCUENTO.</strong>
+            </p>
+          </div>
+
+          <!-- Formulario de Entrada -->
+          <form id="form-login" class="formulario-login mb-3">
+
+            <!-- Campo Correo -->
+            <div class="input-group mb-3">
+              <span class="input-group-text bg-dark text-secondary border-secondary">✉</span>
+              <input type="email" id="correo" class="form-control bg-dark text-white border-secondary"
+                placeholder="Correo electrónico" maxlength="100" required>
+
+            </div>
+
+            <small id="error-correo" class="text-danger"></small>
+
+            <!-- Campo Contraseña -->
+            <div class="input-group mb-2">
+              <span class="input-group-text bg-dark text-secondary border-secondary">🔒</span>
+              <input type="password" id="contraseña" class="form-control bg-dark text-white border-secondary"
+                placeholder="Contraseña" maxlength="10" required>
+            </div>
+
+            <small id="error-contraseña" class="text-danger"></small>
+
+            <!-- Enlace Olvidaste Contraseña -->
+            <div class="text-end mb-4">
+              <a href="#" class="enlace-olvido small">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <!-- Botón Iniciar Sesión -->
+            <button type="submit" class="btn boton-ingresar w-100 fw-bold text-uppercase py-2 mb-4">
+              INICIAR SESIÓN &rarr;
+            </button>
+
+          </form>
+
+          <!-- Divisor u Opción Social -->
+          <div class="text-center position-relative mb-4">
+            <hr class="border-secondary opacity-25">
+            <span class="position-absolute top-50 start-50 translate-middle px-2 bg-black text-secondary small">o
+              ingresa
+              con</span>
+          </div>
+
+          <!-- Botones de Redes Sociales -->
+          <div class="row g-2 mb-4">
+            <div class="col-4">
+              <button type="button"
+                class="btn boton-red-social w-100 d-flex flex-column align-items-center py-2 text-white">
+                <span>🎮</span>
+                <small class="text-secondary">Steam</small>
+              </button>
+            </div>
+            <div class="col-4">
+              <button type="button"
+                class="btn boton-red-social w-100 d-flex flex-column align-items-center py-2 text-white">
+                <span>💬</span>
+                <small class="text-secondary">Discord</small>
+              </button>
+            </div>
+            <div class="col-4">
+              <button type="button"
+                class="btn boton-red-social w-100 d-flex flex-column align-items-center py-2 text-white">
+                <span>🌐</span>
+                <small class="text-secondary">Google</small>
+              </button>
+            </div>
+          </div>
+
+          <!-- Footer / Enlace a Registro -->
+          <div class="text-center mt-2">
+            <span class="text-secondary small">¿Nuevo aquí?</span>
+            <a href="registro.html" class="enlace-registro fw-bold small ms-1">Crear Cuenta &rarr;</a>
+          </div>
+
+        </main>
+      </section>
+
+      <!-- Panel de acceso a Administración -->
+      <section class="panel-admin-info">
+        <div class="contenido-admin">
+
+          <div class="encabezado-admin">
+            <span class="icono-admin">🛡️</span>
+            <h2>ADMINISTRACIÓN</h2>
+          </div>
+
+          <div class="banner-admin">
+            <span class="icono-equipo">👥</span>
+
+            <p>
+              Acceso exclusivo para el equipo
+              <strong>Level-Up.</strong>
+            </p>
+          </div>
+
+          <button type="button" id="btn-admin" class="btn boton-admin">
+            ACCESO ADMIN
+          </button>
+        </div>
+
+        <div class="contenido-cliente">
+
+          <div class="encabezado-cliente">
+            <span class="icono-admin">🎮</span>           
+            <h2>CUENTA LEVEL-UP</h2>
+          </div>
+          
+          <div class="banner-cliente">
+            <span class="icono-equipo">👤</span>
+
+            <p>Regresa al acceso principal de <strong>Level-Up.</strong></p>
+          </div>
+
+          <button type="button" id="btn-cliente" class="btn boton-cliente">
+            CUENTA LEVEL-UP
+          </button>
+        </div>
+
+      </section>
+
+      <!-- Formulario de acceso Administrador -->
+      <section class="panel-admin-form">
+
+        <main class="container px-3 pb-5 pt-4">
+
+          <section class="text-center mb-4 encabezado-form-admin">
+            <h1 class="titulo-marca">LEVEL-<span>UP</span></h1>
+            <p class="subtitulo-marca">ADMINISTRACIÓN</p>
+            <p class="texto-bienvenida mt-3">
+              Acceso al sistema administrativo
+            </p>
+          </section>
+
+          <form id="form-admin">
+
+            <div class="input-group mb-2">
+              <span class="input-group-text bg-dark text-secondary border-secondary">✉</span>
+
+              <input type="email" id="correo-admin" class="form-control bg-dark text-white border-secondary"
+                placeholder="Correo administrativo" maxlength="100" required>
+            </div>
+
+            <small id="error-correo-admin" class="text-danger"></small>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text bg-dark text-secondary border-secondary">🔒</span>
+
+              <input type="password" id="contraseña-admin" class="form-control bg-dark text-white border-secondary"
+                placeholder="Contraseña" maxlength="10" required>
+            </div>
+
+            <small id="error-contraseña-admin" class="text-danger"></small>
+
+            <button type="submit" class="btn boton-ingresar w-100 fw-bold">
+              INGRESAR AL SISTEMA
+            </button>
+
+          </form>
+
+        </main>
+
+      </section>
+
+    </div>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+
+</html>
