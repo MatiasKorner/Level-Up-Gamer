@@ -1,3 +1,4 @@
+/* ===== BANNER PRINCIPAL DEL CATÁLOGO ===== */
 .banner-principal {
   position: relative;
   padding: 3rem;
@@ -10,15 +11,18 @@
   min-height: 200px;
 }
 
+/* ===== ENLACES DE LA NAVEGACIÓN ===== */
 .navegacion a {
   color: #ffffff;
   text-decoration: none;
 }
 
+/* ===== HOVER Y ENLACE ACTIVO DE LA NAVEGACIÓN ===== */
 .navegacion a:hover, .navegacion a.activo {
   color: var(--color-verde, #39ff14);
 }
 
+/* ===== MENÚ PRINCIPAL DE NAVEGACIÓN ===== */
 .menu-principal {
   display: flex;
   list-style: none;
@@ -29,6 +33,7 @@
 }
 
 
+/* ===== CONTENEDOR DERECHO DE LA NAVEGACIÓN ===== */
 .contenedor-derecho {
   display: flex;
   align-items: center;
@@ -36,6 +41,7 @@
   margin-left: auto; 
 }
 
+/* ===== IMAGEN DE FONDO DEL BANNER ===== */
 .imagen-banner-fondo {
   position: absolute;
   top: 0;
@@ -46,6 +52,7 @@
   z-index: 1;
 }
 
+/* ===== CAPA OSCURA SOBRE LA IMAGEN DEL BANNER ===== */
 .banner-principal::after {
   content: '';
   position: absolute;
@@ -57,23 +64,27 @@
   z-index: 2;
 }
 
+/* ===== CONTENIDO QUE APARECE SOBRE EL BANNER ===== */
 .contenido-banner {
   position: relative;
   z-index: 3;
 }
 
+/* ===== ETIQUETA DESTACADA DEL BANNER ===== */
 .etiqueta-banner {
   color: var(--color-verde);
   font-weight: bold;
   font-family: var(--fuente-titulo);
 }
 
+/* ===== TÍTULO PRINCIPAL DEL BANNER ===== */
 .titulo-banner {
   font-family: var(--fuente-titulo);
   font-size: 2.5rem;
   margin: 0.5rem 0;
 }
 
+/* ===== PRECIO MOSTRADO EN EL BANNER ===== */
 .precio-banner {
   color: var(--color-verde);
   font-size: 1.5rem;
@@ -81,32 +92,36 @@
 }
 
 
+/* ===== CONTENEDOR DE LOS FILTROS POR CATEGORÍA ===== */
 .filtros-categoria {
   display: flex;
   gap: 1rem;
   margin: 1.5rem 0;
 }
 
+/* ===== BOTONES DE LOS FILTROS POR CATEGORÍA ===== */
 .filtros-categoria button {
   width: auto;           /* Ancho adaptado a su texto */
   padding: 0.6rem 1.4rem; /* Espaciado interno consistente */
   flex-shrink: 0;        /* Evita deformaciones */
 }
 
+/* ===== BOTÓN CON BORDE Y FONDO TRANSPARENTE ===== */
 .boton-borde {
   width: auto;
   background: transparent;
   border: 1px solid var(--color-borde);
 }
 
+/* ===== TÍTULO DE LA SECCIÓN DE PRODUCTOS ===== */
 .titulo-seccion {
   font-family: var(--fuente-titulo);
   margin-bottom: 1.5rem;
 }
 
+/* ===== REJILLA RESPONSIVE DE PRODUCTOS ===== */
 .rejilla-productos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.5rem;
 }
-

@@ -1,4 +1,4 @@
-/* --- BARRA DE BÚSQUEDA Y FILTROS EN CATÁLOGO --- */
+/* ===== TÍTULO / ENCABEZADO DEL CATÁLOGO ===== */
 .encabezado-catalogo {
   font-family: var(--fuente-titulo, 'Orbitron', sans-serif);
   font-size: 1.8rem;
@@ -8,6 +8,7 @@
   letter-spacing: 1px;
 }
 
+/* ===== CONTENEDOR DE BÚSQUEDA Y ORDENAMIENTO ===== */
 .barra-busqueda {
   display: flex;
   gap: 1rem;
@@ -15,12 +16,13 @@
   width: 100%;
 }
 
-/* Campo de Búsqueda */
+/* ===== CONTENEDOR DEL CAMPO DE BÚSQUEDA ===== */
 .grupo-campo-busqueda {
   position: relative;
   flex: 1;
 }
 
+/* ===== ICONO DE LA BARRA DE BÚSQUEDA ===== */
 .icono-busqueda {
   position: absolute;
   left: 1.2rem;
@@ -30,6 +32,7 @@
   opacity: 0.6;
 }
 
+/* ===== CAMPO DE TEXTO PARA BUSCAR PRODUCTOS ===== */
 .campo-busqueda {
   width: 100%;
   padding: 0.85rem 1rem 0.85rem 2.8rem;
@@ -43,21 +46,24 @@
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+/* ===== EFECTO AL SELECCIONAR EL CAMPO DE BÚSQUEDA ===== */
 .campo-busqueda:focus {
   border-color: var(--color-azul, #1e90ff);
   box-shadow: 0 0 10px rgba(30, 144, 255, 0.2);
 }
 
+/* ===== TEXTO PLACEHOLDER DE LA BÚSQUEDA ===== */
 .campo-busqueda::placeholder {
   color: #6c757d;
 }
 
-/* Menú Select de Ordenamiento */
+/* ===== CONTENEDOR DEL SELECT DE ORDENAMIENTO ===== */
 .contenedor-select {
   position: relative;
   width: 250px;
 }
 
+/* ===== SELECT PARA ORDENAR LOS PRODUCTOS ===== */
 .select-orden {
   width: 100%;
   padding: 0.85rem 2.2rem 0.85rem 1rem;
@@ -75,16 +81,19 @@
   transition: border-color 0.2s;
 }
 
+/* ===== EFECTO AL SELECCIONAR EL ORDENAMIENTO ===== */
 .select-orden:focus {
   border-color: var(--color-azul, #1e90ff);
 }
 
+/* ===== OPCIONES INTERNAS DEL SELECT ===== */
 .select-orden option {
   background-color: #12141d;
   color: #ffffff;
   padding: 0.5rem;
 }
 
+/* ===== FLECHA PERSONALIZADA DEL SELECT ===== */
 .flecha-select {
   position: absolute;
   right: 1.2rem;
@@ -95,12 +104,13 @@
   pointer-events: none;
 }
 
-/* categorias adicionales */
+/* ===== CONTENEDOR DE CATEGORÍAS ADICIONALES ===== */
 .contenedor-mas-categorias {
   position: relative;
   display: inline-block;
 }
 
+/* ===== BOTÓN PARA MOSTRAR MÁS CATEGORÍAS ===== */
 .boton-mas {
   min-width: 42px;
   font-size: 1.3rem;
@@ -109,6 +119,7 @@
   padding-right: 0.9rem;
 }
 
+/* ===== MENÚ DESPLEGABLE DE CATEGORÍAS ===== */
 .menu-categorias {
   display: none;
   position: absolute;
@@ -124,10 +135,12 @@
   animation: aparecer 0.18s ease;
 }
 
+/* ===== MOSTRAR MENÚ CUANDO TIENE LA CLASE ACTIVO ===== */
 .menu-categorias.activo {
   display: block;
 }
 
+/* ===== OPCIONES DEL MENÚ DE CATEGORÍAS ===== */
 .opcion-categoria {
   display: block;
   width: 100%;
@@ -142,12 +155,14 @@
   transition: background-color 0.15s;
 }
 
+/* ===== EFECTO HOVER DE LAS CATEGORÍAS ===== */
 .opcion-categoria:hover {
   background-color: rgba(30, 144, 255, 0.15);
   color: #1e90ff;
 }
 
 
+/* ===== ANIMACIÓN DEL MENÚ DE CATEGORÍAS (ACTUALMENTE COMENTADA) ===== */
 /* @keyframes aparecer {
   from {
     opacity: 0;

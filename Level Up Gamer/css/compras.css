@@ -1,7 +1,8 @@
 /* =======================================================================
    compras.css — Estilos para carrito.html, pago.html y confirmacion.html
-   ======================================================================= */
+   ======================================================================== */
 
+/* ===== SUBTÍTULO DE LA PÁGINA ===== */
 .subtitulo-pagina {
   color: var(--texto-secundario);
   font-size: 0.72rem;
@@ -10,6 +11,7 @@
 
 /* ----- Ítems del carrito ----- */
 
+/* ===== CONTENEDOR DE CADA PRODUCTO DEL CARRITO ===== */
 .cart-item {
   display: flex;
   gap: 10px;
@@ -20,6 +22,7 @@
   background-color: #101010;
 }
 
+/* ===== IMAGEN DEL PRODUCTO DEL CARRITO ===== */
 .cart-item img {
   width: 56px;
   height: 56px;
@@ -28,28 +31,33 @@
   flex-shrink: 0;
 }
 
+/* ===== INFORMACIÓN DEL PRODUCTO DEL CARRITO ===== */
 .cart-item-info {
   flex: 1;
   min-width: 0;
 }
 
+/* ===== NOMBRE DEL PRODUCTO DEL CARRITO ===== */
 .cart-item-info h3 {
   margin: 0 0 2px;
   font-size: 0.8rem;
 }
 
+/* ===== VARIANTE DEL PRODUCTO ===== */
 .cart-item-info .variante {
   color: var(--texto-secundario);
   font-size: 0.68rem;
   margin: 0 0 6px;
 }
 
+/* ===== PRECIO DEL PRODUCTO ===== */
 .cart-item-info .precio {
   color: var(--verde);
   font-weight: bold;
   font-size: 0.78rem;
 }
 
+/* ===== CONTENEDOR DE ACCIONES DEL PRODUCTO ===== */
 .cart-item-actions {
   display: flex;
   flex-direction: column;
@@ -57,6 +65,7 @@
   justify-content: space-between;
 }
 
+/* ===== BOTÓN PARA ELIMINAR PRODUCTO ===== */
 .remove-btn {
   border: 0;
   background: transparent;
@@ -66,10 +75,12 @@
   padding: 0;
 }
 
+/* ===== EFECTO HOVER DEL BOTÓN ELIMINAR ===== */
 .remove-btn:hover {
   color: #ff4d4d;
 }
 
+/* ===== CONTROL DE CANTIDAD DEL PRODUCTO ===== */
 .qty-stepper {
   display: flex;
   align-items: center;
@@ -79,6 +90,7 @@
   padding: 2px 6px;
 }
 
+/* ===== BOTONES PARA AUMENTAR O DISMINUIR CANTIDAD ===== */
 .qty-stepper button {
   width: 20px;
   height: 20px;
@@ -91,10 +103,12 @@
   cursor: pointer;
 }
 
+/* ===== EFECTO HOVER DE LOS BOTONES DE CANTIDAD ===== */
 .qty-stepper button:hover {
   background-color: var(--azul);
 }
 
+/* ===== CANTIDAD ACTUAL DEL PRODUCTO ===== */
 .qty-stepper span {
   min-width: 14px;
   text-align: center;
@@ -103,16 +117,19 @@
 
 /* ----- Código de promoción ----- */
 
+/* ===== CONTENEDOR DEL CÓDIGO DE PROMOCIÓN ===== */
 .promo-box {
   display: flex;
   gap: 8px;
   margin: 14px 0;
 }
 
+/* ===== CAMPO DEL CÓDIGO DE PROMOCIÓN ===== */
 .promo-box input {
   flex: 1;
 }
 
+/* ===== ESTADO DEL CÓDIGO DE PROMOCIÓN APLICADO ===== */
 .promo-box .aplicado {
   color: var(--verde);
   border-color: var(--verde);
@@ -120,6 +137,7 @@
 
 /* ----- Resumen / Totales ----- */
 
+/* ===== CONTENEDOR DEL RESUMEN DE LA COMPRA ===== */
 .summary-box {
   border: 1px solid #252525;
   border-radius: 8px;
@@ -128,6 +146,7 @@
   background-color: #0c0c0c;
 }
 
+/* ===== FILAS DEL RESUMEN DE LA COMPRA ===== */
 .summary-row {
   display: flex;
   justify-content: space-between;
@@ -136,15 +155,18 @@
   margin-bottom: 8px;
 }
 
+/* ===== VALOR DEL DESCUENTO ===== */
 .summary-row.descuento span:last-child {
   color: var(--verde);
 }
 
+/* ===== VALOR DEL ENVÍO ===== */
 .summary-row.envio span:last-child {
   color: var(--verde);
   text-transform: uppercase;
 }
 
+/* ===== FILA DEL TOTAL DE LA COMPRA ===== */
 .summary-row.total {
   border-top: 1px solid #252525;
   padding-top: 10px;
@@ -154,12 +176,14 @@
   color: white;
 }
 
+/* ===== VALOR TOTAL DE LA COMPRA ===== */
 .summary-row.total span:last-child {
   color: var(--verde);
 }
 
 /* ----- Proceso de pago: indicador de pasos ----- */
 
+/* ===== CONTENEDOR DEL INDICADOR DE PASOS ===== */
 .pasos-checkout {
   display: flex;
   align-items: center;
@@ -168,6 +192,7 @@
   margin: 10px 0 24px;
 }
 
+/* ===== CADA PASO DEL PROCESO DE PAGO ===== */
 .paso {
   display: flex;
   flex-direction: column;
@@ -178,6 +203,7 @@
   text-transform: uppercase;
 }
 
+/* ===== CÍRCULO NUMERADO DE CADA PASO ===== */
 .paso .circulo {
   width: 26px;
   height: 26px;
@@ -192,6 +218,7 @@
   color: #666;
 }
 
+/* ===== CÍRCULO DEL PASO ACTIVO O COMPLETADO ===== */
 .paso.activo .circulo,
 .paso.completado .circulo {
   background-color: var(--azul);
@@ -199,10 +226,12 @@
   color: white;
 }
 
+/* ===== TEXTO DEL PASO ACTIVO ===== */
 .paso.activo {
   color: white;
 }
 
+/* ===== LÍNEA ENTRE LOS PASOS ===== */
 .linea-paso {
   width: 30px;
   height: 1px;
@@ -210,14 +239,17 @@
   margin-bottom: 14px;
 }
 
+/* ===== FORMULARIO DE CADA PASO OCULTO ===== */
 .paso-form {
   display: none;
 }
 
+/* ===== FORMULARIO DEL PASO ACTIVO ===== */
 .paso-form.activo {
   display: block;
 }
 
+/* ===== TÍTULO DE CADA SECCIÓN DEL PAGO ===== */
 .seccion-titulo {
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -228,6 +260,7 @@
 
 /* ----- Método de envío / pago (radio cards) ----- */
 
+/* ===== OPCIÓN DE ENVÍO O MÉTODO DE PAGO ===== */
 .opcion-radio {
   display: flex;
   align-items: center;
@@ -239,30 +272,36 @@
   cursor: pointer;
 }
 
+/* ===== OPCIÓN DE ENVÍO O PAGO SELECCIONADA ===== */
 .opcion-radio:has(input:checked),
 .opcion-radio.seleccionado {
   border-color: var(--azul);
   background-color: rgba(30, 144, 255, 0.06);
 }
 
+/* ===== BOTÓN RADIO DE LA OPCIÓN ===== */
 .opcion-radio input {
   accent-color: var(--azul);
 }
 
+/* ===== CONTENEDOR DEL DETALLE DE LA OPCIÓN ===== */
 .opcion-radio .detalle {
   flex: 1;
 }
 
+/* ===== TÍTULO DE LA OPCIÓN ===== */
 .opcion-radio .detalle strong {
   display: block;
   font-size: 0.78rem;
 }
 
+/* ===== DESCRIPCIÓN DE LA OPCIÓN ===== */
 .opcion-radio .detalle small {
   color: var(--texto-secundario);
   font-size: 0.68rem;
 }
 
+/* ===== PRECIO DE LA OPCIÓN ===== */
 .opcion-radio .precio-opcion {
   font-size: 0.75rem;
   font-weight: bold;
@@ -272,11 +311,13 @@
 
 /* ----- Confirmación de pedido ----- */
 
+/* ===== CONTENEDOR PRINCIPAL DE LA CONFIRMACIÓN ===== */
 .confirmacion-wrap {
   text-align: center;
   padding-top: 40px;
 }
 
+/* ===== CÍRCULO DE COMPRA EXITOSA ===== */
 .circulo-exito {
   width: 110px;
   height: 110px;
@@ -291,18 +332,21 @@
   color: var(--verde);
 }
 
+/* ===== TÍTULO DE CONFIRMACIÓN ===== */
 .confirmacion-wrap h1 {
   color: var(--verde);
   font-size: 1.3rem;
   margin-bottom: 6px;
 }
 
+/* ===== TEXTO DE CONFIRMACIÓN ===== */
 .confirmacion-wrap p {
   color: var(--texto-secundario);
   font-size: 0.8rem;
   margin-bottom: 28px;
 }
 
+/* ===== TARJETA CON DATOS DE LA ORDEN ===== */
 .orden-card {
   text-align: left;
   border: 1px solid #252525;
@@ -312,6 +356,7 @@
   background-color: #0c0c0c;
 }
 
+/* ===== FILAS DE INFORMACIÓN DE LA ORDEN ===== */
 .orden-card .fila {
   display: flex;
   justify-content: space-between;
@@ -320,25 +365,30 @@
   border-bottom: 1px solid #1a1a1a;
 }
 
+/* ===== ÚLTIMA FILA DE LA ORDEN ===== */
 .orden-card .fila:last-child {
   border-bottom: 0;
 }
 
+/* ===== ETIQUETAS DE INFORMACIÓN DE LA ORDEN ===== */
 .orden-card .fila span:first-child {
   color: var(--texto-secundario);
 }
 
+/* ===== BOTÓN PARA CONFIRMAR ===== */
 .btn-confirmar {
   background-color: var(--verde);
   color: #000;
   border: none;
 }
 
+/* ===== EFECTO HOVER DEL BOTÓN CONFIRMAR ===== */
 .btn-confirmar:hover {
   background-color: #2fd90f;
   color: #000;
 }
 
+/* ===== INFORMACIÓN DE PUNTOS GANADOS ===== */
 .puntos-ganados {
   margin-top: 10px;
   padding: 10px;

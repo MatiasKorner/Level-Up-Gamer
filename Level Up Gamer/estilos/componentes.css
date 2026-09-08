@@ -1,4 +1,4 @@
-/* --- BARRA DE NAVEGACIÓN --- */
+/* ===== BARRA DE NAVEGACIÓN PRINCIPAL ===== */
 .navegacion {
   display: flex;
   justify-content: space-between;
@@ -11,6 +11,7 @@
   z-index: 100;
 }
 
+/* ===== LOGOTIPO LEVEL-UP ===== */
 .logotipo {
   font-family: var(--fuente-titulo);
   font-weight: 900;
@@ -19,10 +20,12 @@
   text-decoration: none;
 }
 
+/* ===== PARTE DESTACADA DEL LOGOTIPO ===== */
 .logotipo span {
   color: var(--color-azul);
 }
 
+/* ===== CONTENEDOR DE LOS ENLACES DE NAVEGACIÓN ===== */
 .enlaces-nav {
   display: flex;
   gap: 2rem;
@@ -31,6 +34,7 @@
   padding: 0;
 }
 
+/* ===== ESTILO DE LOS ENLACES DE NAVEGACIÓN ===== */
 .enlaces-nav a {
   color: var(--texto-secundario);
   text-decoration: none;
@@ -38,22 +42,26 @@
   transition: color 0.3s;
 }
 
+/* ===== HOVER Y ENLACE ACTIVO DE NAVEGACIÓN ===== */
 .enlaces-nav a:hover, .enlaces-nav a.activo {
   color: var(--color-verde);
 }
 
+/* ===== CONTENEDOR DE ICONOS DE LA NAVEGACIÓN ===== */
 .iconos-nav {
   display: flex;
   gap: 1.5rem;
   align-items: center;
 }
 
+/* ===== ICONO DEL CARRITO ===== */
 .icono-carrito {
   position: relative;
   color: var(--texto-principal);
   text-decoration: none;
 }
 
+/* ===== CONTADOR DE PRODUCTOS DEL CARRITO ===== */
 .contador-carrito {
   position: absolute;
   top: -8px;
@@ -66,7 +74,7 @@
   border-radius: 50%;
 }
 
-/* --- BOTONES --- */
+/* ===== BOTÓN VERDE PRINCIPAL ===== */
 .boton-verde {
   width: 100%;
   padding: 0.8rem 1.5rem;
@@ -84,6 +92,7 @@
   display: inline-block;
 }
 
+/* ===== BOTÓN AZUL PRINCIPAL ===== */
 .boton-azul {
   width: 100%;
   padding: 0.8rem 1.5rem;
@@ -101,12 +110,13 @@
   display: inline-block;
 }
 
+/* ===== EFECTO HOVER DE LOS BOTONES VERDE Y AZUL ===== */
 .boton-verde:hover, .boton-azul:hover {
   transform: translateY(-2px);
   filter: brightness(1.1);
 }
 
-/* --- TARJETAS --- */
+/* ===== TARJETA DE PRODUCTO ===== */
 .tarjeta {
   background-color: var(--color-tarjeta);
   border: 1px solid var(--color-borde);
@@ -117,6 +127,7 @@
   gap: 0.8rem;
 }
 
+/* ===== IMAGEN DE LA TARJETA DE PRODUCTO ===== */
 .imagen-tarjeta {
   width: 100%;
   height: 180px;
@@ -125,18 +136,20 @@
   object-fit: cover;
 }
 
+/* ===== TÍTULO DE LA TARJETA DE PRODUCTO ===== */
 .titulo-tarjeta {
   font-size: 1rem;
   font-weight: 700;
 }
 
+/* ===== PRECIO DE LA TARJETA DE PRODUCTO ===== */
 .precio-tarjeta {
   color: var(--color-verde);
   font-family: var(--fuente-titulo);
   font-weight: bold;
 }
 
-/* Layout para la página de detalle */
+/* ===== CONTENEDOR DE LA PÁGINA DETALLE DEL PRODUCTO ===== */
 .detalle-producto {
   display: flex;
   gap: 3rem;
@@ -146,6 +159,7 @@
   padding: 0 1.5rem;
 }
 
+/* ===== IMAGEN DE LA PÁGINA DETALLE DEL PRODUCTO ===== */
 .imagen-detalle {
   width: 100%;
   max-width: 450px;
@@ -153,8 +167,8 @@
   object-fit: cover;
 }
 
-/* --- PIE DE PÁGINA --- */
-pie-pagina {
+/* ===== PIE DE PÁGINA ===== */
+.pie-pagina {
   text-align: center;
   padding: 1.5rem;
   border-top: 1px solid var(--color-borde);

@@ -1,3 +1,4 @@
+/* ===== VARIABLES GLOBALES DE COLORES ===== */
 :root {
   --fondo: #000000;
   --azul: #1e90ff;
@@ -6,10 +7,12 @@
   --texto-secundario: #d3d3d3;
 }
 
+/* ===== CONFIGURACIÓN GENERAL DE TODOS LOS ELEMENTOS ===== */
 * {
   box-sizing: border-box;
 }
 
+/* ===== CONFIGURACIÓN GENERAL DE LA PÁGINA ===== */
 body {
   margin: 0;
   background-color: var(--fondo);
@@ -17,6 +20,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ===== CONTENEDOR PRINCIPAL DE LA APLICACIÓN ===== */
 .app-shell {
   width: 100%;
   max-width: 1200px;
@@ -26,6 +30,7 @@ body {
   border: 1px solid #222;
 }
 
+/* ===== BARRA SUPERIOR ===== */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -33,6 +38,7 @@ body {
   padding: 18px;
 }
 
+/* ===== LOGOTIPO ===== */
 .logo {
   color: white;
   font-weight: bold;
@@ -40,22 +46,26 @@ body {
   text-decoration: none;
 }
 
+/* ===== PARTE DESTACADA DEL LOGO Y TÍTULO DEL HERO ===== */
 .logo span,
 .hero-gamer h1 span {
   color: var(--azul);
 }
 
+/* ===== CONTENEDOR DE ICONOS DEL HEADER ===== */
 .header-icons {
   display: flex;
   gap: 8px;
 }
 
+/* ===== CONFIGURACIÓN GENERAL DE BOTONES ===== */
 .icon-button,
 .add-button {
   border: 0;
   cursor: pointer;
 }
 
+/* ===== BOTONES DE ICONOS ===== */
 .icon-button {
   background: transparent;
   font-size: 1.1rem;
@@ -64,6 +74,7 @@ body {
   display: inline-flex;
 }
 
+/* ===== BANNER PRINCIPAL GAMER ===== */
 .hero-gamer {
   min-height: 230px;
   padding: 60px 18px 18px;
@@ -74,6 +85,7 @@ body {
     url("../img/hero-gamer.jpg") center / cover;
 }
 
+/* ===== ETIQUETA DE OFERTA ===== */
 .offer-badge {
   display: inline-block;
   padding: 4px 8px;
@@ -84,18 +96,21 @@ body {
   border-radius: 4px;
 }
 
+/* ===== TÍTULO DEL BANNER PRINCIPAL ===== */
 .hero-gamer h1 {
   margin: 10px 0 4px;
   font-size: 1.6rem;
   font-weight: bold;
 }
 
+/* ===== TEXTO DESTACADO Y PRECIO DE PRODUCTOS ===== */
 .hero-gamer p,
 .product-footer span {
   color: var(--verde);
   font-weight: bold;
 }
 
+/* ===== CONTENEDOR DE CATEGORÍAS ===== */
 .categories {
   display: flex;
   gap: 8px;
@@ -103,6 +118,7 @@ body {
   padding: 16px 0;
 }
 
+/* ===== BOTONES DE CATEGORÍAS ===== */
 .category {
   flex: 0 0 auto;
   padding: 8px 12px;
@@ -113,10 +129,12 @@ body {
   text-decoration: none;
 }
 
+/* ===== CATEGORÍA ACTIVA ===== */
 .category.active {
   background-color: var(--azul);
 }
 
+/* ===== ENCABEZADO DE CADA SECCIÓN ===== */
 .section-title {
   display: flex;
   justify-content: space-between;
@@ -124,18 +142,21 @@ body {
   margin-bottom: 12px;
 }
 
+/* ===== TÍTULO DE CADA SECCIÓN ===== */
 .section-title h2 {
   margin: 0;
   font-size: 0.85rem;
   text-transform: uppercase;
 }
 
+/* ===== ENLACE DEL ENCABEZADO DE SECCIÓN ===== */
 .section-title a {
   color: var(--azul);
   font-size: 0.75rem;
   text-decoration: none;
 }
 
+/* ===== TARJETA DE PRODUCTO ===== */
 .product-card {
   min-height: 210px;
   padding: 8px;
@@ -144,6 +165,7 @@ body {
   background-color: #101010;
 }
 
+/* ===== IMAGEN DE LA TARJETA DE PRODUCTO ===== */
 .product-card img {
   width: 100%;
   height: 115px;
@@ -151,21 +173,25 @@ body {
   border-radius: 5px;
 }
 
+/* ===== NOMBRE DEL PRODUCTO ===== */
 .product-card h3 {
   margin: 10px 0;
   font-size: 0.72rem;
 }
 
+/* ===== PARTE INFERIOR DE LA TARJETA DE PRODUCTO ===== */
 .product-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* ===== PRECIO DEL PRODUCTO ===== */
 .product-footer span {
   font-size: 0.7rem;
 }
 
+/* ===== BOTÓN PARA AGREGAR PRODUCTO ===== */
 .add-button {
   width: 25px;
   height: 25px;
@@ -175,6 +201,7 @@ body {
   font-weight: bold;
 }
 
+/* ===== BARRA DE NAVEGACIÓN INFERIOR ===== */
 .bottom-nav {
   position: sticky;
   bottom: 0;
@@ -185,6 +212,7 @@ body {
   background-color: #080808;
 }
 
+/* ===== ENLACES DE LA NAVEGACIÓN INFERIOR ===== */
 .bottom-nav a {
   display: flex;
   flex-direction: column;
@@ -194,10 +222,12 @@ body {
   text-decoration: none;
 }
 
+/* ===== ENLACE ACTIVO DE LA NAVEGACIÓN INFERIOR ===== */
 .bottom-nav a.active {
   color: var(--azul);
 }
 
+/* ===== TEXTO DE LA NAVEGACIÓN INFERIOR ===== */
 .bottom-nav span {
   margin-top: 3px;
   text-transform: uppercase;
@@ -205,6 +235,7 @@ body {
 
 /* ---------- Header de páginas internas (carrito, pago, perfil, etc.) ---------- */
 
+/* ===== FLECHA PARA VOLVER ===== */
 .back-arrow {
   color: white;
   font-size: 1.3rem;
@@ -212,6 +243,7 @@ body {
   line-height: 1;
 }
 
+/* ===== TÍTULO DE LAS PÁGINAS INTERNAS ===== */
 .page-title {
   margin: 0;
   font-size: 0.9rem;
@@ -220,10 +252,12 @@ body {
   letter-spacing: 0.5px;
 }
 
+/* ===== POSICIÓN DEL BOTÓN DE ICONO ===== */
 .icon-button {
   position: relative;
 }
 
+/* ===== CONTADOR DEL BOTÓN DE ICONO ===== */
 .icon-button .badge-count {
   position: absolute;
   top: -6px;
@@ -243,15 +277,18 @@ body {
 
 /* ---------- Estados de validación (comparten look con Bootstrap) ---------- */
 
+/* ===== MENSAJE DE VALIDACIÓN INCORRECTA ===== */
 .invalid-feedback {
   font-size: 0.72rem;
 }
 
+/* ===== CAMPOS CON VALIDACIÓN INCORRECTA ===== */
 .form-control.is-invalid,
 .form-select.is-invalid {
   border-color: #ff4d4d;
 }
 
+/* ===== CAMPOS CON VALIDACIÓN CORRECTA ===== */
 .form-control.is-valid,
 .form-select.is-valid {
   border-color: var(--verde);

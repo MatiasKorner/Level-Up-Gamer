@@ -1,5 +1,7 @@
+/* ===== IMPORTACIÓN DE FUENTES DE GOOGLE ===== */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;700&display=swap');
 
+/* ===== VARIABLES GLOBALES DE COLORES Y FUENTES ===== */
 :root {
   --color-fondo: #090a0f;
   --color-tarjeta: #12141d;
@@ -13,12 +15,14 @@
   --fuente-cuerpo: 'Roboto', sans-serif;
 }
 
+/* ===== CONFIGURACIÓN GENERAL DE TODOS LOS ELEMENTOS ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* ===== CONFIGURACIÓN GENERAL DE LA PÁGINA ===== */
 body {
   background-color: var(--color-fondo);
   color: var(--texto-principal);
@@ -28,6 +32,7 @@ body {
   flex-direction: column;
 }
 
+/* ===== CONTENEDOR PRINCIPAL DE LA PÁGINA ===== */
 .contenedor-principal {
   max-width: 1200px;
   width: 100%;

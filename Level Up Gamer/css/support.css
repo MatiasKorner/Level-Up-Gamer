@@ -1,3 +1,4 @@
+/* ===== CONFIGURACIÓN GENERAL DE LA PÁGINA DE SOPORTE ===== */
 body.support-main-page {
     margin: 0;
     background-color: #000000;
@@ -6,7 +7,7 @@ body.support-main-page {
     min-height: 100dvh;
 }
 
-
+/* ===== BOTÓN PARA VOLVER ===== */
 .back-button {
     text-decoration: none;
     font-weight: 600;
@@ -17,18 +18,22 @@ body.support-main-page {
     letter-spacing: 0.08rem;
 }
 
+/* ===== FLECHA DEL BOTÓN VOLVER ===== */
 .back-arrow {
     margin-right: 0.4rem;
 }
 
+/* ===== CONTENEDOR GENERAL DE SOPORTE ===== */
 .support-page {
     min-height: 100vh;
 }
 
+/* ===== ENCABEZADO DE SOPORTE ===== */
 .support-header {
     padding: 1rem;
 }
 
+/* ===== CONTENIDO PRINCIPAL DE SOPORTE ===== */
 .support-content {
     width: 100%;
     max-width: 600px;
@@ -36,12 +41,14 @@ body.support-main-page {
     padding: 2rem 1rem;
 }
 
+/* ===== ICONO PRINCIPAL DE SOPORTE ===== */
 .support-icon {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 0.7rem;
 }
 
+/* ===== TÍTULO PRINCIPAL DE SOPORTE ===== */
 .support-content h2 {
     font-family: 'Oxanium', sans-serif;
     font-weight: 700;
@@ -50,6 +57,7 @@ body.support-main-page {
     font-size: clamp(1.2rem, 3vw, 1.6rem);
 }
 
+/* ===== SUBTÍTULO DE SOPORTE ===== */
 .support-subtitle {
     text-align: center;
     color: #525151;
@@ -59,10 +67,12 @@ body.support-main-page {
 
 /* Barra de busqueda */
 
+/* ===== CONTENEDOR DE LA BARRA DE BÚSQUEDA ===== */
 .search-box {
     margin-bottom: 1.5rem;
 }
 
+/* ===== ESTILO GENERAL DE LA BARRA DE BÚSQUEDA ===== */
 .search-box .input-group-text,
 .search-box .form-control {
     background-color: #111111;
@@ -70,10 +80,12 @@ body.support-main-page {
     color: #ffffff;
 }
 
+/* ===== ICONO DE LA BARRA DE BÚSQUEDA ===== */
 .search-box .input-group-text {
     border-right: none;
 }
 
+/* ===== CAMPO DE TEXTO DE LA BARRA DE BÚSQUEDA ===== */
 .search-box .form-control {
     border-left: none;
 }
@@ -86,6 +98,8 @@ body.support-main-page {
 }
 
 /* acordeon */
+
+/* ===== ELEMENTOS DEL ACORDEÓN DE PREGUNTAS FRECUENTES ===== */
 .faq-accordion .accordion-item {
     background-color: #090909;
     border: 1px solid #1d1d1d;
@@ -97,10 +111,13 @@ body.support-main-page {
 En vez de utilizar la funcion .collapse para añadir el borde azul, se utiliza "aria-expanded",
 de este modo se evita que todas los acordeones aparezcan con el borde azul, debido a que el borde
 se genera antes que la clase ".collapse" */
+
+/* ===== BORDE AZUL DEL ACORDEÓN CUANDO ESTÁ ABIERTO ===== */
 .faq-accordion .accordion-item:has(.accordion-button[aria-expanded="true"]) {
     border-color: #153759;
 }
 
+/* ===== TÍTULO DE CADA SECCIÓN DE PREGUNTAS ===== */
 .faq-title {
     font-family: 'Orbitron', sans-serif;
     font-size: clamp(0.6rem, 0.9vw, 1rem);
@@ -110,6 +127,7 @@ se genera antes que la clase ".collapse" */
     letter-spacing: 0.08rem;
 }
 
+/* ===== BOTÓN DE CADA PREGUNTA DEL ACORDEÓN ===== */
 .faq-accordion .accordion-button {
     background-color: #090909;
     color: #ffffff;
@@ -120,6 +138,7 @@ se genera antes que la clase ".collapse" */
 
 }
 
+/* ===== ESTILO DEL BOTÓN CUANDO EL ACORDEÓN ESTÁ ABIERTO ===== */
 .faq-accordion .accordion-button:not(.collapsed) {
     background-color: #000;
     color: #ffffff;
@@ -141,6 +160,7 @@ se genera antes que la clase ".collapse" */
     content: "-";
 }
 
+/* ===== CONTENIDO DE LA RESPUESTA DEL ACORDEÓN ===== */
 .faq-accordion .accordion-body {
     background-color: #090909;
     font-family: 'Oxanium', sans-serif;
@@ -152,6 +172,7 @@ se genera antes que la clase ".collapse" */
 
 /* Tarjeta de wsp */
 
+/* ===== TARJETA DE CONTACTO POR WHATSAPP ===== */
 .whatsapp-card {
     margin-top: 1rem;
     padding: 1rem;
@@ -160,6 +181,7 @@ se genera antes que la clase ".collapse" */
     background-color: #03170d;
 }
 
+/* ===== TÍTULO DE LA TARJETA DE WHATSAPP ===== */
 .whatsapp-card h3 {
     font-family: 'Oxanium', sans-serif;
     font-weight: 600;
@@ -170,12 +192,14 @@ se genera antes que la clase ".collapse" */
     letter-spacing: 0.08rem;
 }
 
+/* ===== CONTENEDOR DE INFORMACIÓN DE WHATSAPP ===== */
 .whatsapp-info {
     display: flex;
     align-items: center;
     gap: 0.8rem;
 }
 
+/* ===== ICONO DE WHATSAPP ===== */
 .whatsapp-icon {
     min-width: 2.5rem;
     height: 2.5rem;
@@ -187,6 +211,7 @@ se genera antes que la clase ".collapse" */
     font-size: 1.2rem;
 }
 
+/* ===== TEXTO INFORMATIVO DE WHATSAPP ===== */
 .whatsapp-info p {
     margin: 0;
     color: #ffffff;
@@ -195,6 +220,7 @@ se genera antes que la clase ".collapse" */
     line-height: 1.4;
 }
 
+/* ===== BOTÓN DE WHATSAPP ===== */
 .whatsapp-button {
     margin-top: 0.8rem;
     margin-left: 3.3rem;
@@ -211,15 +237,19 @@ se genera antes que la clase ".collapse" */
     transition: all 0.10s ease;
 }
 
+/* ===== EFECTO HOVER DEL BOTÓN DE WHATSAPP ===== */
 .whatsapp-button:hover {
     transform: scale(1.03);
 }
 
+/* ===== HORARIO DE ATENCIÓN DE WHATSAPP ===== */
 .whatsapp-time {
     color: #20d467;
     font-family: 'Oxanium', sans-serif;
     font-size: 0.7rem;
 }
+
+/* ===== DISEÑO RESPONSIVE PARA PANTALLAS PEQUEÑAS ===== */
 @media (max-width: 576px) {
     .support-content {
         padding: 1.5rem 0.75rem;

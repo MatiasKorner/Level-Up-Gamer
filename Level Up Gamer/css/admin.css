@@ -1,5 +1,6 @@
 /* ===== CABECERA ADMIN ===== */
 
+/* ===== CONTENEDOR DE LA CABECERA DEL ADMINISTRADOR ===== */
 .admin-header {
   height: 75px;
   display: flex;
@@ -10,6 +11,7 @@
   border-bottom: 1px solid var(--color-borde);
 }
 
+/* ===== LOGO DEL PANEL ADMINISTRATIVO ===== */
 .admin-logo {
   font-family: var(--fuente-titulo);
   font-size: 1.5rem;
@@ -18,21 +20,25 @@
   text-decoration: none;
 }
 
+/* ===== PARTE DESTACADA DEL LOGO ===== */
 .admin-logo span {
   color: var(--color-verde);
 }
 
+/* ===== INFORMACIÓN DEL USUARIO ADMINISTRATIVO ===== */
 .admin-usuario {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
+/* ===== ROL DEL USUARIO ===== */
 #admin-rol {
   color: var(--color-verde);
   font-weight: bold;
 }
 
+/* ===== BOTÓN PARA CERRAR SESIÓN ===== */
 #btn-cerrar-sesion {
   padding: 0.6rem 1rem;
   background-color: transparent;
@@ -42,6 +48,7 @@
   cursor: pointer;
 }
 
+/* ===== EFECTO HOVER DEL BOTÓN CERRAR SESIÓN ===== */
 #btn-cerrar-sesion:hover {
   background-color: var(--color-verde);
   color: black;
@@ -50,6 +57,7 @@
 
 /* ===== ESTRUCTURA PRINCIPAL ===== */
 
+/* ===== DISTRIBUCIÓN PRINCIPAL DEL PANEL ADMINISTRATIVO ===== */
 .admin-layout {
   display: flex;
   flex: 1;
@@ -58,6 +66,7 @@
 
 /* ===== MENÚ LATERAL ===== */
 
+/* ===== BARRA LATERAL DEL ADMINISTRADOR ===== */
 .admin-sidebar {
   width: 250px;
   padding: 2rem 1.5rem;
@@ -65,6 +74,7 @@
   border-right: 1px solid var(--color-borde);
 }
 
+/* ===== TÍTULO DEL MENÚ LATERAL ===== */
 .admin-sidebar h2 {
   font-family: var(--fuente-titulo);
   font-size: 1rem;
@@ -72,12 +82,14 @@
   margin-bottom: 2rem;
 }
 
+/* ===== CONTENEDOR DE OPCIONES DEL MENÚ ===== */
 .admin-menu {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
+/* ===== BOTONES DEL MENÚ ADMINISTRATIVO ===== */
 .admin-menu-btn {
   width: 100%;
   padding: 0.9rem 1rem;
@@ -90,11 +102,13 @@
   cursor: pointer;
 }
 
+/* ===== EFECTO HOVER DE LOS BOTONES DEL MENÚ ===== */
 .admin-menu-btn:hover {
   background-color: var(--color-campo);
   color: white;
 }
 
+/* ===== OPCIÓN ACTIVA DEL MENÚ ===== */
 .admin-menu-btn.activo {
   background-color: var(--color-verde);
   color: black;
@@ -104,29 +118,36 @@
 
 /* ===== CONTENIDO ===== */
 
+/* ===== CONTENEDOR PRINCIPAL DEL CONTENIDO ===== */
 .admin-contenido {
   flex: 1;
   padding: 3rem;
 }
 
+/* ===== SECCIONES DEL PANEL ADMINISTRATIVO ===== */
 .admin-seccion {
   display: none;
 }
 
+/* ===== SECCIÓN INICIAL VISIBLE ===== */
 #seccion-inicio {
   display: block;
 }
 
+/* ===== TÍTULOS DE LAS SECCIONES ===== */
 .admin-seccion h1 {
   font-family: var(--fuente-titulo);
   margin-bottom: 1rem;
 }
 
+/* ===== TEXTOS DE LAS SECCIONES ===== */
 .admin-seccion p {
   color: var(--texto-secundario);
 }
+
 /* ===== TABLA DE PRODUCTOS ===== */
 
+/* ===== CONTENEDOR DE LA TABLA ===== */
 .tabla-contenedor {
   margin-top: 2rem;
   overflow-x: auto;
@@ -135,11 +156,13 @@
   border-radius: 10px;
 }
 
+/* ===== TABLA DEL PANEL ADMINISTRATIVO ===== */
 .tabla-admin {
   width: 100%;
   border-collapse: collapse;
 }
 
+/* ===== CELDAS Y ENCABEZADOS DE LA TABLA ===== */
 .tabla-admin th,
 .tabla-admin td {
   padding: 1rem;
@@ -147,16 +170,19 @@
   border-bottom: 1px solid var(--color-borde);
 }
 
+/* ===== ENCABEZADOS DE LA TABLA ===== */
 .tabla-admin th {
   color: var(--color-verde);
   font-family: var(--fuente-titulo);
   font-size: 0.85rem;
 }
 
+/* ===== DATOS DE LA TABLA ===== */
 .tabla-admin td {
   color: var(--texto-principal);
 }
 
+/* ===== CONFIGURACIÓN GENERAL DE BOTONES EDITAR Y ELIMINAR ===== */
 .btn-editar,
 .btn-eliminar {
   padding: 0.45rem 0.8rem;
@@ -165,6 +191,7 @@
   font-weight: bold;
 }
 
+/* ===== BOTÓN PARA EDITAR ===== */
 .btn-editar {
   background-color: var(--color-azul);
   color: white;
@@ -172,16 +199,19 @@
   margin-right: 0.5rem;
 }
 
+/* ===== BOTÓN PARA ELIMINAR ===== */
 .btn-eliminar {
   background-color: transparent;
   color: #ff5c5c;
   border: 1px solid #ff5c5c;
 }
 
+/* ===== EFECTO HOVER DEL BOTÓN EDITAR ===== */
 .btn-editar:hover {
   filter: brightness(1.15);
 }
 
+/* ===== EFECTO HOVER DEL BOTÓN ELIMINAR ===== */
 .btn-eliminar:hover {
   background-color: #ff5c5c;
   color: black;

@@ -4,6 +4,7 @@
 
 /* ----- Encabezado de perfil ----- */
 
+/* ===== CONTENEDOR DEL ENCABEZADO DEL PERFIL ===== */
 .perfil-header {
   display: flex;
   align-items: center;
@@ -11,6 +12,7 @@
   margin-bottom: 18px;
 }
 
+/* ===== ENLACE O BOTÓN PARA EDITAR EL PERFIL ===== */
 .enlace-editar {
   color: var(--azul);
   font-size: 0.75rem;
@@ -19,6 +21,7 @@
   background: transparent;
 }
 
+/* ===== CONTENEDOR DE LOS DATOS DEL USUARIO ===== */
 .perfil-datos {
   display: flex;
   align-items: center;
@@ -26,6 +29,7 @@
   margin-bottom: 20px;
 }
 
+/* ===== AVATAR CIRCULAR DEL USUARIO ===== */
 .avatar-circle {
   width: 60px;
   height: 60px;
@@ -38,17 +42,20 @@
   flex-shrink: 0;
 }
 
+/* ===== NOMBRE DEL USUARIO ===== */
 .perfil-datos h2 {
   margin: 0 0 2px;
   font-size: 1rem;
 }
 
+/* ===== CORREO DEL USUARIO ===== */
 .perfil-datos .correo {
   color: var(--texto-secundario);
   font-size: 0.75rem;
   margin: 0 0 6px;
 }
 
+/* ===== INDICADOR DEL NIVEL DEL USUARIO ===== */
 .badge-nivel {
   display: inline-block;
   padding: 3px 8px;
@@ -61,6 +68,7 @@
 
 /* ----- Stats (nivel / puntos / pedidos) ----- */
 
+/* ===== CONTENEDOR DE ESTADÍSTICAS ===== */
 .stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -68,6 +76,7 @@
   margin-bottom: 20px;
 }
 
+/* ===== CAJA INDIVIDUAL DE ESTADÍSTICA ===== */
 .stat-box {
   text-align: center;
   padding: 12px 4px;
@@ -76,12 +85,14 @@
   background-color: #101010;
 }
 
+/* ===== VALOR PRINCIPAL DE LA ESTADÍSTICA ===== */
 .stat-box strong {
   display: block;
   font-size: 1rem;
   color: var(--azul);
 }
 
+/* ===== DESCRIPCIÓN DE LA ESTADÍSTICA ===== */
 .stat-box span {
   font-size: 0.62rem;
   color: var(--texto-secundario);
@@ -90,6 +101,7 @@
 
 /* ----- Lista de menú del perfil ----- */
 
+/* ===== LISTA DEL MENÚ DEL PERFIL ===== */
 .menu-list {
   list-style: none;
   margin: 0 0 20px;
@@ -99,14 +111,17 @@
   overflow: hidden;
 }
 
+/* ===== ELEMENTOS DE LA LISTA DEL MENÚ ===== */
 .menu-list li {
   border-bottom: 1px solid #1a1a1a;
 }
 
+/* ===== ÚLTIMO ELEMENTO DEL MENÚ ===== */
 .menu-list li:last-child {
   border-bottom: 0;
 }
 
+/* ===== OPCIÓN DEL MENÚ DEL PERFIL ===== */
 .menu-item {
   display: flex;
   align-items: center;
@@ -121,37 +136,44 @@
   cursor: pointer;
 }
 
+/* ===== ICONO DE CADA OPCIÓN DEL MENÚ ===== */
 .menu-item .icono {
   font-size: 1rem;
   width: 22px;
   text-align: center;
 }
 
+/* ===== CONTENEDOR DEL TEXTO DEL MENÚ ===== */
 .menu-item .texto {
   flex: 1;
 }
 
+/* ===== TÍTULO DE LA OPCIÓN DEL MENÚ ===== */
 .menu-item .texto strong {
   display: block;
   font-size: 0.8rem;
   font-weight: 600;
 }
 
+/* ===== DESCRIPCIÓN DE LA OPCIÓN DEL MENÚ ===== */
 .menu-item .texto small {
   color: var(--texto-secundario);
   font-size: 0.68rem;
 }
 
+/* ===== FLECHA DE LAS OPCIONES DEL MENÚ ===== */
 .menu-item .chevron {
   color: #555;
 }
 
+/* ===== OPCIÓN PELIGROSA DEL MENÚ ===== */
 .menu-item.peligro .texto strong {
   color: #ff4d4d;
 }
 
 /* ----- Saldo de puntos ----- */
 
+/* ===== TARJETA PRINCIPAL DE PUNTOS ===== */
 .puntos-card {
   text-align: center;
   padding: 22px 16px;
@@ -161,6 +183,7 @@
   margin-bottom: 18px;
 }
 
+/* ===== ETIQUETA DEL SALDO DE PUNTOS ===== */
 .puntos-card .etiqueta {
   font-size: 0.65rem;
   color: var(--texto-secundario);
@@ -168,6 +191,7 @@
   letter-spacing: 1px;
 }
 
+/* ===== CANTIDAD DE PUNTOS ===== */
 .puntos-card .valor {
   font-size: 2.2rem;
   font-weight: 900;
@@ -175,6 +199,7 @@
   margin: 4px 0 0;
 }
 
+/* ===== TEXTO SECUNDARIO DE LOS PUNTOS ===== */
 .puntos-card .sub {
   font-size: 0.7rem;
   color: var(--texto-secundario);
@@ -182,12 +207,14 @@
   margin-bottom: 14px;
 }
 
+/* ===== TEXTO DEL PROGRESO DE NIVEL ===== */
 .nivel-progreso {
   font-size: 0.7rem;
   color: var(--texto-secundario);
   margin-bottom: 6px;
 }
 
+/* ===== BARRA DE PROGRESO DEL NIVEL ===== */
 .barra-progreso {
   height: 8px;
   border-radius: 4px;
@@ -196,12 +223,14 @@
   margin-bottom: 6px;
 }
 
+/* ===== RELLENO DE LA BARRA DE PROGRESO ===== */
 .barra-progreso-fill {
   height: 100%;
   background-color: var(--verde);
   border-radius: 4px;
 }
 
+/* ===== RANGO DE PUNTOS ACTUAL Y SIGUIENTE ===== */
 .puntos-card .rango {
   display: flex;
   justify-content: space-between;
@@ -211,6 +240,7 @@
 
 /* ----- Logros ----- */
 
+/* ===== TÍTULO DE LA SECCIÓN DE LOGROS ===== */
 .logros-titulo {
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -218,6 +248,7 @@
   margin: 18px 0 10px;
 }
 
+/* ===== REJILLA DE LOGROS ===== */
 .logros-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -225,6 +256,7 @@
   margin-bottom: 22px;
 }
 
+/* ===== LOGRO INDIVIDUAL ===== */
 .logro {
   height: 70px;
   display: flex;
@@ -236,6 +268,7 @@
   background-color: #0c1a26;
 }
 
+/* ===== LOGRO BLOQUEADO ===== */
 .logro.bloqueado {
   opacity: 0.35;
   border-style: dashed;
@@ -245,6 +278,7 @@
 
 /* ----- Canje de recompensas ----- */
 
+/* ===== TARJETA DE RECOMPENSA ===== */
 .reward-card {
   display: flex;
   align-items: center;
@@ -257,16 +291,19 @@
   background-color: #101010;
 }
 
+/* ===== TÍTULO DE LA RECOMPENSA ===== */
 .reward-card .titulo {
   font-size: 0.8rem;
   margin: 0 0 3px;
 }
 
+/* ===== COSTO DE LA RECOMPENSA ===== */
 .reward-card .costo {
   font-size: 0.7rem;
   color: var(--verde);
 }
 
+/* ===== BOTÓN PARA CANJEAR RECOMPENSA ===== */
 .reward-btn {
   border: 1px solid var(--azul);
   background: transparent;
@@ -279,11 +316,13 @@
   cursor: pointer;
 }
 
+/* ===== EFECTO HOVER DEL BOTÓN DE CANJE HABILITADO ===== */
 .reward-btn:hover:not(:disabled) {
   background-color: var(--azul);
   color: white;
 }
 
+/* ===== BOTÓN DE CANJE DESHABILITADO ===== */
 .reward-btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -291,6 +330,7 @@
 
 /* ----- Historial de pedidos ----- */
 
+/* ===== CONTENEDOR DE FILTROS DEL HISTORIAL ===== */
 .order-tabs {
   display: flex;
   gap: 8px;
@@ -298,6 +338,7 @@
   margin-bottom: 18px;
 }
 
+/* ===== BOTONES DE FILTRO DE PEDIDOS ===== */
 .order-tab {
   flex: 0 0 auto;
   padding: 6px 14px;
@@ -309,11 +350,13 @@
   cursor: pointer;
 }
 
+/* ===== FILTRO DE PEDIDOS ACTIVO ===== */
 .order-tab.active {
   background-color: var(--azul);
   color: white;
 }
 
+/* ===== TARJETA DE PEDIDO ===== */
 .order-card {
   border: 1px solid #252525;
   border-radius: 10px;
@@ -322,6 +365,7 @@
   background-color: #0c0c0c;
 }
 
+/* ===== CABECERA DE LA TARJETA DE PEDIDO ===== */
 .order-card .cabecera {
   display: flex;
   justify-content: space-between;
@@ -329,16 +373,19 @@
   margin-bottom: 4px;
 }
 
+/* ===== IDENTIFICADOR DEL PEDIDO ===== */
 .order-card .cabecera strong {
   font-size: 0.82rem;
 }
 
+/* ===== INFORMACIÓN SECUNDARIA DEL PEDIDO ===== */
 .order-card .meta {
   color: var(--texto-secundario);
   font-size: 0.68rem;
   margin-bottom: 10px;
 }
 
+/* ===== ESTADO GENERAL DEL PEDIDO ===== */
 .order-status {
   padding: 3px 8px;
   border-radius: 10px;
@@ -348,32 +395,38 @@
   white-space: nowrap;
 }
 
+/* ===== ESTADO DEL PEDIDO EN CAMINO ===== */
 .order-status.en_camino {
   background-color: rgba(30, 144, 255, 0.15);
   color: var(--azul);
 }
 
+/* ===== ESTADO DEL PEDIDO ENTREGADO ===== */
 .order-status.entregado {
   background-color: rgba(57, 255, 20, 0.12);
   color: var(--verde);
 }
 
+/* ===== ESTADO DEL PEDIDO CANCELADO ===== */
 .order-status.cancelado {
   background-color: rgba(255, 77, 77, 0.12);
   color: #ff4d4d;
 }
 
+/* ===== PIE DE LA TARJETA DE PEDIDO ===== */
 .order-card .pie {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* ===== TOTAL DEL PEDIDO ===== */
 .order-card .total {
   font-weight: bold;
   font-size: 0.85rem;
 }
 
+/* ===== BOTÓN DE ACCIÓN DEL PEDIDO ===== */
 .order-card .accion-btn {
   border: 1px solid var(--azul);
   background: transparent;
@@ -385,11 +438,13 @@
   cursor: pointer;
 }
 
+/* ===== EFECTO HOVER DEL BOTÓN DEL PEDIDO ===== */
 .order-card .accion-btn:hover {
   background-color: var(--azul);
   color: white;
 }
 
+/* ===== MENSAJE CUANDO NO HAY RESULTADOS ===== */
 .sin-resultados {
   text-align: center;
   color: var(--texto-secundario);
