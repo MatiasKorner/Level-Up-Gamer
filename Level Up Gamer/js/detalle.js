@@ -46,7 +46,26 @@ const productos = {
     precio: "$9.990 CLP",
     imagen: "img/mousepad.jpg",
     descripcion: "Superficie de tela de alta precisión con bordes iluminados por RGB personalizables mediante conexión USB."
-  }
+  },
+  ps5: {
+  titulo: "Consola PlayStation 5 Edición Digital",
+  precio: "$549.990 CLP",
+  imagen: "img/play.avif",
+  descripcion: "Consola de nueva generación con SSD ultra rápido y soporte para resolución 4K a 120 FPS."
+  },
+  mandoxbox: {
+  titulo: "Mando Inalámbrico Xbox Wireless Controller Robot White",
+  precio: "$69.990 CLP",
+  imagen: "img/mandoxbox.avif",
+  descripcion: "Control inalámbrico ergonómico con agarre texturizado y conectividad Bluetooth para PC y consola."
+  },
+  gabinetegamer: {
+  titulo: "Gabinete Gamer Mid-Tower RGB Vidrio Templado",
+  precio: "$45.990 CLP",
+  imagen: "img/gabinete.webp",
+  descripcion: "Chasis ATX con panel lateral de vidrio templado e iluminación RGB con excelente flujo de aire."
+}
+
 };
 
 document.addEventListener('DOMContentLoaded', () => {
