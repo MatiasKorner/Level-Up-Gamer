@@ -311,6 +311,7 @@ body {
   background-color: rgba(57, 255, 20, 0.03);
   font-size: 0.72rem;
   white-space: nowrap; /* Mantiene todo en una sola línea */
+  width:100%
 }
 
 .icono-estudiante {
@@ -320,7 +321,9 @@ body {
 }
 
 .texto-banner {
-  color: var(--gris-texto);
+  flex: 1;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .texto-banner strong {
