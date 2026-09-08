@@ -8,11 +8,9 @@
   <link rel="stylesheet" href="css/inicio.css">
   <link rel="stylesheet" href="css/catalogo.css">
 </head>
-
 <body>
-
   <header class="navegacion">
-    <a href="index.html" class="logotipo">LEVEL-<span>UP</span></a>
+    <a href="inicio.html" class="logotipo">LEVEL-<span>UP</span></a>
     
     <ul class="menu-principal">
       <li><a href="inicio.html">Inicio</a></li>
@@ -23,12 +21,11 @@
       <ul class="enlaces-nav">
         <li><a href="login.html">Iniciar sesión</a></li>
         <li><a href="registro.html">Registrarse</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="support.html">Soporte</a></li>
-        <li><a href="events.html">Eventos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="support.html">Soporte</a></li>
       </ul>
       <div class="iconos-nav">
-        <a href="carrito.html" class="icono-carrito">🛒 <span class="contador-carrito">2</span></a>
+        <a href="carrito.html" class="icono-carrito" aria-label="Ver carrito">🛒 <span id="cart-count-badge" class="contador-carrito">0</span></a>
       </div>
     </div>
   </header>
@@ -48,7 +45,6 @@
           <option value="precio-menor">Precio: Menor a Mayor</option>
           <option value="precio-mayor">Precio: Mayor a Menor</option>
           <option value="nombre">Nombre: A - Z</option>
-          <option value="categoria">Categoria</option>
         </select>
         <span class="flecha-select">▼</span>
       </div>
@@ -56,37 +52,10 @@
 
     <!-- Filtros de categoría para el Catálogo -->
     <div class="filtros-categoria">
-      <!-- se les da una categoria -->
-      <button class="boton-azul" data-categoria="todos" onclick="filtrarProductos('todos', this)">Todos</button>
-      <button class="boton-azul boton-borde" data-categoria="consolas" onclick="filtrarProductos('consolas', this)">Consolas</button>
-      <button class="boton-azul boton-borde" data-categoria="computadores-gamers" onclick="filtrarProductos('computadores-gamers', this)">Computadores</button>
-      <button class="boton-azul boton-borde" data-categoria="accesorios" onclick="filtrarProductos('accesorios', this)">Accesorios</button>
-      
-      <!-- Botón de los 3 puntos + menu desplegable -->
-      <div class="contenedor-mas-categorias">
-        <button class="boton-azul boton-borde boton-mas" id="btn-mas-categorias" title="Más categorías">⋯</button>
-    
-        <div class="menu-categorias" id="menu-categorias">
-          <button class="opcion-categoria" data-categoria="juegos-de-mesa" onclick="filtrarProductos('juegos-de-mesa', this)">Juegos de mesa</button>
-          <button class="opcion-categoria" data-categoria="sillas-gamer" onclick="filtrarProductos('sillas-gamer', this)">Sillas gamer</button>
-          <button class="opcion-categoria" data-categoria="mouse" onclick="filtrarProductos('mouse', this)">Mouse</button>
-          <button class="opcion-categoria" data-categoria="mousepad" onclick="filtrarProductos('mousepad', this)">Mousepad</button>
-          <button class="opcion-categoria" data-categoria="poleras-polerones" onclick="filtrarProductos('poleras-polerones', this)">Poleras y polerones</button>
-        </div>
-      </div> 
-    </div> 
-
-    
-<!--EN CASO DE AGREGAR MAS PRODUCTOS OCUPAR LOS SIGUENTES "data-categoria" O EL FILTRO NO LO DETECTARA
-
-    data-categoria="juegos-de-mesa"
-    data-categoria="sillas-gamer"
-    data-categoria="mouse"
-    data-categoria="mousepad"
-    data-categoria="poleras-polerones"
-    data-categoria="computadores-gamers"
-    data-categoria="accesorios"
-    data-categoria="consolas" -->
+      <button class="boton-azul" onclick="filtrarProductos('todos', this)">Todos</button>
+      <button class="boton-azul boton-borde" onclick="filtrarProductos('consolas', this)">Consolas</button>
+      <button class="boton-azul boton-borde" onclick="filtrarProductos('pc', this)">PC</button>
+    </div>
 
     <div class="rejilla-productos">
       <div class="tarjeta" data-categoria="consolas tendencias">
@@ -96,21 +65,21 @@
         <a href="detalle.html?id=mando" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="accesorios tendencias">
+      <div class="tarjeta" data-categoria="pc tendencias">
         <img src="img/auris.webp" alt="Audífonos HyperX Cloud II" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Audífonos HyperX Cloud II</div>
         <div class="precio-tarjeta">$89.990 CLP</div>
         <a href="detalle.html?id=auris" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="accesorios tendencias">
+      <div class="tarjeta" data-categoria="pc tendencias">
         <img src="img/teclado.webp" alt="Teclado Redragon Kumara K552" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Teclado Redragon Kumara</div>
         <div class="precio-tarjeta">$32.990 CLP</div>
         <a href="detalle.html?id=teclado" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="mouse tendencias">
+      <div class="tarjeta" data-categoria="pc tendencias">
         <img src="img/mouse.webp" alt="Mouse Logitech G305" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Mouse Logitech G305</div>
         <div class="precio-tarjeta">$29.990 CLP</div>
@@ -131,7 +100,7 @@
         <a href="detalle.html?id=ea-fc" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="mousepad">
+      <div class="tarjeta" data-categoria="pc">
         <img src="img/mousepad.jpg" alt="Mousepad Monster Games USB RGB Negro" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Mousepad Monster Games USB RGB Negro</div>
         <div class="precio-tarjeta">$9.990 CLP</div>
@@ -140,7 +109,8 @@
     </div>
   </main> 
 
-  <script src="js/filtros_inicio.js"></script>
-  <script src="js/filtros.js"></script>
+  <script src="js/tienda.js"></script>
+<script src="js/inicio.js"></script>
+<script src="js/filtros_inicio.js"></script>
 </body>
 </html>
