@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="css/inicio.css">
   <link rel="stylesheet" href="css/catalogo.css">
 </head>
+
 <body>
+
   <header class="navegacion">
     <a href="index.html" class="logotipo">LEVEL-<span>UP</span></a>
     
@@ -54,10 +56,37 @@
 
     <!-- Filtros de categoría para el Catálogo -->
     <div class="filtros-categoria">
-      <button class="boton-azul" onclick="filtrarProductos('todos', this)">Todos</button>
-      <button class="boton-azul boton-borde" onclick="filtrarProductos('consolas', this)">Consolas</button>
-      <button class="boton-azul boton-borde" onclick="filtrarProductos('pc', this)">PC</button>
-    </div>
+      <!-- se les da una categoria -->
+      <button class="boton-azul" data-categoria="todos" onclick="filtrarProductos('todos', this)">Todos</button>
+      <button class="boton-azul boton-borde" data-categoria="consolas" onclick="filtrarProductos('consolas', this)">Consolas</button>
+      <button class="boton-azul boton-borde" data-categoria="computadores-gamers" onclick="filtrarProductos('computadores-gamers', this)">Computadores</button>
+      <button class="boton-azul boton-borde" data-categoria="accesorios" onclick="filtrarProductos('accesorios', this)">Accesorios</button>
+      
+      <!-- Botón de los 3 puntos + menu desplegable -->
+      <div class="contenedor-mas-categorias">
+        <button class="boton-azul boton-borde boton-mas" id="btn-mas-categorias" title="Más categorías">⋯</button>
+    
+        <div class="menu-categorias" id="menu-categorias">
+          <button class="opcion-categoria" data-categoria="juegos-de-mesa" onclick="filtrarProductos('juegos-de-mesa', this)">Juegos de mesa</button>
+          <button class="opcion-categoria" data-categoria="sillas-gamer" onclick="filtrarProductos('sillas-gamer', this)">Sillas gamer</button>
+          <button class="opcion-categoria" data-categoria="mouse" onclick="filtrarProductos('mouse', this)">Mouse</button>
+          <button class="opcion-categoria" data-categoria="mousepad" onclick="filtrarProductos('mousepad', this)">Mousepad</button>
+          <button class="opcion-categoria" data-categoria="poleras-polerones" onclick="filtrarProductos('poleras-polerones', this)">Poleras y polerones</button>
+        </div>
+      </div> 
+    </div> 
+
+    
+<!--EN CASO DE AGREGAR MAS PRODUCTOS OCUPAR LOS SIGUENTES "data-categoria" O EL FILTRO NO LO DETECTARA
+
+    data-categoria="juegos-de-mesa"
+    data-categoria="sillas-gamer"
+    data-categoria="mouse"
+    data-categoria="mousepad"
+    data-categoria="poleras-polerones"
+    data-categoria="computadores-gamers"
+    data-categoria="accesorios"
+    data-categoria="consolas" -->
 
     <div class="rejilla-productos">
       <div class="tarjeta" data-categoria="consolas tendencias">
@@ -67,21 +96,21 @@
         <a href="detalle.html?id=mando" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="pc tendencias">
+      <div class="tarjeta" data-categoria="accesorios tendencias">
         <img src="img/auris.webp" alt="Audífonos HyperX Cloud II" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Audífonos HyperX Cloud II</div>
         <div class="precio-tarjeta">$89.990 CLP</div>
         <a href="detalle.html?id=auris" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="pc tendencias">
+      <div class="tarjeta" data-categoria="accesorios tendencias">
         <img src="img/teclado.webp" alt="Teclado Redragon Kumara K552" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Teclado Redragon Kumara</div>
         <div class="precio-tarjeta">$32.990 CLP</div>
         <a href="detalle.html?id=teclado" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="pc tendencias">
+      <div class="tarjeta" data-categoria="mouse tendencias">
         <img src="img/mouse.webp" alt="Mouse Logitech G305" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Mouse Logitech G305</div>
         <div class="precio-tarjeta">$29.990 CLP</div>
@@ -102,7 +131,7 @@
         <a href="detalle.html?id=ea-fc" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="pc">
+      <div class="tarjeta" data-categoria="mousepad">
         <img src="img/mousepad.jpg" alt="Mousepad Monster Games USB RGB Negro" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Mousepad Monster Games USB RGB Negro</div>
         <div class="precio-tarjeta">$9.990 CLP</div>
