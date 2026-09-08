@@ -1,4 +1,4 @@
-/* Variables de color de la marca */
+/* ===== VARIABLES DE COLORES DE LA MARCA ===== */
 :root {
   --verde-neon: #39ff14;
   --verde-panel: #24c914;
@@ -6,7 +6,7 @@
   --gris-borde: #2a3241;
   --gris-texto: #8a99ad;
 }
-
+/* ===== CONFIGURACIÓN GENERAL DE LA PÁGINA ===== */
 body {
   background-color: var(--negro-fondo);
   color: #ffffff;
@@ -18,20 +18,21 @@ body {
   margin: 0;
 }
 
-/* Contenedor general del Lgin y logo*/
+/* ===== CONTENEDOR GENERAL DEL LOGIN Y LOGO ===== */
 .pagina-login {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/*Logo principal*/
+/* ===== LOGO PRINCIPAL ===== */
 .logo-principal {
   width: 145px;
   height: auto;
   margin-bottom: 40px;
   flex-shrink: 0;
 }
+/* ===== CONTENEDOR PRINCIPAL DEL LOGIN ===== */
 .login-contenedor{
   display: flex;/*pone a hijos(cliente/admin) uno al lado del otro */
   width: 900px;
@@ -42,7 +43,7 @@ body {
   overflow: hidden;
   position: relative; 
 }
-
+/* ===== PANEL DE INICIO DE SESIÓN DEL CLIENTE ===== */
 .panel-cliente{
   width: 65%;
   opacity: 1;
@@ -52,12 +53,14 @@ body {
   border-radius: 0;
   transition: all 0.5s ease, opacity 0.5s ease;
 }
+/* ===== CONTENIDO INTERNO DEL PANEL CLIENTE ===== */
 
 .panel-cliente main {
   width: 80%;
   max-width: 500px;
   margin: 0 auto;
 }
+/* ===== PANEL VERDE DE INFORMACIÓN ADMINISTRATIVA ===== */
 
 .panel-admin-info {
   width: 35%;
@@ -69,7 +72,7 @@ body {
   background-color: var(--verde-panel);
   transition: all 0.5s ease;
 }
-
+/* ===== CONTENIDO DEL PANEL ADMINISTRADOR ===== */
 .contenido-admin{
   width: 100%;
   max-width: 290px;
@@ -82,48 +85,50 @@ body {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/*Encabezado del panel administrador */
+/* ===== ENCABEZADO DEL PANEL ADMINISTRADOR ===== */
 .encabezado-admin {
   width: 100%;
   text-align: center;
   transform: translateY(-30px);
 }
+/* ===== ICONO DEL ENCABEZADO ADMINISTRADOR ===== */
 .encabezado-admin .icono-admin {
   display: block;
   margin: 0 auto 12px;
 }
-
+/* ===== TÍTULO DEL ENCABEZADO ADMINISTRADOR ===== */
 .encabezado-admin h2 {
   margin: 0;
   text-align: center;
   font-size: 1.6rem;
 }
-/* Mueve el titulo ADMINISTRACION */
+/* ===== TÍTULO ADMINISTRACIÓN ===== */
 .contenido-admin h2 {
   text-align: center;
   margin: 0;
 }
-
+/* ===== ICONO ADMINISTRADOR ===== */
 .icono-admin {
   font-size: 2.5rem;
   display: block;
   text-align: center;
   margin: 0;
 }
-
+/* ===== TÍTULOS DEL PANEL ADMINISTRADOR ===== */
 .panel-admin-info h2{
   font-size: 1.6rem;
   font-weight: 900;
   margin-bottom: 15px;
   color: #ffffff;
 }
+/* ===== TEXTO DEL PANEL ADMINISTRADOR ===== */
 
 .panel-admin-info p{
   font-size: 0.9rem;
   margin-bottom: 25px;
 }
 
-/* Tarjeta de información para acceso administrativo */
+/* ===== TARJETA DE INFORMACIÓN PARA ACCESO ADMINISTRATIVO ===== */
 .banner-admin {
   display: flex;
   align-items: center;
@@ -135,22 +140,22 @@ body {
   text-align: left;
   margin: 0;
 }
-
+/* ===== TEXTO DE LA TARJETA ADMINISTRATIVA ===== */
 .banner-admin p {
   margin: 0;
   font-size: 0.9rem;
   color: #ffffff;
   line-height: 1.5;
 }
-
+/* ===== TEXTO DESTACADO DE LA TARJETA ADMINISTRATIVA ===== */
 .banner-admin strong {
   color: var(--verde-neon);
 }
-
+/* ===== ICONO DE EQUIPO ===== */
 .icono-equipo {
   font-size: 2rem;
 }
-
+/* ===== BOTÓN PARA CAMBIAR A MODO ADMINISTRADOR ===== */
 .boton-admin {
   width: 100%;
   background-color: #0d1117;
@@ -162,13 +167,13 @@ body {
   text-transform: uppercase;
   transition: 0.3s ease;
 }
-
+/* ===== EFECTO HOVER DEL BOTÓN ADMINISTRADOR ===== */
 .boton-admin:hover {
   background-color: transparent;
   color: #0d1117;
   border-color: #0d1117;
 }
-
+/* ===== PANEL DEL FORMULARIO ADMINISTRADOR ===== */
 .panel-admin-form{
   width: 0;
   opacity: 0;
@@ -181,7 +186,7 @@ body {
   transition: all 0.5s ease, opacity 0.5s ease;
 }
 
-/*Contenido del Formulario administrador*/
+/* ===== CONTENIDO INTERNO DEL FORMULARIO ADMINISTRADOR ===== */
 .panel-admin-form main {
   width: 80%;
   max-width: 500px;
@@ -191,25 +196,23 @@ body {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Mueve solo el formulario administrador */
+/* ===== POSICIÓN DEL FORMULARIO ADMINISTRADOR ===== */
 #form-admin {
   transform: translateY(-45px);
 }
-
+/* ===== ESPACIADO ENTRE CAMPOS DEL FORMULARIO ADMIN ===== */
 #form-admin .input-group {
   margin-bottom: 25px !important;
 }
-
+/* ===== ESPACIADO DEL BOTÓN INGRESAR ADMIN ===== */
 #form-admin .boton-ingresar {
   margin-top: 15px;
 }
-
-/* Encabezado del formulario administrador */
+/* ===== ENCABEZADO DEL FORMULARIO ADMINISTRADOR ===== */
 .encabezado-form-admin {
   transform: translateY(-80px);
 }
-
-/*Contenido para volver a la cuenta Level-Up*/
+/* ===== CONTENIDO PARA VOLVER A CUENTA LEVEL-UP ===== */
 .contenido-cliente{
   display: flex;
   width: 100%;
@@ -224,17 +227,18 @@ body {
   pointer-events: none;
 }
 
-/* Encabezado Cuenta Level-Up */
+/* ===== ENCABEZADO CUENTA LEVEL-UP ===== */
 .encabezado-cliente {
   width: 100%;
   text-align: center;
   transform: translateY(-75px);
 }
-
+/* ===== ICONO DEL ENCABEZADO CLIENTE ===== */
 .encabezado-cliente .icono-admin {
   display: block;
   margin: 0 auto 12px;
 }
+/* ===== TÍTULO CUENTA LEVEL-UP ===== */
 
 .encabezado-cliente h2 {
   margin: 0;
@@ -244,7 +248,7 @@ body {
   white-space: nowrap;
 }
 
-/* Tarjeta para volver al login cliente */
+/* ===== TARJETA PARA VOLVER AL LOGIN CLIENTE ===== */
 .banner-cliente {
   display: flex;
   align-items: center;
@@ -255,19 +259,19 @@ body {
   padding: 22px 18px;
   text-align: left;
 }
-
+/* ===== TEXTO DE LA TARJETA CLIENTE ===== */
 .banner-cliente p {
   margin: 0;
   font-size: 0.9rem;
   color: #ffffff;
   line-height: 1.5;
 }
-
+/* ===== TEXTO DESTACADO DE LA TARJETA CLIENTE ===== */
 .banner-cliente strong {
   color: var(--verde-neon);
 }
 
-/* Botón volver a cuenta cliente */
+/* ===== BOTÓN PARA VOLVER A CUENTA CLIENTE ===== */
 .boton-cliente {
   width: 100%;
   background-color: #0d1117;
@@ -278,20 +282,20 @@ body {
   font-weight: 700;
   text-transform: uppercase;
 }
-
+/* ===== EFECTO HOVER DEL BOTÓN CLIENTE ===== */
 .boton-cliente:hover {
   background-color: var(--verde-neon);
   color: #0d1117;
   border-color: var(--verde-neon);
 }
 
-/* Encabezado */
+/* ===== TÍTULO PRINCIPAL DE LA MARCA ===== */
 .titulo-marca {
   font-size: 1.8rem;
   font-weight: 900;
   color: var(--verde-neon);
 }
-
+/* ===== SUBTÍTULO DE LA MARCA ===== */
 .subtitulo-marca {
   font-size: 0.75rem;
   letter-spacing: 2px;
@@ -299,13 +303,12 @@ body {
   font-weight: 700;
   margin-top: -8px;
 }
-
+/* ===== TEXTO DE BIENVENIDA ===== */
 .texto-bienvenida {
   color: var(--gris-texto);
   font-size: 0.85rem;
 }
-
-/* Banner de descuento Duoc UC */
+/* ===== BANNER DE DESCUENTO DUOC UC ===== */
 .banner-estudiante {
   border: 1px solid var(--verde-neon);
   background-color: rgba(57, 255, 20, 0.03);
@@ -313,69 +316,66 @@ body {
   white-space: nowrap; /* Mantiene todo en una sola línea */
   width:100%
 }
-
+/* ===== ICONO DEL BANNER DUOC ===== */
 .icono-estudiante {
   font-size: 2.5rem;
   display: block;
   margin-bottom: 20px;
 }
-
+/* ===== TEXTO DEL BANNER DUOC ===== */
 .texto-banner {
   flex: 1;
   white-space: normal;
   overflow-wrap: break-word;
 }
-
+/* ===== TEXTO DESTACADO DEL BANNER DUOC ===== */
 .texto-banner strong {
   color: var(--verde-neon);
 }
-
-/* Formulario e Inputs */
+/* ===== PLACEHOLDER DE LOS INPUTS ===== */
 .form-control::placeholder {
   color: #6c757d;
   font-size: 0.85rem;
 }
-
+/* ===== ENLACE "OLVIDÉ MI CONTRASEÑA" ===== */
 .enlace-olvido {
   color: var(--verde-neon);
   text-decoration: none;
 }
-
+/* ===== HOVER DEL ENLACE DE CONTRASEÑA ===== */
 .enlace-olvido:hover {
   text-decoration: underline;
 }
-
+/* ===== BOTÓN INGRESAR ===== */
 .boton-ingresar {
   background-color: var(--verde-neon);
   color: #0d1117;
   border: none;
 }
-
+/* ===== HOVER DEL BOTÓN INGRESAR ===== */
 .boton-ingresar:hover {
   background-color: #2edb12;
   color: #0d1117;
 }
-
-/* Botones sociales */
+/* ===== BOTONES DE REDES SOCIALES ===== */
 .boton-red-social {
   border-color: var(--gris-borde);
   background-color: #0d1117;
 }
-
+/* ===== HOVER DE BOTONES DE REDES SOCIALES ===== */
 .boton-red-social:hover {
   border-color: var(--verde-neon);
 }
-
-/* Registro */
+/* ===== ENLACE DE REGISTRO ===== */
 .enlace-registro {
   color: var(--verde-neon);
   text-decoration: none;
 }
-
+/* ===== HOVER DEL ENLACE DE REGISTRO ===== */
 .enlace-registro:hover {
   text-decoration: underline;
 }
-
+/* ===== MENSAJE DE ERROR DEL CORREO CLIENTE ===== */
 #error-correo { /* Se usa el # porque utilizamos id*/
   display: block; 
   margin-top: -10px;
@@ -383,13 +383,14 @@ body {
   margin-left: 15px;
   font-size: 0.8rem;
 }
+/* ===== MENSAJE DE ERROR DE CONTRASEÑA CLIENTE ===== */
 #error-contraseña {
   display:block;
   margin-top: -10px;
   margin-left: 15px;
   font-size: 0.8rem;
 }
-
+/* ===== MENSAJE DE ERROR DEL CORREO ADMIN ===== */
 #error-correo-admin{
   display:block;
   margin-top: -10px;
@@ -397,28 +398,26 @@ body {
   margin-left: 15px;
   font-size: 0.8rem;
 }
-
+/* ===== MENSAJE DE ERROR DE CONTRASEÑA ADMIN ===== */
 #error-contraseña-admin{
   display: block;
   margin-top: -10px;
   margin-left: 15px;
   font-size: 0.8rem;
 }
-
-/*Cuando se activa el modo Administrador */
-
+/* ===== CAMBIO DEL PANEL CLIENTE AL ACTIVAR MODO ADMIN ===== */
 .login-contenedor.admin-activo .panel-cliente {
   width: 0;
   opacity: 0;
   padding: 0;
   overflow: hidden;
 }
-
+/* ===== TAMAÑO DEL PANEL VERDE EN MODO ADMIN ===== */
 .login-contenedor.admin-activo .panel-admin-info {
   width: 35%;
   flex-shrink: 0;
 }
-
+/* ===== MOSTRAR FORMULARIO ADMINISTRADOR ===== */
 .login-contenedor.admin-activo .panel-admin-form {
   display: flex;
   width: 65%;
@@ -427,29 +426,29 @@ body {
   background-color: #0d1117;
   border-radius: 0;
 }
-
+/* ===== OCULTAR CONTENIDO CLIENTE CUANDO NO ESTÁ ACTIVO ===== */
 .login-contenedor:not(.admin-activo) .contenido-cliente {
   position: absolute;
 }
-
+/* ===== OCULTAR CONTENIDO ADMINISTRATIVO ORIGINAL ===== */
 .login-contenedor.admin-activo .contenido-admin{
   opacity: 0;
   transform: translateY(40px);
   pointer-events: none;
   position: absolute;
 }
-
+/* ===== MOSTRAR OPCIONES PARA VOLVER A CUENTA CLIENTE ===== */
 .login-contenedor.admin-activo .contenido-cliente{
   opacity: 1;
   transform: translateX(0);
   pointer-events: auto;
 }
-
+/* ===== MOSTRAR FORMULARIO ADMINISTRADOR CON ANIMACIÓN ===== */
 .login-contenedor.admin-activo .panel-admin-form main {
   opacity: 1;
   transform: translateY(0);
 }
-/* Enlace para entrar sin iniciar sesion */
+/* ===== ENLACE PARA ENTRAR COMO INVITADO ===== */
 .invitado-link {
   display: block;
   width: 55%;
@@ -463,7 +462,7 @@ body {
   font-size: 13px;
   font-weight: bold;
 }
-
+/* ===== HOVER DEL ENLACE DE INVITADO ===== */
 .invitado-link:hover {
   background-color: #39ff14;
   color: black;
