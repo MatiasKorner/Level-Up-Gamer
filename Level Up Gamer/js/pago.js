@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const formEnvio = document.getElementById("form-envio");
   const formPago = document.getElementById("form-pago");
   const pasoConfirmar = document.getElementById("paso-confirmar");
-
+  const datosTarjeta = document.getElementById("datos-tarjeta");
+  const titularInput = document.getElementById("tarjeta-titular");
+  const numeroTarjetaInput = document.getElementById("tarjeta-numero");
+  const vencimientoInput = document.getElementById("tarjeta-vencimiento");
+  const cvvInput = document.getElementById("tarjeta-cvv");
   const nombreInput = document.getElementById("envio-nombre");
   const direccionInput = document.getElementById("envio-direccion");
   const ciudadInput = document.getElementById("envio-ciudad");
@@ -45,11 +49,24 @@ document.addEventListener("DOMContentLoaded", () => {
       marcarOpcionesSeleccionadas();
     })
   );
-  document.querySelectorAll('input[name="metodo-pago"]').forEach((r) =>
-    r.addEventListener("change", marcarOpcionesSeleccionadas)
-  );
+  document.querySelectorAll('input[name="metodo-pago"]').forEach((r) => {
+    r.addEventListener("change", () => {
 
-  function irAPaso(n) {
+      marcarOpcionesSeleccionadas();
+
+      const metodoPago = document.querySelector(
+        'input[name="metodo-pago"]:checked'
+      ).value;
+
+      if (metodoPago === "Transferencia Bancaria") {
+        datosTarjeta.style.display = "none";
+      } else {
+        datosTarjeta.style.display = "block";
+      }
+
+    });
+  });
+    function irAPaso(n) {
     [formEnvio, formPago, pasoConfirmar].forEach((el) => el.classList.remove("activo"));
     document.querySelectorAll(".paso").forEach((p) => p.classList.remove("activo", "completado"));
 
@@ -95,6 +112,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---- Paso 2: seleccionar método de pago ----
   formPago.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    const metodoPagoSeleccionado = document.querySelector(
+      'input[name="metodo-pago"]:checked'
+    ).value;
+
+    if (metodoPagoSeleccionado !== "Transferencia Bancaria") {
+
+    const titular = titularInput.value.trim();
+    const numero = numeroTarjetaInput.value.replace(/\s/g, "");
+    const vencimiento = vencimientoInput.value.trim();
+    const cvv = cvvInput.value.trim();
+
+    if (titular.length < 3) {
+      alert("Ingresa un nombre válido para el titular.");
+      return;
+    }
+
+    if (!/^\d{16}$/.test(numero)) {
+      alert("El número de tarjeta debe tener 16 dígitos.");
+      return;
+    }
+
+    if (!/^\d{2}\/\d{2}$/.test(vencimiento)) {
+      alert("El vencimiento debe tener formato MM/AA.");
+      return;
+    }
+
+    if (!/^\d{3}$/.test(cvv)) {
+      alert("El CVV debe tener 3 dígitos.");
+      return;
+    }
+  }
 
     const metodoEnvio = document.querySelector('input[name="metodo-envio"]:checked').closest(".opcion-radio").querySelector("strong").textContent;
     const metodoPago = document.querySelector('input[name="metodo-pago"]:checked').value;
@@ -147,6 +196,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     LevelUp.Pedidos.crear(pedido);
     LevelUp.guardarPedidoEnCurso(pedido);
+
+    const usuarioActual = LevelUp.Usuario.obtener();
+
+    LevelUp.Usuario.actualizar({
+      puntos: usuarioActual.puntos + pedido.puntosGanados,
+      pedidosRealizados: usuarioActual.pedidosRealizados + 1
+    });
+
     LevelUp.Carrito.vaciar();
 
     window.location.href = "confirmacion.html";

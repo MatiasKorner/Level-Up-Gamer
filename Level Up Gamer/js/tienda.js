@@ -106,7 +106,7 @@ const LevelUp = (() => {
 
   const Carrito = {
     obtenerItems() {
-      return leer(KEYS.CART, null) ?? (guardar(KEYS.CART, CARRITO_SEMILLA), CARRITO_SEMILLA.slice());
+      return leer(KEYS.CART, [])
     },
     guardarItems(items) {
       guardar(KEYS.CART, items);
@@ -149,7 +149,10 @@ const LevelUp = (() => {
       const items = this.obtenerItems();
       const subtotal = items.reduce((acc, i) => acc + i.precio * i.cantidad, 0);
       const correo = localStorage.getItem("lug_correo") || "";
-      const esDuoc = correo.toLowerCase().endsWith("@duocuc.cl");
+      const correoNormalizado = correo.toLowerCase();
+      const esDuoc =
+        correoNormalizado.endsWith("@duoc.cl") ||
+        correoNormalizado.endsWith("@profesor.duoc.cl");
       const descuentoPct = esDuoc ? 0.2 : 0;
       const descuento = Math.round(subtotal * descuentoPct);
       const envio = 0;
@@ -274,7 +277,99 @@ const LevelUp = (() => {
 })();
 
 /* Actualiza el contador del icono de carrito en el header, si existe en la página */
-document.addEventListener("DOMContentLoaded", () => {
+function actualizarContadorCarrito() {
   const badge = document.getElementById("cart-count-badge");
-  if (badge) badge.textContent = LevelUp.Carrito.contarUnidades();
+
+  if (badge) {
+    badge.textContent = LevelUp.Carrito.contarUnidades();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", actualizarContadorCarrito);
+
+window.addEventListener("pageshow", actualizarContadorCarrito);
+
+function crearModalPerfilInvitado() {
+  // Evita crear el modal mas de una vez
+  if (document.getElementById("modal-perfil-invitado")) {
+    return;
+  }
+
+  const modalHTML = `
+    <div class="modal fade" id="modal-perfil-invitado" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-black text-white border border-secondary">
+
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title">👤 Cuenta Level-Up</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar">
+            </button>
+          </div>
+
+          <div class="modal-body text-center">
+            <p class="mb-4">
+              Debes iniciar sesión o crear una cuenta para acceder a tu perfil.
+            </p>
+
+            <div class="d-grid gap-2">
+              <a href="login.html" class="btn btn-primary fw-bold">
+                INICIAR SESIÓN
+              </a>
+
+              <a href="registro.html" class="btn btn-outline-light fw-bold">
+                CREAR CUENTA
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.insertAdjacentHTML("beforeend", modalHTML);
+}
+
+function actualizarNavegacionUsuario() {
+  const usuario = localStorage.getItem("lug_user");
+
+  const enlacesSesion = document.querySelector(".enlaces-nav");
+  const botonPerfil = document.querySelector(".icono-perfil");
+
+  if (usuario) {
+    if (enlacesSesion) {
+      enlacesSesion.style.display = "none";
+    }
+
+    if (botonPerfil) {
+      botonPerfil.href = "perfil.html";
+    }
+  } else {
+    if (enlacesSesion) {
+      enlacesSesion.style.display = "";
+    }
+
+    if (botonPerfil) {
+      botonPerfil.href = "#";
+
+      botonPerfil.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const modalPerfil = new bootstrap.Modal(
+          document.getElementById("modal-perfil-invitado")
+        );
+
+        modalPerfil.show();
+      });
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  crearModalPerfilInvitado();
+  actualizarNavegacionUsuario();
 });

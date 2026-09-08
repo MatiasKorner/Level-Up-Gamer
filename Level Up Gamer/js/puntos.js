@@ -1,6 +1,12 @@
 /* puntos.js — Lógica de la página puntos.html (10) */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  const usuarioSesion = localStorage.getItem("lug_user");
+  if (!usuarioSesion) {
+    window.location.href = "login.html";
+    return;
+  }
   function render() {
     const u = LevelUp.Usuario.obtener();
     document.getElementById("puntos-valor").textContent = u.puntos.toLocaleString("es-CL");

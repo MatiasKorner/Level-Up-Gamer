@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Gamer</title>
+    <title>Level-Up Gamer | Blog</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,20 +17,56 @@
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- CSS general -->
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/componentes.css">
+
+    <!-- CSS del blog -->
     <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="estilos/inicio.css">
 </head>
 
 <body class="blog-page">
 
+    <!-- Navegacion principal -->
+    <header class="navegacion">
+        <a href="index.html" class="logotipo">LEVEL-<span>UP</span></a>
+
+        <ul class="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="blog.html" class="activo">Blog</a></li>
+            <li><a href="support.html">Soporte</a></li>
+        </ul>
+
+        <div class="contenedor-derecho">
+            <ul class="enlaces-nav">
+                <li><a href="login.html">Iniciar sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+            </ul>
+
+            <div class="iconos-nav">
+                <a href="carrito.html" class="icono-carrito" aria-label="Ver carrito">
+                    🛒 <span id="cart-count-badge" class="contador-carrito">0</span>
+                </a>
+
+                <a href="perfil.html" class="icono-perfil" aria-label="Ver perfil">
+                    👤
+                </a>
+            </div>
+        </div>
+    </header>
+
     <!--
     container: centra el contenido y le da un ancho máximo
-    py-4: agrega un padding vertical de 4 unidades (arriba y abajo) -->
+    py-4: agrega un padding vertical de 4 unidades (arriba y abajo)
+    -->
     <main class="container py-4">
 
-        <!-- "mb-4": deja una espacio de margen debajo del elemento, evita que el texto se vea demasiado cerca a los btns -->
+        <!-- mb-4 deja espacio debajo del titulo -->
         <h1 class="blog-title mb-4">BLOG GAMER</h1>
 
+        <!-- Botones para filtrar las categorias -->
         <div class="category-filters d-flex flex-wrap gap-2 mb-4">
             <button class="category-btn active">Todo</button>
             <button class="category-btn">Reseñas</button>
@@ -41,22 +77,29 @@
 
         <!-- Post destacado -->
         <article class="featured-post mb-4">
-            <!-- al hacer click se redirije al href -->
+
+            <!-- Al hacer click se redirige a articulo.html -->
             <a href="articulo.html" class="featured-link">
+
                 <div class="featured-image-wrapper">
-                    <!-- imagen destacada en el blog-->
+
+                    <!-- Imagen destacada en el blog -->
                     <img src="img/featured-article.png" alt="Top 10 RPGs del 2026" class="featured-image">
-                    <!-- Aparece la "medalla" de destacado -->
+
+                    <!-- Aparece la etiqueta de destacado -->
                     <span class="featured-badge">DESTACADO</span>
                 </div>
 
                 <div class="featured-content">
+
                     <!-- Titulo del post destacado -->
                     <h2 class="featured-title">Top 10 RPGs del 2026: Los Mejores del Año</h2>
 
                     <div class="featured-meta">
+
                         <!-- Categoria -->
                         <span class="post-category">RESEÑAS</span>
+
                         <!-- Cuando se subio el post -->
                         <span class="post-time">hace 2d</span>
                     </div>
@@ -64,31 +107,40 @@
             </a>
         </article>
 
-        <!-- lista de post -->
-        <!-- estructura base del post -->
+        <!-- Lista de post -->
         <div class="post-list">
-            <!-- redirige a la pagina articulo.html -->
-            <a href="#" class="post-card">
-                <!-- img que aparece en el post -->
+
+            <!-- Primer post -->
+            <a href="articulo.html" class="post-card">
+
+                <!-- Imagen que aparece en el post -->
                 <img src="img/first-post.jpeg" alt="RTX 5090" class="post-card-image">
+
                 <div class="post-card-content">
+
                     <!-- Titulo del post -->
                     <h3 class="post-card-title">RTX 5090 Ti ¿Vale la Pena el Precio?</h3>
 
                     <div class="post-card-meta">
+
                         <!-- Categoria del post -->
                         <span class="post-card-category">HARDWARE</span>
-                        <!-- cuando se publico el post -->
+
+                        <!-- Cuando se publico el post -->
                         <span class="post-card-time">hace 5h</span>
                     </div>
                 </div>
             </a>
 
             <!-- Segundo post -->
-            <a href="#" class="post-card">
+            <a href="articulo.html" class="post-card">
+
                 <img src="img/second-post.jpg" alt="Setup Gamer" class="post-card-image">
+
                 <div class="post-card-content">
+
                     <h3 class="post-card-title">Guia Definitiva: Setup Gamer Chile 2026</h3>
+
                     <div class="post-card-meta">
                         <span class="post-card-category">CONSEJOS</span>
                         <span class="post-card-time">hace 1d</span>
@@ -96,11 +148,15 @@
                 </div>
             </a>
 
-            <!-- tercer post -->
-            <a href="#" class="post-card">
-                <img src="img/third-post.jpg" alt="Esport Chile" class="post-card-image">
+            <!-- Tercer post -->
+            <a href="articulo.html" class="post-card">
+
+                <img src="img/third-post.jpg" alt="Esports Chile" class="post-card-image">
+
                 <div class="post-card-content">
+
                     <h3 class="post-card-title">Esports en Chile 2026: Estado del Arte</h3>
+
                     <div class="post-card-meta">
                         <span class="post-card-category">ESPORTS</span>
                         <span class="post-card-time">hace 3d</span>
@@ -109,10 +165,13 @@
             </a>
 
         </div>
-
-
-
     </main>
+
+    <!-- Pie de pagina -->
+    <footer>&copy; 2026 Level-Up Gamer. Todos los derechos reservados.</footer>
+
+    <!-- JS general de la tienda -->
+    <script src="js/tienda.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

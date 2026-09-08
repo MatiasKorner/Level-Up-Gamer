@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Gamer | Crear Cuenta</title>
+  <link rel="stylesheet" href="estilos/base.css">
+  <link rel="stylesheet" href="estilos/componentes.css">
+  <link rel="stylesheet" href="estilos/auth.css">
+</head>
+<body>
+  <header class="navegacion">
+    <a href="index.html" class="logotipo">LEVEL-<span>UP</span></a>
+  </header>
+
+  <main class="contenedor-principal">
+    <div class="contenedor-autenticacion">
+      <h1 class="titulo-autenticacion">LEVEL-<span>UP</span></h1>
+      <p class="subtitulo-autenticacion">CREAR TU CUENTA</p>
+      <div class="linea-decorativa"></div>
+
+      <form onsubmit="validarRegistro(event)">
+        <div class="grupo-campo">
+          <span class="icono-campo">👤</span>
+          <input type="text" id="nombre" class="campo-entrada" placeholder="Nombre completo">
+        </div>
+
+        <div class="grupo-campo">
+          <span class="icono-campo">✉️</span>
+          <input type="email" id="email" class="campo-entrada" placeholder="Correo electrónico">
+        </div>
+
+        <div class="grupo-campo">
+          <span class="icono-campo">🔒</span>
+          <input type="password" id="pass1" class="campo-entrada" placeholder="Contraseña">
+        </div>
+
+        <div class="grupo-campo">
+          <span class="icono-campo">🔒</span>
+          <input type="password" id="pass2" class="campo-entrada" placeholder="Confirmar contraseña">
+        </div>
+
+        <div class="contenedor-casilla">
+          <input type="checkbox" id="terminos">
+          <label for="terminos" class="texto-casilla">
+            Confirmo que tengo <strong>18 años o más</strong> y acepto los <a href="#">Términos de Servicio</a> para acceder a contenido y compras de videojuegos.
+          </label>
+        </div>
+
+        <div class="banner-beneficio-duoc">
+          <span class="icono-duoc">🎓</span>
+          <div class="texto-duoc">
+            <strong>BENEFICIO ESTUDIANTES DUOC UC</strong><br>
+            Obtén <strong>20% DE DESCUENTO</strong> en tu primera compra con tu credencial estudiantil vigente.
+          </div>
+        </div>
+
+        <button type="submit" class="boton-verde" style="margin-bottom: 1.5rem;">CREAR CUENTA →</button>
+
+        <p class="pie-autenticacion">
+          ¿Ya tienes cuenta? <a href="login.html">Iniciar Sesión</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="js/validaciones_login.js"></script>
+
+</body>
+</html>

@@ -30,32 +30,62 @@
       <form id="form-envio" class="paso-form activo" novalidate>
         <p class="seccion-titulo">Dirección de envío</p>
 
-        <div class="campo-form mb-3">
-          <input type="text" id="envio-nombre" class="form-control bg-dark text-white border-secondary" placeholder="Nombre completo">
+      <div class="campo-form mb-3">
+        <label for="envio-nombre" class="form-label">Nombre completo</label>
+        <input
+          type="text"
+          id="envio-nombre"
+          class="form-control bg-dark text-white border-secondary"
+          placeholder="Ej: Juan Pérez">
+      </div>
+
+      <div class="campo-form mb-3">
+        <label for="envio-direccion" class="form-label">Dirección</label>
+        <input
+          type="text"
+          id="envio-direccion"
+          class="form-control bg-dark text-white border-secondary"
+          placeholder="Calle, número y depto.">
+      </div>
+
+      <div class="row g-2 mb-3">
+
+        <div class="col-6 campo-form">
+          <label for="envio-ciudad" class="form-label">Ciudad</label>
+          <input
+            type="text"
+            id="envio-ciudad"
+            class="form-control bg-dark text-white border-secondary"
+            placeholder="Ej: Santiago">
         </div>
-        <div class="campo-form mb-3">
-          <input type="text" id="envio-direccion" class="form-control bg-dark text-white border-secondary" placeholder="Calle, número y depto.">
+
+        <div class="col-6 campo-form">
+          <label for="envio-region" class="form-label">Región</label>
+          <select
+            id="envio-region"
+            class="form-select bg-dark text-white border-secondary">
+
+            <option value="" selected disabled>Selecciona una región</option>
+            <option>Región Metropolitana</option>
+            <option>Valparaíso</option>
+            <option>Biobío</option>
+            <option>Los Lagos</option>
+            <option>Antofagasta</option>
+            <option>Coquimbo</option>
+            <option>Otra</option>
+          </select>
         </div>
-        <div class="row g-2 mb-3">
-          <div class="col-6 campo-form">
-            <input type="text" id="envio-ciudad" class="form-control bg-dark text-white border-secondary" placeholder="Ciudad">
-          </div>
-          <div class="col-6 campo-form">
-            <select id="envio-region" class="form-select bg-dark text-white border-secondary">
-              <option value="" selected disabled>Región</option>
-              <option>Región Metropolitana</option>
-              <option>Valparaíso</option>
-              <option>Biobío</option>
-              <option>Los Lagos</option>
-              <option>Antofagasta</option>
-              <option>Coquimbo</option>
-              <option>Otra</option>
-            </select>
-          </div>
-        </div>
-        <div class="campo-form mb-4">
-          <input type="tel" id="envio-telefono" class="form-control bg-dark text-white border-secondary" placeholder="Número de teléfono (+56 9 xxxx xxxx)">
-        </div>
+
+      </div>
+
+      <div class="campo-form mb-4">
+        <label for="envio-telefono" class="form-label">Número de teléfono</label>
+        <input
+          type="tel"
+          id="envio-telefono"
+          class="form-control bg-dark text-white border-secondary"
+          placeholder="+56 9 xxxx xxxx">
+      </div>
 
         <p class="seccion-titulo">Método de envío</p>
         <label class="opcion-radio">
@@ -99,6 +129,63 @@
           <input type="radio" name="metodo-pago" value="Transferencia Bancaria">
           <span class="detalle"><strong>Transferencia Bancaria</strong><small>Confirmación manual (24 hrs)</small></span>
         </label>
+      <div id="datos-tarjeta" class="mt-4">
+
+        <p class="seccion-titulo">Datos de la tarjeta</p>
+
+        <div class="campo-form mb-3">
+          <label for="tarjeta-titular" class="form-label">
+            Nombre del titular
+          </label>
+
+          <input
+            type="text"
+            id="tarjeta-titular"
+            class="form-control bg-dark text-white border-secondary"
+            placeholder="Ej: Juan Pérez">
+        </div>
+
+        <div class="campo-form mb-3">
+          <label for="tarjeta-numero" class="form-label">
+            Número de tarjeta
+          </label>
+
+          <input
+            type="text"
+            id="tarjeta-numero"
+            class="form-control bg-dark text-white border-secondary"
+            placeholder="0000 0000 0000 0000">
+        </div>
+
+        <div class="row g-2">
+
+          <div class="col-6 campo-form">
+            <label for="tarjeta-vencimiento" class="form-label">
+              Vencimiento
+            </label>
+
+            <input
+              type="text"
+              id="tarjeta-vencimiento"
+              class="form-control bg-dark text-white border-secondary"
+              placeholder="MM/AA">
+          </div>
+
+          <div class="col-6 campo-form">
+            <label for="tarjeta-cvv" class="form-label">
+              CVV
+            </label>
+
+            <input
+              type="password"
+              id="tarjeta-cvv"
+              class="form-control bg-dark text-white border-secondary"
+              placeholder="123">
+          </div>
+
+        </div>
+
+      </div>        
 
         <div class="d-flex gap-2 mt-4">
           <button type="button" class="btn btn-outline-light w-50" data-volver="1">&larr; Volver</button>

@@ -1,6 +1,12 @@
 /* pedidos.js — Lógica de la página pedidos.html (11) */
 
 document.addEventListener("DOMContentLoaded", () => {
+  const usuarioSesion = localStorage.getItem("lug_user");
+
+  if (!usuarioSesion) {
+    window.location.href = "login.html";
+    return;
+  }  
   const listaEl = document.getElementById("lista-pedidos");
   const sinPedidosEl = document.getElementById("sin-pedidos");
   let filtroActivo = "todos";

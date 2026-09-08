@@ -64,8 +64,35 @@ document.addEventListener("DOMContentLoaded", () => {
     errorContraseña.textContent = "";
     contraseñaInput.classList.remove("is-invalid");
 
+    const usuarioRegistrado = JSON.parse(
+  localStorage.getItem("lug_usuario_registrado")
+);
+
+    if (
+      !usuarioRegistrado ||
+      usuarioRegistrado.correo !== correo ||
+      usuarioRegistrado.contraseña !== contraseña
+    ) {
+      errorContraseña.textContent = "Correo o contraseña incorrectos";
+      contraseñaInput.classList.add("is-invalid");
+      return;
+    }
+
+    const usuarioSesion = {
+      nombre: usuarioRegistrado.nombre,
+      correo: usuarioRegistrado.correo,
+      telefono: usuarioRegistrado.telefono,
+      nivel: usuarioRegistrado.nivel,
+      puntos: usuarioRegistrado.puntos,
+      puntosSiguienteNivel: usuarioRegistrado.puntosSiguienteNivel,
+      pedidosRealizados: usuarioRegistrado.pedidosRealizados
+    };
+
     localStorage.setItem("lug_correo", correo);
+    localStorage.setItem("lug_user", JSON.stringify(usuarioSesion));
+
     window.location.href = "index.html";
+
   });
 
   formularioAdmin.addEventListener("submit", (e) => {
@@ -115,8 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
   localStorage.setItem("lug_rol", usuarioEncontrado.rol);
 
   alert("Bienvenido " + usuarioEncontrado.rol);
+  window.location = "admin.html";
 
-  
+
   // Más adelante aquí validaremos el rol y el acceso administrativo.
 });
   correoInput.addEventListener("input", () => {
@@ -176,6 +204,17 @@ contraseñaAdminInput.addEventListener("input", () => {
     contraseñaAdminInput.classList.remove("is-invalid");
   }
 });
+
+// Entrar a la tienda sin iniciar sesion
+const botonInvitado = document.getElementById("btn-invitado");
+
+if (botonInvitado) {
+  botonInvitado.addEventListener("click", () => {
+    localStorage.removeItem("lug_user");
+    localStorage.removeItem("lug_correo");
+    localStorage.removeItem("lug_rol");
+  });
+}
 
 });
 

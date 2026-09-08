@@ -36,7 +36,7 @@ body {
   display: flex;/*pone a hijos(cliente/admin) uno al lado del otro */
   width: 900px;
   max-width :95%;
-  height: 640px;
+  height: 700px;
   background-color: var(--azul-electrico);
   border-radius: 20px;
   overflow: hidden;
@@ -68,7 +68,6 @@ body {
   padding: 40px 20px;
   background-color: var(--verde-panel);
   transition: all 0.5s ease;
-  position: all 0.5s ease;
 }
 
 .contenido-admin{
@@ -179,7 +178,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #0d1117;
-  transition: all 0.5s ease, opacity 0.5s easy;
+  transition: all 0.5s ease, opacity 0.5s ease;
 }
 
 /*Contenido del Formulario administrador*/
@@ -446,4 +445,23 @@ body {
 .login-contenedor.admin-activo .panel-admin-form main {
   opacity: 1;
   transform: translateY(0);
+}
+/* Enlace para entrar sin iniciar sesion */
+.invitado-link {
+  display: block;
+  width: 55%;
+  margin: 5px auto 30px auto;
+  padding: 8px;
+  text-align: center;
+  color: white;
+  background-color: #21262d;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.invitado-link:hover {
+  background-color: #39ff14;
+  color: black;
 }

@@ -21,24 +21,52 @@
 
 
     <!-- CSS -->
+
     <link rel="stylesheet" href="css/support.css">
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/componentes.css">
+    <link rel="stylesheet" href="estilos/inicio.css">
+    
 </head>
 
 
 <body class="support-main-page">
+
+        <!-- Navegacion principal -->
+    <header class="navegacion">
+        <a href="index.html" class="logotipo">LEVEL-<span>UP</span></a>
+
+        <ul class="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="support.html" class="activo">Soporte</a></li>
+        </ul>
+
+        <div class="contenedor-derecho">
+            <ul class="enlaces-nav">
+                <li><a href="login.html">Iniciar sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+            </ul>
+
+            <div class="iconos-nav">
+                <a href="carrito.html" class="icono-carrito" aria-label="Ver carrito">
+                    🛒 <span id="cart-count-badge" class="contador-carrito">0</span>
+                </a>
+
+                <a href="perfil.html" class="icono-perfil" aria-label="Ver perfil">
+                    👤
+                </a>
+            </div>
+        </div>
+    </header>
     <main class="support-page">
-        <header class="support-header">
-            <a href="#" class="back-button">
-                <span class="back-arrow">←</span>SOPORTE TECNICO
-            </a>
-            
-        </header>
+        
 
         
         <!-- <div class="article-header d-flex align-items-center justify-content-between mb-3">
             <a href="blog.html" class="back-button">
-                <span class="back-button">←</span> ARTICULO
-            </a>
+                <span class="back-button">←</sppo
         </div> -->
    
 
@@ -158,21 +186,21 @@
                             Tiempo de respuesta promedio:
                             <span class="whatsapp-time">3 minutos</span>
                         </p>
-
                     </div>
-
+                                   
                     <button class="whatsapp-button">
                         CHATEAR AHORA →
                     </button>
 
                 </div>
-
+            </div>
         </section>
         
     </main>
 
 
-
+    <!-- JS general de la tienda -->
+    <script src="js/tienda.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

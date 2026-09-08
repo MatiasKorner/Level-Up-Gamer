@@ -1,6 +1,13 @@
 /* perfil.js — Lógica de la página perfil.html (09) */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  const usuarioSesion = localStorage.getItem("lug_user");
+    if (!usuarioSesion) {
+      window.location.href = "login.html";
+      return;
+    }
+
   const nombreInput = document.getElementById("editar-nombre");
   const correoInput = document.getElementById("editar-correo");
   const telefonoInput = document.getElementById("editar-telefono");
@@ -55,6 +62,21 @@ document.addEventListener("DOMContentLoaded", () => {
       correo: correoInput.value.trim(),
       telefono: telefonoInput.value.trim(),
     });
+    const usuarioRegistrado = JSON.parse(
+    localStorage.getItem("lug_usuario_registrado")
+    );
+
+    if (usuarioRegistrado) {
+
+      usuarioRegistrado.nombre = nombreInput.value.trim();
+      usuarioRegistrado.correo = correoInput.value.trim();
+      usuarioRegistrado.telefono = telefonoInput.value.trim();
+
+      localStorage.setItem(
+        "lug_usuario_registrado",
+        JSON.stringify(usuarioRegistrado)
+      );
+    }
 
     bootstrap.Modal.getInstance(document.getElementById("modal-editar-perfil")).hide();
     LevelUp.toast("Perfil actualizado correctamente");
@@ -67,6 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("btn-cerrar-sesion").addEventListener("click", () => {
     if (confirm("¿Cerrar sesión?")) {
+      localStorage.removeItem("lug_correo");
+      localStorage.removeItem("lug_rol");
+      localStorage.removeItem("lug_user");
+
       window.location.href = "login.html";
     }
   });

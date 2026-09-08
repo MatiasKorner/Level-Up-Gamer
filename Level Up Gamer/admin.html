@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración | Level-Up Gamer</title>
+
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="css/admin.css">    
+</head>
+<body>
+    
+      <header class="admin-header">
+    <a href="index.html" class="admin-logo">
+      LEVEL-<span>UP</span>
+    </a>
+
+    <div class="admin-usuario">
+      <span id="admin-rol">Administrador</span>
+      <button id="btn-cerrar-sesion">Cerrar sesión</button>
+    </div>
+  </header>
+    <div class="admin-layout">
+
+    <!-- Menú lateral -->
+    <aside class="admin-sidebar">
+
+      <h2>Administración</h2>
+
+      <nav class="admin-menu">
+        <button class="admin-menu-btn activo" data-seccion="inicio">
+          🏠 Inicio
+        </button>
+
+        <button class="admin-menu-btn" data-seccion="productos">
+          🎮 Productos
+        </button>
+
+        <button class="admin-menu-btn" data-seccion="pedidos">
+          📦 Pedidos
+        </button>
+
+        <button class="admin-menu-btn solo-admin" data-seccion="usuarios">
+          👥 Usuarios
+        </button>
+      </nav>
+
+    </aside>
+        <!-- Contenido principal -->
+    <main class="admin-contenido">
+
+      <section id="seccion-inicio" class="admin-seccion">
+        <h1>Panel de administración</h1>
+
+        <p>
+          Bienvenido al sistema administrativo de Level-Up Gamer.
+        </p>
+      </section>
+
+        <section id="seccion-productos" class="admin-seccion">
+        <h1>Productos</h1>
+
+        <button id="btn-agregar-producto" class="btn-editar solo -admin">
+            Agregar producto
+        </button>
+
+
+        <div class="tabla-contenedor">
+            <table class="tabla-admin">
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th id="columna-acciones">Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabla-productos">
+                <!-- Los productos se agregarán desde admin.js -->
+            </tbody>
+            </table>
+        </div>
+        </section>
+            <section id="seccion-pedidos" class="admin-seccion">
+        <h1>Pedidos</h1>
+
+        <div class="tabla-contenedor">
+            <table class="tabla-admin">
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Productos</th>
+                <th>Total</th>
+                <th>Estado</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabla-pedidos">
+                <!-- Se carga desde localStorage -->
+            </tbody>
+            </table>
+        </div>
+
+      </section>
+            <section id="seccion-usuarios" class="admin-seccion">
+        <h1>Usuarios</h1>
+            <div class="tabla-contenedor">
+        <table class="tabla-admin">
+        <thead>
+            <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabla-usuarios">
+            <!-- Se carga desde localStorage -->
+        </tbody>
+        </table>
+    </div>   
+      </section>
+    </main>
+
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>
