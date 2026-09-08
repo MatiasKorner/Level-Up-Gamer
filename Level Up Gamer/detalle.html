@@ -21,9 +21,11 @@
       <ul class="enlaces-nav">
         <li><a href="login.html">Iniciar sesión</a></li>
         <li><a href="registro.html">Registrarse</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="support.html">Soporte</a></li>
       </ul>
       <div class="iconos-nav">
-        <a href="#" class="icono-carrito">🛒 <span class="contador-carrito">2</span></a>
+        <a href="carrito.html" class="icono-carrito" aria-label="Ver carrito">🛒 <span id="cart-count-badge" class="contador-carrito">0</span></a>
       </div>
     </div> 
   </header>
@@ -44,7 +46,7 @@
           <label for="cantidad">Cantidad:</label>
           <input type="number" id="cantidad" value="1" min="1" max="10">
         </div>
-        <button class="boton-azul">Añadir al Carrito</button>
+        <button type="button" class="boton-azul" data-add-to-cart>Añadir al Carrito</button>
 
       </div>
     </div>
@@ -52,6 +54,7 @@
 
   <footer>&copy; 2026 Level-Up Gamer. Todos los derechos reservados.</footer>
 
-  <script src="js/detalle.js"></script>
+  <script src="js/tienda.js"></script>
+<script src="js/detalle.js"></script>
 </body>
 </html>
