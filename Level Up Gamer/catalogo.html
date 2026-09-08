@@ -3,30 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Level-Up Gamer | Catálogo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="estilos/base.css">
   <link rel="stylesheet" href="estilos/componentes.css">
   <link rel="stylesheet" href="estilos/inicio.css">
   <link rel="stylesheet" href="estilos/catalogo.css">
 </head>
+
 <body>
-  <header class="navegacion">
-    <a href="inicio.html" class="logotipo">LEVEL-<span>UP</span></a>
-    
+<header class="navegacion">
+  <a href="index.html" class="logotipo">LEVEL-<span>UP</span></a>
+
     <ul class="menu-principal">
-      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="index.html">Inicio</a></li>
       <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="support.html">Soporte</a></li>
+
     </ul>
 
     <div class="contenedor-derecho">
-      <ul class="enlaces-nav">
-        <li><a href="login.html">Iniciar sesión</a></li>
-        <li><a href="registro.html">Registrarse</a></li>
-      </ul>
-      <div class="iconos-nav">
-        <a href="#" class="icono-carrito">🛒 <span class="contador-carrito">2</span></a>
-      </div>
+
+    <ul class="enlaces-nav">
+      <li><a href="login.html">Iniciar sesión</a></li>
+      <li><a href="registro.html">Registrarse</a></li>
+    </ul>
+
+    <div class="iconos-nav">
+      <a href="carrito.html" class="icono-carrito" aria-label="Ver carrito">
+        🛒 <span id="cart-count-badge" class="contador-carrito">0</span>
+      </a>
+
+      <a href="perfil.html" class="icono-perfil" aria-label="Ver perfil">
+        👤
+      </a>
     </div>
-  </header>
+  </div>
+</header>
 
   <main class="contenedor-principal">
     <h2 class="encabezado-catalogo">CATÁLOGO</h2>
@@ -43,6 +56,7 @@
           <option value="precio-menor">Precio: Menor a Mayor</option>
           <option value="precio-mayor">Precio: Mayor a Menor</option>
           <option value="nombre">Nombre: A - Z</option>
+          <option value="categoria">Categoria</option>
         </select>
         <span class="flecha-select">▼</span>
       </div>
@@ -50,34 +64,61 @@
 
     <!-- Filtros de categoría para el Catálogo -->
     <div class="filtros-categoria">
-      <button class="boton-azul" onclick="filtrarProductos('todos', this)">Todos</button>
-      <button class="boton-azul boton-borde" onclick="filtrarProductos('consolas', this)">Consolas</button>
-      <button class="boton-azul boton-borde" onclick="filtrarProductos('pc', this)">PC</button>
-    </div>
+      <!-- se les da una categoria -->
+      <button class="boton-azul" data-categoria="todos" onclick="filtrarProductos('todos', this)">Todos</button>
+      <button class="boton-azul boton-borde" data-categoria="consolas" onclick="filtrarProductos('consolas', this)">Consolas</button>
+      <button class="boton-azul boton-borde" data-categoria="computadores-gamers" onclick="filtrarProductos('computadores-gamers', this)">Computadores</button>
+      <button class="boton-azul boton-borde" data-categoria="accesorios" onclick="filtrarProductos('accesorios', this)">Accesorios</button>
+      
+      <!-- Botón de los 3 puntos + menu desplegable -->
+      <div class="contenedor-mas-categorias">
+        <button class="boton-azul boton-borde boton-mas" id="btn-mas-categorias" title="Más categorías">⋯</button>
+    
+        <div class="menu-categorias" id="menu-categorias">
+          <button class="opcion-categoria" data-categoria="juegos-de-mesa" onclick="filtrarProductos('juegos-de-mesa', this)">Juegos de mesa</button>
+          <button class="opcion-categoria" data-categoria="sillas-gamer" onclick="filtrarProductos('sillas-gamer', this)">Sillas gamer</button>
+          <button class="opcion-categoria" data-categoria="mouse" onclick="filtrarProductos('mouse', this)">Mouse</button>
+          <button class="opcion-categoria" data-categoria="mousepad" onclick="filtrarProductos('mousepad', this)">Mousepad</button>
+          <button class="opcion-categoria" data-categoria="poleras-polerones" onclick="filtrarProductos('poleras-polerones', this)">Poleras y polerones</button>
+        </div>
+      </div> 
+    </div> 
+
+    
+<!--EN CASO DE AGREGAR MAS PRODUCTOS OCUPAR LOS SIGUENTES "data-categoria" O EL FILTRO NO LO DETECTARA
+
+    data-categoria="juegos-de-mesa"
+    data-categoria="sillas-gamer"
+    data-categoria="mouse"
+    data-categoria="mousepad"
+    data-categoria="poleras-polerones"
+    data-categoria="computadores-gamers"
+    data-categoria="accesorios"
+    data-categoria="consolas" -->
 
     <div class="rejilla-productos">
-      <div class="tarjeta" data-categoria="consolas tendencias">
+      <div class="tarjeta" data-categoria="consolas tendencias accesorios">
         <img src="img/mando.jpg" alt="Mando DualSense PS5" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Mando DualSense PS5</div>
         <div class="precio-tarjeta">$64.990 CLP</div>
         <a href="detalle.html?id=mando" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="pc tendencias">
+      <div class="tarjeta" data-categoria="accesorios tendencias">
         <img src="img/auris.webp" alt="Audífonos HyperX Cloud II" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Audífonos HyperX Cloud II</div>
         <div class="precio-tarjeta">$89.990 CLP</div>
         <a href="detalle.html?id=auris" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="pc tendencias">
+      <div class="tarjeta" data-categoria="accesorios tendencias">
         <img src="img/teclado.webp" alt="Teclado Redragon Kumara K552" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Teclado Redragon Kumara</div>
         <div class="precio-tarjeta">$32.990 CLP</div>
         <a href="detalle.html?id=teclado" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="pc tendencias">
+      <div class="tarjeta" data-categoria="mouse tendencias">
         <img src="img/mouse.webp" alt="Mouse Logitech G305" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Mouse Logitech G305</div>
         <div class="precio-tarjeta">$29.990 CLP</div>
@@ -98,15 +139,60 @@
         <a href="detalle.html?id=ea-fc" class="boton-azul">Ver Detalle</a>
       </div>
 
-      <div class="tarjeta" data-categoria="pc">
+      <div class="tarjeta" data-categoria="mousepad accesorios">
         <img src="img/mousepad.jpg" alt="Mousepad Monster Games USB RGB Negro" class="imagen-tarjeta">
         <div class="titulo-tarjeta">Mousepad Monster Games USB RGB Negro</div>
         <div class="precio-tarjeta">$9.990 CLP</div>
         <a href="detalle.html?id=mousepad" class="boton-azul">Ver Detalle</a>
       </div>
+
+      <div class="tarjeta" data-categoria="consolas">
+        <img src="img/play.avif" alt="PlayStation 5" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Consola PlayStation 5</div>
+        <div class="precio-tarjeta">$549.990 CLP</div>
+        <a href="detalle.html?id=ps5" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="consolas accesorios">
+        <img src="img/mandoxbox.avif" alt="PlayStation 5" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Mando Inalámbrico Xbox Wireless Controller Robot White</div>
+        <div class="precio-tarjeta">$69.990 CLP</div>
+        <a href="detalle.html?id=mandoxbox" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="computadores-gamers">
+        <img src="img/gabinete.webp" alt="Gabinete Gamer Mid-Tower RGB Vidrio Templado" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Gabinete Gamer Mid-Tower RGB Vidrio Templado</div>
+        <div class="precio-tarjeta">$45.990 CLP</div>
+        <a href="detalle.html?id=gabinetegamer" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="computadores-gamers">
+        <img src="img/pc.webp" alt="Pc Gamer Vibora Black V2 AMD Ryzen 5 5600GT" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Pc Gamer Vibora Black V2 AMD Ryzen 5 5600GT</div>
+        <div class="precio-tarjeta">$589.990 CLP</div>
+        <a href="detalle.html?id=pcGamerVibora" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="computadores-gamers">
+        <img src="img/note.png" alt="Notebook Asus Intel Core i5 12GB SSD Azul Marino" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Notebook Asus Intel Core i5 12GB SSD Azul Marino</div>
+        <div class="precio-tarjeta">$499.990 CLP</div>
+        <a href="detalle.html?id=notebookAsus" class="boton-azul">Ver Detalle</a>
+      </div>
+
+      <div class="tarjeta" data-categoria="computadores-gamers">
+        <img src="img/monitor.jpg" alt="Monitor Gamer 24\" FHD 165Hz 1ms IPS" class="imagen-tarjeta">
+        <div class="titulo-tarjeta">Monitor Gamer 24\" FHD 165Hz 1ms IPS</div>
+        <div class="precio-tarjeta">$119.990 CLP</div>
+        <a href="detalle.html?id=monitorGamer" class="boton-azul">Ver Detalle</a>
+      </div>
+
     </div>
   </main> 
 
-  <script src="js/filtros_inicio.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/tienda.js"></script>
+  <script src="js/filtros.js"></script>
 </body>
 </html>
