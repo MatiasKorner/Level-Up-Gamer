@@ -223,3 +223,33 @@
 .pie-autenticacion a:hover {
   text-decoration: underline;
 }
+
+.campo-form {
+  margin-top: 18px;
+}
+
+.campo-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.campo-form input {
+  width: 100%;
+  padding: 14px 16px;
+  background: #1b1f2a;
+  border: 1px solid #2b3040;
+  border-radius: 8px;
+  color: #ffffff;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.campo-form input:focus {
+  border-color: #39ff14;
+}
+
+.campo-form input::placeholder {
+  color: #6f7785;
+}

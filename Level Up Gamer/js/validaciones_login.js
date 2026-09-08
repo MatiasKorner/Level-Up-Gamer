@@ -7,6 +7,7 @@ function validarRegistro(event) {
   const pass1 = document.getElementById("pass1").value;
   const pass2 = document.getElementById("pass2").value;
   const terminos = document.getElementById("terminos").checked;
+  const codigoReferido = document.getElementById("codigo-referido").value.trim();
 
   if (nombre === "" || nombre.length < 3) {
     alert("Por favor, ingresa tu nombre completo (mínimo 3 caracteres).");
@@ -50,7 +51,8 @@ function validarRegistro(event) {
   nivel: 1,
   puntos: 0,
   puntosSiguienteNivel: 1000,
-  pedidosRealizados: 0
+  pedidosRealizados: 0,
+  codigoReferido: codigoReferido
 };
 
   localStorage.setItem(
