@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const precioEl = document.getElementById('detalle-precio');
   const descEl = document.getElementById('detalle-descripcion');
   const imgEl = document.getElementById('detalle-imagen');
+  const btnCarrito = document.querySelector('[data-add-to-cart]');
 
   if (productoId && productos[productoId]) {
     const item = productos[productoId];
@@ -67,6 +68,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tituloEl) tituloEl.textContent = item.titulo;
     if (precioEl) precioEl.textContent = item.precio;
     if (descEl) descEl.textContent = item.descripcion;
+
+    if (btnCarrito) {
+      btnCarrito.addEventListener('click', () => {
+        if (typeof LevelUp === 'undefined') {
+          alert('No se pudo cargar el carrito.');
+          return;
+        }
+        const precioNumero = Number(item.precio.replace(/[^0-9]/g, ''));
+        LevelUp.Carrito.agregar({
+          id: productoId,
+          nombre: item.titulo,
+          variante: 'Unidad',
+          precio: precioNumero,
+          cantidad: 1,
+          img: item.imagen
+        });
+        LevelUp.toast(item.titulo + ' agregado al carrito');
+        const badge = document.getElementById('cart-count-badge');
+        if (badge) badge.textContent = LevelUp.Carrito.contarUnidades();
+      });
+    }
   } else {
     if (tituloEl) tituloEl.textContent = "Producto no encontrado";
     if (descEl) descEl.textContent = "El ID especificado en la URL (" + productoId + ") no está registrado en el sistema.";
