@@ -46,7 +46,45 @@ const productos = {
     precio: "$9.990 CLP",
     imagen: "img/mousepad.jpg",
     descripcion: "Superficie de tela de alta precisión con bordes iluminados por RGB personalizables mediante conexión USB."
-  }
+  },
+  ps5: {
+  titulo: "Consola PlayStation 5 Edición Digital",
+  precio: "$549.990 CLP",
+  imagen: "img/play.avif",
+  descripcion: "Consola de nueva generación con SSD ultra rápido y soporte para resolución 4K a 120 FPS."
+  },
+  mandoxbox: {
+  titulo: "Mando Inalámbrico Xbox Wireless Controller Robot White",
+  precio: "$69.990 CLP",
+  imagen: "img/mandoxbox.avif",
+  descripcion: "Control inalámbrico ergonómico con agarre texturizado y conectividad Bluetooth para PC y consola."
+  },
+  gabinetegamer: {
+  titulo: "Gabinete Gamer Mid-Tower RGB Vidrio Templado",
+  precio: "$45.990 CLP",
+  imagen: "img/gabinete.webp",
+  descripcion: "Chasis ATX con panel lateral de vidrio templado e iluminación RGB con excelente flujo de aire."
+  },
+ pcGamerVibora: {
+  titulo: "PC Gamer Víbora Black V2 AMD Ryzen 5 5600GT",
+  precio: "$429.990 CLP",
+  imagen: "img/pc.webp",
+  descripcion: "Equipo de escritorio equipado con procesador AMD Ryzen 5 5600GT y gráficos Radeon Vega 7 integrados."
+  },
+notebookAsus: {
+  titulo: "Notebook Asus Intel Core i5 12GB SSD Azul Marino",
+  precio: "$499.990 CLP",
+  imagen: "img/note.png",
+  descripcion: "Laptop ultraportátil con procesador Intel Core i5, 12GB de memoria RAM y SSD rápido en acabado azul marino."
+},
+monitorGamer: {
+  titulo: "Monitor Gamer 24\" FHD 165Hz 1ms IPS",
+  precio: "$129.990 CLP",
+  imagen: "img/monitor.jpg",
+  descripcion: "Pantalla Full HD con tasa de refresco de 165Hz y 1ms de respuesta, ideal para una experiencia fluida e inmersiva."
+}
+
+
 };
 
 document.addEventListener('DOMContentLoaded', () => {
