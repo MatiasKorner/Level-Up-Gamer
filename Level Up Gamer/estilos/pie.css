@@ -1,0 +1,101 @@
+/* ==========================================================================
+   PIE DE PÁGINA (FOOTER) - LEVEL UP
+   ========================================================================== */
+.pie-pagina {
+  background-color: #0d0f14;
+  color: #ffffff;
+  padding: 40px 20px 20px 20px;
+  border-top: 1px solid #1e2430;
+  margin-top: 60px;
+  font-family: sans-serif;
+}
+
+.pie-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.pie-columna {
+  flex: 1;
+  min-width: 200px;
+}
+
+.pie-logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.pie-logo span {
+  color: #1a9fff; /* Azul similar a tus botones */
+}
+
+.pie-columna h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #1a9fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pie-columna p {
+  color: #a0aab8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pie-columna ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pie-columna ul li {
+  margin-bottom: 10px;
+}
+
+.pie-columna ul li a {
+  color: #a0aab8;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.pie-columna ul li a:hover {
+  color: #1a9fff;
+}
+
+.pie-creditos {
+  max-width: 1200px;
+  margin: 30px auto 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #1a202c;
+  text-align: center;
+}
+
+.pie-creditos p {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* LOGOO */
+.pie-logo-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.pie-logo-img {
+  height: 60px; /* Ajusta la altura de la imagen del logo según tu diseño */
+  width: auto;
+}
+
+.pie-logo-contenedor .pie-logo {
+  margin-bottom: 0; /* Quita el margen inferior para alinearse con la imagen */
+}
