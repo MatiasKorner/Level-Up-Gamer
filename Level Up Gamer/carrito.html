@@ -1,11 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<<<<<<< Updated upstream
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-=======
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Level-Up Gamer - Mi Carrito</title>
@@ -16,9 +11,72 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/componentes.css">
   <link rel="stylesheet" href="css/inicio.css">
->>>>>>> Stashed changes
 </head>
 <body>
+  <header class="navegacion">
+  <a href="index.html" class="logotipo">LEVEL-<span>UP</span></a>
+
+  <ul class="menu-principal">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="catalogo.html">Catálogo</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="support.html">Soporte</a></li>
+  </ul>
+
+  <div class="contenedor-derecho">
+    <ul class="enlaces-nav">
+      <li><a href="login.html">Iniciar sesión</a></li>
+      <li><a href="registro.html">Registrarse</a></li>
+    </ul>
+
+    <div class="iconos-nav">
+      <a href="carrito.html" class="icono-carrito" aria-label="Ver carrito">
+        🛒 <span id="cart-count-badge" class="contador-carrito">0</span>
+      </a>
+
+      <a href="perfil.html" class="icono-perfil" aria-label="Ver perfil">
+        👤
+      </a>
+    </div>
+  </div>
+  </header>
+  <div class="app-shell">
+    <header class="topbar">
+      <a href="catalogo.html" class="back-arrow" aria-label="Volver">&larr;</a>
+      <h1 class="page-title">Mi Carrito</h1>
+    </header>
+
+    <main class="container px-3 pb-5">
+      <p class="subtitulo-pagina" id="carrito-subtitulo">Cargando...</p>
+
+      <div id="carrito-lista"></div>
+
+      <div id="carrito-vacio" class="sin-resultados d-none">
+        Tu carrito está vacío. <a href="catalogo.html" class="enlace-registro">Ver catálogo &rarr;</a>
+      </div>
+
+      <div id="carrito-con-items">
+        <div class="promo-box" id="beneficio-duoc">
+          <p>🎓 Beneficio Duoc UC: 20% de descuento</p>
+        </div>
+
+        <div class="summary-box">
+          <div class="summary-row"><span>Subtotal</span><span id="resumen-subtotal">$0 CLP</span></div>
+          <div class="summary-row descuento"><span id="resumen-descuento-label">Descuento</span><span id="resumen-descuento">-$0 CLP</span></div>
+          <div class="summary-row envio"><span>Envío</span><span>Gratis</span></div>
+          <div class="summary-row total"><span>Total</span><span id="resumen-total">$0 CLP</span></div>
+        </div>
+
+        <a href="pago.html" class="btn btn-primary w-100 fw-bold text-uppercase py-2" id="btn-proceder">
+          Proceder al pago &rarr;
+        </a>
+      </div>
+    </main>
+
     
+  </div>
+
+  <script src="js/tienda.js"></script>
+  <script src="js/carrito.js"></script>
 </body>
 </html>

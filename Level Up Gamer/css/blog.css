@@ -1,4 +1,6 @@
 /* solo se aplicaran los estilos a los elemenos "body" */
+
+/* ===== CONFIGURACIÓN GENERAL DE LA PÁGINA DEL BLOG ===== */
 body.blog-page {
     margin: 0;
     background-color: #000000;
@@ -8,6 +10,7 @@ body.blog-page {
 
 }
 
+/* ===== TÍTULO PRINCIPAL DEL BLOG ===== */
 .blog-title {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
@@ -16,6 +19,7 @@ body.blog-page {
     margin:0;
 }
 
+/* ===== BOTONES DE CATEGORÍAS ===== */
 .category-btn {
     background-color: transparent;
     color: #525151;
@@ -27,6 +31,7 @@ body.blog-page {
     transition: all 0.2s ease;
 }
 
+/* ===== CATEGORÍA ACTIVA ===== */
 .category-btn.active {
     background-color: #39ff14;
     color: #000000;
@@ -36,6 +41,8 @@ body.blog-page {
 /*
 ====== Empiezan los estilos para el post destacado ======
 */
+
+/* ===== CONTENEDOR DEL POST DESTACADO ===== */
 .featured-post {
     border-radius: 1rem;
     overflow: hidden;
@@ -43,12 +50,14 @@ body.blog-page {
     position: relative;
 }
 
+/* ===== ENLACE DEL POST DESTACADO ===== */
 .featured-link {
     text-decoration: none;
     color:white;
     display: block;
 }
 
+/* ===== CONTENEDOR DE LA IMAGEN DESTACADA ===== */
 .featured-image-wrapper {
     position: relative;
     width: 100%;
@@ -56,6 +65,7 @@ body.blog-page {
     overflow: hidden;
 }
 
+/* ===== IMAGEN DEL POST DESTACADO ===== */
 .featured-image {
     width: 100%;
     height: 100%;
@@ -63,10 +73,12 @@ body.blog-page {
     transition: transform 0.4s ease;  /* agrega una transicion al pasar el mouse por encima */
 }
 
+/* ===== EFECTO HOVER DE LA IMAGEN DESTACADA ===== */
 .featured-post:hover .featured-image {
     transform: scale(1.03);  /* aumenta el tamaño de la imagen al pasar el mouse por encima */
 }
 
+/* ===== ETIQUETA DEL POST DESTACADO ===== */
 .featured-badge {
     position: absolute;
     top: 0.75rem;
@@ -79,6 +91,7 @@ body.blog-page {
     border-radius: 3px;
 }
 
+/* ===== CONTENIDO SUPERPUESTO DEL POST DESTACADO ===== */
 .featured-content {
     position: absolute;
     bottom: 0;
@@ -88,6 +101,7 @@ body.blog-page {
     background-color: rgba(0, 0, 0, 0.75)
 }
 
+/* ===== TÍTULO DEL POST DESTACADO ===== */
 .featured-title {
     font-family: 'Orbitron', sans-serif;
     font-size: clamp(0.86rem, 1.5vw, 1.25rem);
@@ -95,12 +109,14 @@ body.blog-page {
     margin: 0 0 8px 0;
 }
 
+/* ===== INFORMACIÓN DEL POST DESTACADO ===== */
 .featured-meta {
     display: flex;
     gap: 0.6rem;
     font-size: 0.8rem;
 }
 
+/* ===== CATEGORÍA DEL POST ===== */
 .post-category {
     font-family: 'Orbitron', sans-serif;
     border: 0.1rem solid #1e90ff;
@@ -111,12 +127,15 @@ body.blog-page {
     font-size: clamp(0.5rem, 1vw, 1rem);
 }
 
+/* ===== TIEMPO DE PUBLICACIÓN ===== */
 .post-time {
     color: #525151;
 }
 /* 
 @media (max-width: 576px) : if (anchoPantalla) > 576px then....
  */
+
+/* ===== DISEÑO RESPONSIVE PARA PANTALLAS PEQUEÑAS ===== */
 @media (max-width: 576px) {
     .category-btn {
         padding: 0.25rem 0.6rem;
@@ -132,12 +151,14 @@ body.blog-page {
 ====== Empiezan los estilos para los post pequeños ======
 */
 
+/* ===== LISTA DE POSTS PEQUEÑOS ===== */
 .post-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
+/* ===== TARJETA DE POST PEQUEÑO ===== */
 .post-card {
     display: flex;
     gap: 1rem;
@@ -150,10 +171,12 @@ body.blog-page {
     transition: border-color 0.2 ease;
 }
 
+/* ===== EFECTO HOVER DE LA TARJETA ===== */
 .post-card:hover {
     border-color: #444444;
 }
 
+/* ===== IMAGEN DEL POST PEQUEÑO ===== */
 .post-card-image {
     width: 7rem;
     height: 7rem;
@@ -161,6 +184,7 @@ body.blog-page {
     flex-shrink: 0;
 }
 
+/* ===== CONTENIDO DEL POST PEQUEÑO ===== */
 .post-card-content {
     display: flex;
     flex-direction: column;
@@ -169,6 +193,7 @@ body.blog-page {
     gap: 0.4rem;
 }
 
+/* ===== CATEGORÍA DEL POST PEQUEÑO ===== */
 .post-card-category {
     font-size: clamp(0.5rem, 1vw, 1.5rem);
     font-weight: 700;
@@ -179,6 +204,7 @@ body.blog-page {
     width: fit-content;
 }
 
+/* ===== TÍTULO DEL POST PEQUEÑO ===== */
 .post-card-title {
     font-family: 'Orbitron', sans-serif;
     font-size: clamp(0.8rem, 2vw, 1rem);
@@ -187,11 +213,13 @@ body.blog-page {
     line-height: 1.3;
 }
 
+/* ===== TIEMPO DEL POST PEQUEÑO ===== */
 .post-card-time {
     font-size: 0.75rem;
     color:#525151;
 }
 
+/* ===== INFORMACIÓN DEL POST PEQUEÑO ===== */
 .post-card-meta {
     display: flex;
     align-items: center;

@@ -1,3 +1,4 @@
+/* ===== CONFIGURACIÓN GENERAL DE LA PÁGINA DEL ARTÍCULO ===== */
 body.article-page {
     margin: 0;
     background-color: #000000;
@@ -6,10 +7,12 @@ body.article-page {
     min-height: 100dvh;
 }
 
+/* ===== ENCABEZADO DEL ARTÍCULO ===== */
 .article-header {
     padding: 0.5rem 0;
 }
 
+/* ===== BOTÓN PARA VOLVER ===== */
 .back-button {
     color: #ffffff;
     text-decoration: none;
@@ -22,18 +25,22 @@ body.article-page {
     gap: 0.4rem;
 }
 
+/* ===== EFECTO HOVER DEL BOTÓN VOLVER ===== */
 .back-button:hover {
     color: #cccccc;
 }
 
+/* ===== FLECHA DEL BOTÓN VOLVER ===== */
 .back-arrow {
     color: #1e90ff;
 }
 
+/* ===== CONTENEDOR DE LA IMAGEN PRINCIPAL DEL ARTÍCULO ===== */
 .article-hero {
     overflow: hidden;
 }
 
+/* ===== IMAGEN PRINCIPAL DEL ARTÍCULO ===== */
 .article-hero-image {
     width: 100%;
     height: clamp(8rem, 40vw, 17rem);
@@ -41,6 +48,7 @@ body.article-page {
     display: block;
 }
 
+/* ===== ESTILO GENERAL DE LAS ETIQUETAS ===== */
 .badge-custom {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.7rem;
@@ -51,18 +59,21 @@ body.article-page {
     text-transform: uppercase;
 }
 
+/* ===== ETIQUETA DE REVIEWS ===== */
 .badge-reviews {
     border: 1px solid #1e90ff;
     color: #1e90ff;
     font-size: clamp(0.5rem, 1vw, 1.5rem);
 }
 
+/* ===== ETIQUETA TOP 10 ===== */
 .badge-top10 {
     border: 1px solid #39ff14;
     color: #39ff14;
     font-size: clamp(0.5rem, 1vw, 1.5rem);
 }
 
+/* ===== TÍTULO PRINCIPAL DEL ARTÍCULO ===== */
 .article-title {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
@@ -73,37 +84,43 @@ body.article-page {
     margin: 0;
 }
 
- /* Elementos del editor */
- .author-avatar {
+/* Elementos del editor */
+
+/* ===== FOTO DEL AUTOR ===== */
+.author-avatar {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
- }
+}
 
- .author-name {
+/* ===== NOMBRE DEL AUTOR ===== */
+.author-name {
     font-family: 'Orbitron', sans-serif;
     font-weight: 600;
     font-size: 0.8rem;
     color: #ffffff;
- }
+}
 
- .article-meta {
+/* ===== INFORMACIÓN SECUNDARIA DEL ARTÍCULO ===== */
+.article-meta {
     font-size: 0.8rem;
     color: #525151;
- }
+}
 
- /* Elementos del parrafo */
+/* Elementos del parrafo */
 
- .article-intro {
+/* ===== PÁRRAFO INTRODUCTORIO DEL ARTÍCULO ===== */
+.article-intro {
     font-size: clamp(0.75rem, 1.3vw, 5rem);
     line-height: 1.6;
     color: #858383;
     margin: 0;
- }
+}
 
- .article-quote {
+/* ===== CITA DESTACADA DEL ARTÍCULO ===== */
+.article-quote {
     background-color: #000000;
     border: 0.1rem solid #0a3056;
     border-left: 4px solid #1e90ff;
@@ -115,27 +132,30 @@ body.article-page {
     color: #ffffff;
     margin: 0;
     font-style: italic;
- }
+}
 
- .game-number {
+/* ===== NÚMERO O POSICIÓN DEL JUEGO ===== */
+.game-number {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     font-size: clamp(0.8rem, 1.5vw, 1.35rem);
     color: #096bff;
     margin-bottom: 0.6rem;
     letter-spacing: 0.02em;
- }
+}
 
- .game-description {
+/* ===== DESCRIPCIÓN DEL JUEGO ===== */
+.game-description {
     font-size: clamp(0.75rem, 1.3vw, 2rem);
     line-height: 1.6;
     color: #858383;
     margin: 0;
- }
+}
 
- @media (max-width: 576px) {
+/* ===== DISEÑO RESPONSIVE PARA PANTALLAS PEQUEÑAS ===== */
+@media (max-width: 576px) {
     .container {
         padding-left: 1rem;
         padding-right: 1rem;
     }
- }
+}
