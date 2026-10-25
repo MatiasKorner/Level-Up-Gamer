@@ -33,7 +33,6 @@ export default function App() {
           <Route path="/pago" element={<Pago />} />
           <Route path="/confirmacion" element={<ConfirmacionPedido />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/registro" element={<Registro />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/pedidos" element={<ListaPedidos />} />
           <Route path="/puntos" element={<Puntos />} />
@@ -44,6 +43,7 @@ export default function App() {
         </Route>
 
         {/* Fuera del Layout: la página de error no lleva navbar ni footer */}
+        <Route path="/registro" element={<Registro />} />
         <Route path="/404" element={<PaginaError />} />
         <Route path="*" element={<PaginaError />} />
       </Routes>
