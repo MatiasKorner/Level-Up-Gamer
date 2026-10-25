@@ -33,8 +33,6 @@ export default function App() {
           <Route path="/pago" element={<Pago />} />
           <Route path="/confirmacion" element={<ConfirmacionPedido />} />
           <Route path="/perfil" element={<Perfil />} />
-          <Route path="/pedidos" element={<ListaPedidos />} />
-          <Route path="/puntos" element={<Puntos />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/articuloN1" element={<ArticuloN1 />} />
           <Route path="/soporte" element={<Soporte />} />
@@ -42,10 +40,12 @@ export default function App() {
         </Route>
 
         {/* Fuera del Layout no mostrara la navbar */}
+        <Route path="/pedidos" element={<ListaPedidos />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/404" element={<PaginaError />} />
         <Route path="*" element={<PaginaError />} />
+        <Route path="/puntos" element={<Puntos />} />
       </Routes>
     </ErrorBoundary>
   );
