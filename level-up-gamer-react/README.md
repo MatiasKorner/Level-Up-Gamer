@@ -31,18 +31,18 @@ Se está migrando el proyecto original de HTML, CSS y JavaScript a React. La sig
 | `error.html` | `PaginaError.jsx` |
 | `index.html` | `Inicio.jsx` |
 
-**Progreso:** 13 de 16 páginas migradas.
+**Progreso:** 16 de 16 páginas migradas.
 
 ### ⏳ Páginas pendientes de migración
 
 - [X] `login.html`
-- [ ] `pago.html`
+- [X] `pago.html`
 - [X] `pedidos.html`
 - [X] `perfil.html`
 - [X] `puntos.html`
 - [X] `registro.html`
-- [ ] `confirmacion.html`
-- [ ] `admin.html`
+- [x] `confirmacion.html`
+- [X] `admin.html`
 
 ## 📝 Consideraciones
 

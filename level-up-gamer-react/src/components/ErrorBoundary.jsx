@@ -9,7 +9,6 @@ export default class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, info) {
-    // Aquí podrías enviar el error a un servicio de registro más adelante
     console.error("Error capturado:", error, info.componentStack);
   }
 

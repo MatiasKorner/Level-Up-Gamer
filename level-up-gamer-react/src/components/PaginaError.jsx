@@ -20,7 +20,6 @@ export default function PaginaError({ codigo = "404", subtitulo = "...", descrip
   // 3. AQUÍ va enviarReporte
   function enviarReporte(evento) {
     evento.preventDefault();
-    // ...la versión actualizada con trim()
   }
 
   // 4. El JSX

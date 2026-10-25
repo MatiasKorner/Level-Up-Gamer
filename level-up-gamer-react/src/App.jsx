@@ -30,22 +30,23 @@ export default function App() {
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/detalle" element={<DetallesProducto />} />
           <Route path="/carrito" element={<Carrito />} />
-          <Route path="/pago" element={<Pago />} />
-          <Route path="/confirmacion" element={<ConfirmacionPedido />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/articuloN1" element={<ArticuloN1 />} />
           <Route path="/soporte" element={<Soporte />} />
-          <Route path="/admin" element={<MenuAdmin />} />
         </Route>
 
         {/* Fuera del Layout no mostrara la navbar */}
+        <Route path="/pago" element={<Pago />} />
+        <Route path="/confirmacion" element={<ConfirmacionPedido />} />
+        <Route path="/admin" element={<MenuAdmin />} />
         <Route path="/pedidos" element={<ListaPedidos />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/404" element={<PaginaError />} />
         <Route path="*" element={<PaginaError />} />
         <Route path="/puntos" element={<Puntos />} />
+
       </Routes>
     </ErrorBoundary>
   );

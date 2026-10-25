@@ -26,7 +26,7 @@
 }
 
 /* ===== INFORMACIÓN DEL USUARIO ADMINISTRATIVO ===== */
-.admin-usuario {
+.admin-usuario  {
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -39,7 +39,7 @@
 }
 
 /* ===== BOTÓN PARA CERRAR SESIÓN ===== */
-#btn-cerrar-sesion {
+.admin-usuario #btn-cerrar-sesion {
   padding: 0.6rem 1rem;
   background-color: transparent;
   color: white;
@@ -49,7 +49,7 @@
 }
 
 /* ===== EFECTO HOVER DEL BOTÓN CERRAR SESIÓN ===== */
-#btn-cerrar-sesion:hover {
+.admin-usuario #btn-cerrar-sesion:hover {
   background-color: var(--color-verde);
   color: black;
 }

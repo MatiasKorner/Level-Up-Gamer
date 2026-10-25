@@ -173,11 +173,11 @@ export default function Catalogo() {
 
   // Filtrar las tarjetas
   const productosFiltrados = productos.filter((producto) => {
-    // Obtenemos las categorías de la tarjeta
+    // las categorías de la tarjeta
     // Ejemplo: "consolas tendencias" → ["consolas", "tendencias"]
     const cats = producto.categorias.toLowerCase().split(/\s+/);
 
-    // Obtenemos el título del producto
+    //el título del producto
     const titulo = producto.nombre.toLowerCase();
 
     // ¿Coincide con la categoría seleccionada?
@@ -193,7 +193,7 @@ export default function Catalogo() {
     return coincideCategoria && coincideBusqueda;
   });
 
-  // PASO 2: Ordenar las tarjetas filtradas
+  // Ordenar las tarjetas filtradas
   const productosOrdenados = [...productosFiltrados].sort((a, b) => {
     // Según la opción elegida, ordena de forma diferente
     switch (criterioOrden) {
