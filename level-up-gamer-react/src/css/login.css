@@ -7,7 +7,7 @@
   --gris-texto: #8a99ad;
 }
 /* ===== CONFIGURACIÓN GENERAL DE LA PÁGINA ===== */
-body {
+body.login-page {
   background-color: var(--negro-fondo);
   color: #ffffff;
   height: 100vh;

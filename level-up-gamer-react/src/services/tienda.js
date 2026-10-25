@@ -110,6 +110,7 @@ export const LevelUp = (() => {
     },
     guardarItems(items) {
       guardar(KEYS.CART, items);
+      window.dispatchEvent(new Event("lug-carrito-actualizado"));
     },
     agregar(producto) {
       const items = this.obtenerItems();
@@ -275,4 +276,6 @@ export const LevelUp = (() => {
     leerPedidoAVer,
   };
 })();
+
+export default LevelUp;
 // A FUTURO COLOCAR EL FRAGMENTO DE JS ELIMINADO AQUI

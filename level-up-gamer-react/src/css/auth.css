@@ -161,7 +161,7 @@
 /* --- OLVIDASTE CONTRASEÑA --- */
 
 /* ===== ENLACE PARA RECUPERAR CONTRASEÑA ===== */
-.enlace-olvido {
+.contenedor-autenticacion .enlace-olvido {
   display: block;
   text-align: right;
   color: var(--color-azul, #1e90ff);
@@ -172,7 +172,7 @@
 }
 
 /* ===== EFECTO HOVER DEL ENLACE DE CONTRASEÑA ===== */
-.enlace-olvido:hover {
+.contenedor-autenticacion .enlace-olvido:hover {
   text-decoration: underline;
 }
 
@@ -265,12 +265,12 @@
 }
 
 /* ===== CONTENEDOR DEL CAMPO DE CÓDIGO DE REFERIDO ===== */
-.campo-form {
+.contenedor-autenticacion .campo-form {
   margin-top: 18px;
 }
 
 /* ===== ETIQUETA DEL CAMPO DE CÓDIGO DE REFERIDO ===== */
-.campo-form label {
+.contenedor-autenticacion .campo-form label {
   display: block;
   margin-bottom: 8px;
   color: #ffffff;
@@ -278,7 +278,7 @@
 }
 
 /* ===== CAMPO DE ENTRADA DEL CÓDIGO DE REFERIDO ===== */
-.campo-form input {
+.contenedor-autenticacion .campo-form input {
   width: 100%;
   padding: 14px 16px;
   background: #1b1f2a;
@@ -290,11 +290,11 @@
 }
 
 /* ===== EFECTO AL SELECCIONAR EL CAMPO DE REFERIDO ===== */
-.campo-form input:focus {
+.contenedor-autenticacion .campo-form input:focus {
   border-color: #39ff14;
 }
 
 /* ===== PLACEHOLDER DEL CAMPO DE REFERIDO ===== */
-.campo-form input::placeholder {
+.contenedor-autenticacion .campo-form input::placeholder {
   color: #6f7785;
 }
