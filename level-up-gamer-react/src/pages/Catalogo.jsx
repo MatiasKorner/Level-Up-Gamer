@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 
+import "../css/base.css";
+import "../css/componentes.css";
+import "../css/inicio.css";
+import "../css/catalogo.css";
+import "../css/pie.css";
+
 const productos = [
   {
     id: "mando",

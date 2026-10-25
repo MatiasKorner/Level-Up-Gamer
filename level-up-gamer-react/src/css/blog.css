@@ -137,9 +137,9 @@ body.blog-page {
 
 /* ===== DISEÑO RESPONSIVE PARA PANTALLAS PEQUEÑAS ===== */
 @media (max-width: 576px) {
-    .category-btn {
-        padding: 0.25rem 0.6rem;
-        font-size: 0.65rem;
+    .article-page .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 /*

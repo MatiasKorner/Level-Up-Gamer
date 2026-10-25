@@ -3,6 +3,12 @@ import { useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { LevelUp } from '../services/tienda.js';
 
+import "../css/base.css";
+import "../css/componentes.css";
+import "../css/inicio.css";
+import "../css/detalle.css";
+
+
 const productos = {
   mando: {
     titulo: 'Mando Inalámbrico DualSense PS5',

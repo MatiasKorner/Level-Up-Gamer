@@ -2,6 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { LevelUp } from "../services/tienda.js";
 
+import "../css/estilos.css";
+import "../css/compras.css";
+import "../css/base.css";
+import "../css/componentes.css";
+import "../css/inicio.css";
+
 export default function Carrito() {
   // se carga el carrito guardado en localStorage al abrir la página.
   const [items, setItems] = useState(() =>

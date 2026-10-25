@@ -1,5 +1,5 @@
 /* ===== CONFIGURACIÓN GENERAL DE LA PÁGINA DEL ARTÍCULO ===== */
-body.article-page {
+article-page {
     margin: 0;
     background-color: #000000;
     color: #ffffff;
