@@ -104,13 +104,13 @@ describe("productos.js (CRUD)", () => {
   // ---- ELIMINAR ----
   describe("eliminar", () => {
     it("borra el producto y devuelve true", () => {
-      expect(eliminarProducto("mando")).toBeTrue();
+      expect(eliminarProducto("mando")).toBe(true);
       expect(obtenerProductoPorId("mando")).toBeUndefined();
       expect(obtenerProductos().length).toBe(TOTAL_INICIAL - 1);
     });
 
     it("devuelve false si el producto no existe", () => {
-      expect(eliminarProducto("no-existe")).toBeFalse();
+      expect(eliminarProducto("no-existe")).toBe(false);
       expect(obtenerProductos().length).toBe(TOTAL_INICIAL);
     });
   });

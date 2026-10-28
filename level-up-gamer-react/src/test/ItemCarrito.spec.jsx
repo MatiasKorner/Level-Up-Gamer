@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import ItemCarrito from "../components/ItemCarrito.jsx";
 import { LevelUp } from "../services/tienda.js";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 
 const PRODUCTO = {
   id: "juego-a",
@@ -16,9 +17,8 @@ describe("ItemCarrito", () => {
   let onEliminar;
 
   beforeEach(() => {
-    // Espías de Jasmine: funciones falsas que registran si las llamaron
-    onCambiarCantidad = jasmine.createSpy("onCambiarCantidad");
-    onEliminar = jasmine.createSpy("onEliminar");
+    onCambiarCantidad = vi.fn();
+    onEliminar = vi.fn();
 
     render(
       <ItemCarrito
