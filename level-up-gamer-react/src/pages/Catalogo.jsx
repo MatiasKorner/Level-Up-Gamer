@@ -1,118 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from 'react-router-dom';
+import TarjetaProducto from "../components/TarjetaProducto.jsx";
+import { obtenerProductos } from "../data/productos.js";
 
 import "../css/base.css";
 import "../css/componentes.css";
 import "../css/inicio.css";
 import "../css/catalogo.css";
 import "../css/pie.css";
-
-const productos = [
-  {
-    id: "mando",
-    nombre: "Mando DualSense PS5",
-    precio: 64990,
-    imagen: "mando.jpg",
-    alt: "Mando DualSense PS5",
-    categorias: "consolas tendencias accesorios",
-  },
-  {
-    id: "auris",
-    nombre: "Audífonos HyperX Cloud II",
-    precio: 89990,
-    imagen: "auris.webp",
-    alt: "Audífonos HyperX Cloud II",
-    categorias: "accesorios tendencias",
-  },
-  {
-    id: "teclado",
-    nombre: "Teclado Redragon Kumara",
-    precio: 32990,
-    imagen: "teclado.webp",
-    alt: "Teclado Redragon Kumara",
-    categorias: "accesorios tendencias",
-  },
-  {
-    id: "mouse",
-    nombre: "Mouse Logitech G305",
-    precio: 29990,
-    imagen: "mouse.webp",
-    alt: "Mouse Logitech G305",
-    categorias: "mouse tendencias",
-  },
-  {
-    id: "gta",
-    nombre: "Grand Theft Auto VI (PS5)",
-    precio: 69990,
-    imagen: "gta.webp",
-    alt: "Grand Theft Auto VI para PS5",
-    categorias: "consolas tendencias",
-  },
-  {
-    id: "ea-fc",
-    nombre: "EA Sports FC 26",
-    precio: 54990,
-    imagen: "fc.jpg",
-    alt: "EA Sports FC 26",
-    categorias: "consolas",
-  },
-  {
-    id: "mousepad",
-    nombre: "Mousepad Monster Games USB RGB Negro",
-    precio: 9990,
-    imagen: "mousepad.jpg",
-    alt: "Mousepad Monster Games USB RGB Negro",
-    categorias: "mousepad accesorios",
-  },
-  {
-    id: "ps5",
-    nombre: "Consola PlayStation 5",
-    precio: 549990,
-    imagen: "play.avif",
-    alt: "Consola PlayStation 5",
-    categorias: "consolas",
-  },
-  {
-    id: "mandoxbox",
-    nombre: "Mando Inalámbrico Xbox Wireless Controller Robot White",
-    precio: 69990,
-    imagen: "mandoxbox.avif",
-    alt: "Mando inalámbrico Xbox Robot White",
-    categorias: "consolas accesorios",
-  },
-  {
-    id: "gabinetegamer",
-    nombre: "Gabinete Gamer Mid-Tower RGB Vidrio Templado",
-    precio: 45990,
-    imagen: "gabinete.webp",
-    alt: "Gabinete Gamer Mid-Tower RGB",
-    categorias: "computadores-gamers",
-  },
-  {
-    id: "pcGamerVibora",
-    nombre: "Pc Gamer Vibora Black V2 AMD Ryzen 5 5600GT",
-    precio: 589990,
-    imagen: "pc.webp",
-    alt: "PC Gamer Vibora Black V2",
-    categorias: "computadores-gamers",
-  },
-  {
-    id: "notebookAsus",
-    nombre: "Notebook Asus Intel Core i5 12GB SSD Azul Marino",
-    precio: 499990,
-    imagen: "note.png",
-    alt: "Notebook Asus Intel Core i5",
-    categorias: "computadores-gamers",
-  },
-  {
-    id: "monitorGamer",
-    nombre: 'Monitor Gamer 24" FHD 165Hz 1ms IPS',
-    precio: 119990,
-    imagen: "monitor.jpg",
-    alt: "Monitor Gamer 24 pulgadas",
-    categorias: "computadores-gamers",
-  },
-];
 
 const categoriasPrincipales = [
   { valor: "todos", texto: "Todos" },
@@ -129,11 +23,9 @@ const categoriasAdicionales = [
   { valor: "poleras-polerones", texto: "Poleras y polerones" },
 ];
 
-function formatearPrecio(precio) {
-  return `$${precio.toLocaleString("es-CL")} CLP`;
-}
-
 export default function Catalogo() {
+  // Los productos vienen del archivo de datos (se leen una sola vez)
+  const [productos] = useState(() => obtenerProductos());
   const [categoriaActual, setCategoriaActual] = useState("todos");
   const [textoBusqueda, setTextoBusqueda] = useState("");
   const [criterioOrden, setCriterioOrden] = useState("");
@@ -318,30 +210,7 @@ export default function Catalogo() {
 
       <div className="rejilla-productos">
         {productosOrdenados.map((producto) => (
-          <div
-            className="tarjeta"
-            key={producto.id}
-            data-categoria={producto.categorias}
-          >
-            <img
-              src={`/img/${producto.imagen}`}
-              alt={producto.alt}
-              className="imagen-tarjeta"
-            />
-
-            <div className="titulo-tarjeta">{producto.nombre}</div>
-
-            <div className="precio-tarjeta">
-              {formatearPrecio(producto.precio)}
-            </div>
-
-            <Link
-              to={`/detalle?id=${encodeURIComponent(producto.id)}`}
-              className="boton-azul"
-            >
-              Ver Detalle
-            </Link>
-          </div>
+          <TarjetaProducto key={producto.id} producto={producto} />
         ))}
       </div>
 

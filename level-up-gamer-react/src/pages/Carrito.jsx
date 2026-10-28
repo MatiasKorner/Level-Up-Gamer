@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { LevelUp } from "../services/tienda.js";
+import ItemCarrito from "../components/ItemCarrito.jsx";
 
 import "../css/estilos.css";
 import "../css/compras.css";
@@ -79,58 +80,15 @@ export default function Carrito() {
               : ""}
           </p>
 
-          {/* Productos del carrito */}
+          {/* Productos del carrito: cada fila es un componente ItemCarrito */}
           <div id="carrito-lista">
             {items.map((item) => (
-              <div className="cart-item" data-id={item.id} key={item.id}>
-                <img
-                  src={
-                    item.img.startsWith("/")
-                      ? item.img
-                      : `/${item.img}`
-                  }
-                  alt={item.nombre}
-                />
-
-                <div className="cart-item-info">
-                  <h3>{item.nombre}</h3>
-                  <p className="variante">{item.variante}</p>
-                  <p className="precio">
-                    {LevelUp.formatCLP(item.precio * item.cantidad)}
-                  </p>
-                </div>
-
-                <div className="cart-item-actions">
-                  <button
-                    type="button"
-                    className="remove-btn"
-                    aria-label={`Eliminar ${item.nombre}`}
-                    onClick={() => eliminarProducto(item.id)}
-                  >
-                    🗑
-                  </button>
-
-                  <div className="qty-stepper">
-                    <button
-                      type="button"
-                      aria-label={`Disminuir cantidad de ${item.nombre}`}
-                      onClick={() => cambiarCantidad(item.id, -1)}
-                    >
-                      -
-                    </button>
-
-                    <span>{item.cantidad}</span>
-
-                    <button
-                      type="button"
-                      aria-label={`Aumentar cantidad de ${item.nombre}`}
-                      onClick={() => cambiarCantidad(item.id, 1)}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ItemCarrito
+                key={item.id}
+                item={item}
+                onCambiarCantidad={cambiarCantidad}
+                onEliminar={eliminarProducto}
+              />
             ))}
           </div>
 
