@@ -18,12 +18,14 @@ import ArticuloN1 from "./pages/ArticuloN1.jsx";
 import Soporte from "./pages/Soporte.jsx";
 import MenuAdmin from "./pages/MenuAdmin.jsx";
 import PaginaError from "./pages/PaginaError.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 export default function App() {
   const { key } = useLocation();
 
   return (
     <ErrorBoundary resetKey={key}>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Inicio />} />

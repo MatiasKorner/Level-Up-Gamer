@@ -47,7 +47,7 @@
 }
 
 /* En móvil el menú desplegado se separa del logo con una línea */
-@media (max-width: 767.98px) {
+@media (max-width: 1199.98px) {
   .lu-header .navbar-collapse {
     border-top: 1px solid var(--lu-borde);
     margin-top: 0.5rem;
@@ -56,7 +56,7 @@
 }
 
 /* En escritorio: enlaces pegados a la izquierda, como el original */
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .lu-header .lu-nav-principal {
     gap: clamp(1rem, 3.4vw, 2.5rem);
     margin-left: clamp(1rem, 9.5vw, 7rem);

@@ -62,7 +62,7 @@ export default function Header() {
   return (
     <>
             <header className="lu-header">
-        <nav className="navbar navbar-expand-md" data-bs-theme="dark">
+        <nav className="navbar navbar-expand-xl" data-bs-theme="dark">
           {/* El container alinea el header con el contenido de las páginas */}
           <div className="container">
             <Link to="/" className="navbar-brand lu-logo">
@@ -70,7 +70,7 @@ export default function Header() {
             </Link>
 
             {/* Carrito, perfil y hamburguesa: siempre visibles */}
-            <div className="d-flex align-items-center gap-3 ms-auto order-md-3">
+            <div className="d-flex align-items-center gap-3 ms-auto order-xl-3">
               <Link
                 to="/carrito"
                 className="lu-icono position-relative"
@@ -118,11 +118,11 @@ export default function Header() {
 
             {/* Enlaces: en móvil bajan a una columna desplegable */}
             <div
-              className="collapse navbar-collapse order-md-2"
+              className="collapse navbar-collapse order-xl-2"
               id="menu-principal"
               ref={menuRef}
             >
-              <ul className="navbar-nav lu-nav-principal me-md-auto">
+              <ul className="navbar-nav lu-nav-principal me-xl-auto">
                 <li className="nav-item">
                   <NavLink to="/" end className="nav-link">
                     Inicio
