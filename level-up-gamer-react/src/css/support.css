@@ -7,22 +7,6 @@ body.support-main-page {
     min-height: 100dvh;
 }
 
-/* ===== BOTÓN PARA VOLVER ===== */
-.back-button {
-    text-decoration: none;
-    font-weight: 600;
-    color: #fff;
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(0.86rem, 1.6vw, 1.3rem);
-    letter-spacing: 0.08rem;
-}
-
-/* ===== FLECHA DEL BOTÓN VOLVER ===== */
-.back-arrow {
-    margin-right: 0.4rem;
-}
-
 /* ===== CONTENEDOR GENERAL DE SOPORTE ===== */
 .support-page {
     min-height: 100vh;

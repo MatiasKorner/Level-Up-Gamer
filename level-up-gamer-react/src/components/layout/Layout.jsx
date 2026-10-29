@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import "../../css/base.css";
 import "../../css/componentes.css";
-import "../../css/pie.css";
+
 
 export default function Layout() {
   return (

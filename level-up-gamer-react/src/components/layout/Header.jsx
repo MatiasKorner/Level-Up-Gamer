@@ -1,13 +1,18 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import useSesion from "../../hooks/useSesion.js";
 import LevelUp from "../../services/tienda.js";
+import "../../css/layout.css";
 
 const EVENTOS_CARRITO = ["lug-carrito-actualizado", "lug-cart-updated"];
 
 export default function Header() {
   const haySesion = useSesion();
+  const { pathname } = useLocation();
+
   const cerrarModalRef = useRef(null);
+  const menuRef = useRef(null);
+  const togglerRef = useRef(null);
 
   const [cantidadProductos, setCantidadProductos] = useState(() =>
     LevelUp.Carrito.contarUnidades(),
@@ -19,11 +24,8 @@ export default function Header() {
       setCantidadProductos(LevelUp.Carrito.contarUnidades());
     };
 
-    // Otra pestaña modifica el carrito
     window.addEventListener("storage", actualizarCantidad);
-    // El usuario vuelve a esta pestaña
     window.addEventListener("focus", actualizarCantidad);
-    // Este código añade o modifica productos
     EVENTOS_CARRITO.forEach((evento) =>
       window.addEventListener(evento, actualizarCantidad),
     );
@@ -36,6 +38,13 @@ export default function Header() {
       );
     };
   }, []);
+
+  // En móvil, cierra el menú desplegable al cambiar de página
+  useEffect(() => {
+    if (menuRef.current?.classList.contains("show")) {
+      togglerRef.current?.click();
+    }
+  }, [pathname]);
 
   // Si el header se desmonta con el modal abierto (login y registro están
   // fuera del Layout), limpia el fondo oscuro que deja Bootstrap
@@ -52,75 +61,110 @@ export default function Header() {
 
   return (
     <>
-      <header className="navegacion">
-        <Link to="/" className="logotipo">
-          LEVEL-<span>UP</span>
-        </Link>
-
-        <ul className="menu-principal">
-          <li>
-            <Link to="/">Inicio</Link>
-          </li>
-          <li>
-            <Link to="/catalogo">Catálogo</Link>
-          </li>
-          <li>
-            <Link to="/blog">Blog</Link>
-          </li>
-          <li>
-            <Link to="/soporte">Soporte</Link>
-          </li>
-        </ul>
-
-        <div className="contenedor-derecho">
-          {!haySesion && (
-            <ul className="enlaces-nav">
-              <li>
-                <Link to="/login">Iniciar sesión</Link>
-              </li>
-              <li>
-                <Link to="/registro">Registrarse</Link>
-              </li>
-            </ul>
-          )}
-
-          <div className="iconos-nav">
-            <Link
-              to="/carrito"
-              className="icono-carrito"
-              aria-label={`Ver carrito, ${cantidadProductos} productos`}
-            >
-              🛒{" "}
-              <span id="cart-count-badge" className="contador-carrito">
-                {cantidadProductos}
-              </span>
+            <header className="lu-header">
+        <nav className="navbar navbar-expand-md" data-bs-theme="dark">
+          {/* El container alinea el header con el contenido de las páginas */}
+          <div className="container">
+            <Link to="/" className="navbar-brand lu-logo">
+              LEVEL-<span>UP</span>
             </Link>
 
-            {haySesion ? (
+            {/* Carrito, perfil y hamburguesa: siempre visibles */}
+            <div className="d-flex align-items-center gap-3 ms-auto order-md-3">
               <Link
-                to="/perfil"
-                className="icono-perfil"
-                aria-label="Ver perfil"
+                to="/carrito"
+                className="lu-icono position-relative"
+                aria-label={`Ver carrito, ${cantidadProductos} productos`}
               >
-                👤
+                🛒
+                <span
+                  id="cart-count-badge"
+                  className="lu-badge badge rounded-pill position-absolute top-0 start-100 translate-middle"
+                >
+                  {cantidadProductos}
+                </span>
               </Link>
-            ) : (
-              // Sin sesión: abre el modal en vez de ir al perfil
-              <a
-                href="#"
-                className="icono-perfil"
-                aria-label="Ver perfil"
-                data-bs-toggle="modal"
-                data-bs-target="#modal-perfil-invitado"
+
+              {haySesion ? (
+                <Link to="/perfil" className="lu-icono" aria-label="Ver perfil">
+                  👤
+                </Link>
+              ) : (
+                // Sin sesión: abre el modal en vez de ir al perfil
+                <a
+                  href="#"
+                  className="lu-icono"
+                  aria-label="Ver perfil"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-perfil-invitado"
+                >
+                  👤
+                </a>
+              )}
+
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu-principal"
+                aria-controls="menu-principal"
+                aria-expanded="false"
+                aria-label="Abrir menú"
+                ref={togglerRef}
               >
-                👤
-              </a>
-            )}
+                <span className="navbar-toggler-icon"></span>
+              </button>
+            </div>
+
+            {/* Enlaces: en móvil bajan a una columna desplegable */}
+            <div
+              className="collapse navbar-collapse order-md-2"
+              id="menu-principal"
+              ref={menuRef}
+            >
+              <ul className="navbar-nav lu-nav-principal me-md-auto">
+                <li className="nav-item">
+                  <NavLink to="/" end className="nav-link">
+                    Inicio
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/catalogo" className="nav-link">
+                    Catálogo
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/blog" className="nav-link">
+                    Blog
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/soporte" className="nav-link">
+                    Soporte
+                  </NavLink>
+                </li>
+              </ul>
+
+              {!haySesion && (
+                <ul className="navbar-nav lu-nav-sesion">
+                  <li className="nav-item">
+                    <NavLink to="/login" className="nav-link">
+                      Iniciar sesión
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink to="/registro" className="nav-link">
+                      Registrarse
+                    </NavLink>
+                  </li>
+                </ul>
+              )}
+            </div>
           </div>
-        </div>
+        </nav>
       </header>
 
-      {/* Modal para invitados (antes lo creaba tienda.js con el DOM) */}
+      {/* Modal para invitados */}
       <div
         className="modal fade"
         id="modal-perfil-invitado"

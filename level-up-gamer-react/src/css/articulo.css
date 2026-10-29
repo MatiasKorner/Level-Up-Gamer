@@ -154,7 +154,7 @@ article-page {
 
 /* ===== DISEÑO RESPONSIVE PARA PANTALLAS PEQUEÑAS ===== */
 @media (max-width: 576px) {
-    .container {
+    .article-page .container {
         padding-left: 1rem;
         padding-right: 1rem;
     }

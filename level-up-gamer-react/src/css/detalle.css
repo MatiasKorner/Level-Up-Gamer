@@ -81,3 +81,16 @@
   align-self: flex-start;
   margin-top: 1rem;
 }
+
+@media (max-width: 991.98px) {
+  .detalle-producto {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .info-detalle {
+    width: 100%;
+    min-width: 0;
+  }
+}
