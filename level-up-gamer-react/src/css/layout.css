@@ -1,0 +1,124 @@
+/* ===== VARIABLES DEL HEADER Y DEL FOOTER ===== */
+:root {
+  --lu-fondo: #0a0a10;
+  --lu-borde: #1f2230;
+  --lu-verde: #39ff14;
+  --lu-azul: #1e90ff;
+  --lu-texto-suave: #9aa0ad;
+}
+
+/* ===== HEADER ===== */
+.lu-header {
+  background-color: var(--lu-fondo);
+  border-bottom: 1px solid var(--lu-borde);
+}
+
+.lu-header .navbar {
+  min-height: 75px;
+}
+
+.lu-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.55rem;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.lu-logo:hover {
+  color: #ffffff;
+}
+
+.lu-logo span {
+  color: var(--lu-azul);
+}
+
+.lu-header .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+}
+
+.lu-header .nav-link:hover,
+.lu-header .nav-link.active {
+  color: var(--lu-verde);
+}
+
+/* En móvil el menú desplegado se separa del logo con una línea */
+@media (max-width: 767.98px) {
+  .lu-header .navbar-collapse {
+    border-top: 1px solid var(--lu-borde);
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+  }
+}
+
+/* En escritorio: enlaces pegados a la izquierda, como el original */
+@media (min-width: 768px) {
+  .lu-header .lu-nav-principal {
+    gap: clamp(1rem, 3.4vw, 2.5rem);
+    margin-left: clamp(1rem, 9.5vw, 7rem);
+  }
+
+  /* Iniciar sesión / Registrarse, pegados a los iconos */
+  .lu-header .lu-nav-sesion {
+    gap: clamp(0.75rem, 2.8vw, 2rem);
+    margin-right: 1.5rem;
+  }
+
+  /* El espacio entre palabras lo da el gap, no el relleno de cada enlace */
+  .lu-header .nav-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ===== ICONOS DE CARRITO Y PERFIL ===== */
+.lu-icono {
+  font-size: 1.15rem;
+  line-height: 1;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.lu-icono:hover {
+  color: var(--lu-verde);
+}
+
+.lu-badge {
+  background-color: var(--lu-verde);
+  color: #000000;
+  font-size: 0.65rem;
+}
+
+/* ===== FOOTER ===== */
+.lu-footer {
+  background-color: var(--lu-fondo);
+  border-top: 1px solid var(--lu-borde);
+  color: var(--lu-texto-suave);
+}
+
+.lu-footer h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.lu-footer a {
+  color: var(--lu-texto-suave);
+  text-decoration: none;
+}
+
+.lu-footer a:hover {
+  color: var(--lu-verde);
+}
+
+.lu-footer-creditos {
+  border-top: 1px solid var(--lu-borde);
+}
