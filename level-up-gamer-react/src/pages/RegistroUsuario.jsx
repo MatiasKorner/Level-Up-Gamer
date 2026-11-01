@@ -1,6 +1,8 @@
+// RegistroUsuario: página de creación de cuenta; valida el formulario, guarda el usuario en localStorage y usa CampoFormulario para los campos.
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import CampoFormulario from "../components/CampoFormulario.jsx";
 
 import "../css/auth.css";
 import "../css/base.css";
@@ -121,57 +123,41 @@ export default function RegistroUsuario() {
           <div className="linea-decorativa"></div>
 
           <form onSubmit={validarRegistro}>
-            <div className="grupo-campo">
-              <span className="icono-campo">👤</span>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                className="campo-entrada"
-                placeholder="Nombre completo"
-                value={datos.nombre}
-                onChange={manejarCambio}
-              />
-            </div>
+            {/* Los 4 campos usan el mismo componente; solo cambian sus props */}
+            <CampoFormulario
+              icono="👤"
+              id="nombre"
+              placeholder="Nombre completo"
+              valor={datos.nombre}
+              onChange={manejarCambio}
+            />
 
-            <div className="grupo-campo">
-              <span className="icono-campo">✉️</span>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="campo-entrada"
-                placeholder="Correo electrónico"
-                value={datos.email}
-                onChange={manejarCambio}
-              />
-            </div>
+            <CampoFormulario
+              icono="✉️"
+              id="email"
+              tipo="email"
+              placeholder="Correo electrónico"
+              valor={datos.email}
+              onChange={manejarCambio}
+            />
 
-            <div className="grupo-campo">
-              <span className="icono-campo">🔒</span>
-              <input
-                type="password"
-                id="pass1"
-                name="pass1"
-                className="campo-entrada"
-                placeholder="Contraseña"
-                value={datos.pass1}
-                onChange={manejarCambio}
-              />
-            </div>
+            <CampoFormulario
+              icono="🔒"
+              id="pass1"
+              tipo="password"
+              placeholder="Contraseña"
+              valor={datos.pass1}
+              onChange={manejarCambio}
+            />
 
-            <div className="grupo-campo">
-              <span className="icono-campo">🔒</span>
-              <input
-                type="password"
-                id="pass2"
-                name="pass2"
-                className="campo-entrada"
-                placeholder="Confirmar contraseña"
-                value={datos.pass2}
-                onChange={manejarCambio}
-              />
-            </div>
+            <CampoFormulario
+              icono="🔒"
+              id="pass2"
+              tipo="password"
+              placeholder="Confirmar contraseña"
+              valor={datos.pass2}
+              onChange={manejarCambio}
+            />
 
             <div className="contenedor-casilla">
               <input

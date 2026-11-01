@@ -1,5 +1,7 @@
+// Inicio: página principal con el banner de oferta, los filtros de categoría (FiltroCategorias) y los artículos destacados (TarjetaProducto).
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import FiltroCategorias from "../components/FiltroCategorias.jsx";
+import TarjetaProducto from "../components/TarjetaProducto.jsx";
 
 import "../css/base.css";
 import "../css/componentes.css";
@@ -55,10 +57,6 @@ const categorias = [
   { valor: "pc", texto: "PC" },
 ];
 
-function formatearPrecio(precio) {
-  return `$${precio.toLocaleString("es-CL")} CLP`;
-}
-
 export default function Inicio() {
   const [categoriaActual, setCategoriaActual] = useState("tendencias");
 
@@ -85,51 +83,18 @@ export default function Inicio() {
         </div>
       </div>
 
-      <div className="filtros-categoria">
-        {categorias.map((categoria) => (
-          <button
-            key={categoria.valor}
-            type="button"
-            className={`boton-azul ${
-              categoriaActual === categoria.valor ? "" : "boton-borde"
-            }`}
-            onClick={() => setCategoriaActual(categoria.valor)}
-            aria-pressed={categoriaActual === categoria.valor}
-          >
-            {categoria.texto}
-          </button>
-        ))}
-      </div>
+      {/* El estado vive aquí; el componente solo muestra y avisa qué se eligió */}
+      <FiltroCategorias
+        categorias={categorias}
+        activa={categoriaActual}
+        onSeleccionar={setCategoriaActual}
+      />
 
       <h2 className="titulo-seccion">Artículos Destacados</h2>
 
       <div className="rejilla-productos">
-        {/* PRODUCTOS */}
         {productosFiltrados.map((producto) => (
-          <div
-            className="tarjeta"
-            data-categoria={producto.categorias}
-            key={producto.id}
-          >
-            <img
-              src={`/img/${producto.imagen}`}
-              alt={producto.alt}
-              className="imagen-tarjeta"
-            />
-
-            <div className="titulo-tarjeta">{producto.nombre}</div>
-
-            <div className="precio-tarjeta">
-              {formatearPrecio(producto.precio)}
-            </div>
-
-            <Link
-              to={`/detalle?id=${encodeURIComponent(producto.id)}`}
-              className="boton-azul"
-            >
-              Ver Detalle
-            </Link>
-          </div>
+          <TarjetaProducto key={producto.id} producto={producto} />
         ))}
       </div>
     </main>

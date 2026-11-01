@@ -1,4 +1,6 @@
+// Catalogo: página con todos los productos; permite filtrar por categoría, buscar por nombre (BarraBusqueda), ordenar y abrir el menú de más categorías.
 import { useEffect, useRef, useState } from "react";
+import BarraBusqueda from "../components/BarraBusqueda.jsx";
 import TarjetaProducto from "../components/TarjetaProducto.jsx";
 import { obtenerProductos } from "../data/productos.js";
 
@@ -117,16 +119,12 @@ export default function Catalogo() {
       <h2 className="encabezado-catalogo">CATÁLOGO</h2>
 
       <div className="barra-busqueda">
-        <div className="grupo-campo-busqueda">
-          <span className="icono-busqueda">🔍</span>
-          <input
-            type="text"
-            className="campo-busqueda"
-            placeholder="Buscar juego, consola o accesorio..."
-            value={textoBusqueda}
-            onChange={(evento) => setTextoBusqueda(evento.target.value)}
-          />
-        </div>
+        {/* El estado del texto vive aquí; el componente solo avisa qué se escribió */}
+        <BarraBusqueda
+          valor={textoBusqueda}
+          onCambiar={setTextoBusqueda}
+          placeholder="Buscar juego, consola o accesorio..."
+        />
 
         <div className="contenedor-select">
           <select
