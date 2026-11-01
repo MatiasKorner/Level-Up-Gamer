@@ -1,3 +1,5 @@
+// Pruebas de la página Carrito: lista de productos, resumen con descuento Duoc, cambio de cantidad, eliminación y mocks (toast y evento al Header).
+
 import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Carrito from "../pages/Carrito.jsx";
