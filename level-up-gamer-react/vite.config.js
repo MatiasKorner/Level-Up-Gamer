@@ -10,5 +10,12 @@ export default defineConfig({
     globals: true,
     clearMocks: true,
     restoreMocks: true,
+
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html'],
+      include: ['src/components/**', 'src/pages/**', 'src/hooks/**', 'src/services/**', 'src/data/**'],
+      exclude: ['src/test/**'],
+    },
   },
 })
